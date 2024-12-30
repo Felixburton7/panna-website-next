@@ -10,18 +10,16 @@ function Responsibility() {
           time, but it needs to be enjoyed in moderation and within a budget.
         </h1>
         <p className="intro-grey">
-          Responsible play is the betr way to play. That means setting and
+          Responsible play is the better way to play. That means setting and
           sticking to a budget, taking frequent breaks, and using the provided
           tools to help keep your play fun and within your limits.
         </p>
         <p className="intro-grey">
           All gambling activities and skill gaming have risks and it’s important
           to understand that, over time, you will lose more often than you win.
-          That is why the betr way to play is to see gambling and skilled gaming
+          That is why the better way to play is to see gambling and skilled gaming
           as a form of entertainment and use responsible play strategies to keep
-          play within your spending budget. It also means not expecting to win
-          back the money you’ve lost or to see gambling and skilled gaming as a
-          way to make money.
+          play within your spending budget.
         </p>
 
         {/* Tips Section */}

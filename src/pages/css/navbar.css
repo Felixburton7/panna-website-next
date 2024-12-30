@@ -1,0 +1,172 @@
+/* ------------------------------------------------------------- */
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem; /* Increased top margin */
+}
+
+.navbar-left {
+  flex: 1;
+}
+
+.navbar-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  font-weight: 500;
+  margin-left: 10rem;
+}
+.navbar-play-wrapper {
+  padding: 0 1.5rem; /* Add padding around the play button */
+}
+
+.navbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar-logo {
+  padding: 0.5px;
+  height: 57px;
+  margin-top: 10px;
+}
+
+.navbar-center a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbar-center a.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a119d6; /* Purple color */
+}
+
+.navbar-right a {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.navbar-play-link {
+  border: 1px solid #383838;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+/* Burger Icon (hidden on desktop) */
+.burger-icon {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+/* Mobile menu container */
+.mobile-menu {
+  position: fixed; /* Changed to fixed for better scroll behavior */
+  top: 80px; /* Align with navbar height */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px); /* Take remaining viewport height */
+  background-color: #111;
+  padding: 2rem 1rem;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Menu items */
+.mobile-menu a {
+  font-size: 1rem; /* Bigger text */
+  font-weight: 600; /* Bold text for clarity */
+  color: #fff; /* White text for contrast */
+  text-align: left; /* Left-aligned text */
+  width: 100%; /* Take up full width */
+  padding-left: 1rem; /* Consistent padding to push left-aligned items slightly center */
+  padding-top: 1rem; /* Consistent vertical alignment */
+  padding-bottom: 1rem; /* Consistent vertical alignment */
+}
+
+/* Divider between all menu items */
+.mobile-menu a:not(:first-child) {
+  border-top: 1px solid #222222; /* 90% grey divider */
+  width: 90%; /* Dividers span 90% of the width */
+}
+
+
+
+/* Horizontal social icons */
+.mobile-menu .social-icons {
+  display: flex;
+  justify-content: center; /* Center icons horizontally */
+  align-items: center; /* Align icons vertically */
+  gap: 3rem; /* Increase horizontal spacing */
+  width: 100%; /* Ensure full width for proper alignment */
+}
+
+.mobile-menu .social-icons a {
+  color: #fff; /* White icons for contrast */
+  font-size: 1.5rem; /* Larger size for clarity */
+  display: flex;
+  align-items: center; /* Center each icon vertically */
+  justify-content: center;
+}
+
+/* "Play Now" button */
+.mobile-menu .play-now-button {
+  margin-top: 2rem; /* Space above the button */
+  background-color: #a119d6; /* Purple background */
+  color: #fff; /* White text for contrast */
+  font-weight: bold; /* Bold text for emphasis */
+  text-align: center; /* Center text horizontally */
+  padding: 1rem; /* Padding inside the button */
+  border: none;
+  border-radius: 4px; /* Rounded corners for modern look */
+  width: 90%; /* 90% width of the container */
+  cursor: pointer;
+  align-self: center; /* Center align the button */
+}
+
+.mobile-menu .play-now-button:hover {
+  background-color: #8b0fb3; /* Darker purple on hover */
+}
+
+/* Hide mobile menu when viewport widens */
+@media (min-width: 900px) {
+  .mobile-menu {
+    display: none;
+  }
+}

@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+
+import "../pages/css/home.css";
 import { ReactTyped as Typed } from "react-typed";
 import appScreenshotOutline1 from "../assets/app_screenshot_outline.png"; // Outline for first screenshot
 import appScreenshot1 from "../assets/app_screenshot_2.png"; // First app screenshot
 import appScreenshotOutline2 from "../assets/app_screenshot_outline.png"; // Outline for second screenshot
 import appScreenshot2 from "../assets/app_screenshot.png"; // Second app screenshot
-import { FaRocket, FaBolt, FaList } from "react-icons/fa";
+import { FaRocket, FaBolt, FaList, FaUsers, FaHeart, FaHandshake } from "react-icons/fa";
 
 function Home() {
   const [activeFAQ, setActiveFAQ] = useState(null);
+  const [animatePhones, setAnimatePhones] = useState(false);
+
+  useEffect(() => {
+    setAnimatePhones(true);
+  }, []);
 
   const toggleFAQ = (index) => {
     setActiveFAQ(activeFAQ === index ? null : index);
@@ -29,6 +36,7 @@ function Home() {
       answer:
         "A sportsbook offers fixed odds betting where punters bet on certain outcomes to win money from the bookie. In Panna, players compete with each other in peer-to-peer game modes, making it more interactive and social.",
     },
+      
     {
       question: "How do I get started on Panna?",
       answer:
@@ -61,17 +69,15 @@ function Home() {
       {/* HERO SECTION */}
       <section className="hero-section">
         <div className="container hero-inner">
-          
-          {/* LEFT SIDE: TEXT */}
           <div className="hero-text">
             <h1 className="hero-title">Social Betting</h1>
             <h2 className="hero-subtitle">
               <Typed
                 strings={[
-                  "Just got better",
-                  "Your way",
                   "Re-imagined",
                   "Higher stakes",
+                  "Your way",
+                  "Done better",
                   "More social",
                 ]}
                 typeSpeed={70}
@@ -80,17 +86,14 @@ function Home() {
               />
             </h2>
             <p className="hero-description">
-              Your go-to platform for social betting with friends or competing
-              globally. Explore innovative social gambling features, including
-              group pools, leaderboards, and community challenges.
+              Your go-to platform for social betting with friends or competing globally. Explore innovative social gambling features, including group pools, leaderboards, and community challenges.
             </p>
             <button className="hero-button">Play Now</button>
           </div>
-          
-          {/* RIGHT SIDE: IMAGES */}
           <div className="hero-images">
-            {/* Overlapping container for phone mockups */}
-            <div className="phones-wrapper">
+            <div
+              className={`phones-wrapper ${animatePhones ? "appear" : ""}`}
+            >
               <div className="phone-container phone-container-1">
                 <img
                   src={appScreenshotOutline1}
@@ -103,7 +106,6 @@ function Home() {
                   className="app-screenshot"
                 />
               </div>
-
               <div className="phone-container phone-container-2">
                 <img
                   src={appScreenshotOutline2}
@@ -121,17 +123,13 @@ function Home() {
         </div>
       </section>
 
-      {/* WHY CHOOSE PANNA SECTION */}
+      {/* SOCIAL PICKS SECTION */}
       <section className="why-choose-panna-section">
         <div className="container why-choose-inner">
           <div className="text-column">
-            <h2 className="section-heading">Social Picks</h2>
+            <h2 className="section-heading">Join a Community</h2>
             <p className="section-description">
-              Social Picks is a fun way to engage with betting by selecting MORE
-              or LESS for your favorite bets. Compete with friends and the
-              community while earning up to 2000x your stake! Make picks across
-              multiple sports like football, basketball, golf, and more.
-            </p>
+            Join a community of like-minded sports enthusiasts and elevate your betting experience. Compete with friends and others in the community, share insights, and test your skills. Play together, but the winnings are yours alone.          </p>
           </div>
           <div className="feature-cards-column">
             <div className="feature-card">
@@ -141,8 +139,7 @@ function Home() {
               <div>
                 <h3 className="feature-title">Massive Wins</h3>
                 <p className="feature-description grey">
-                  Win up to 2000x your bet by making bold predictions and
-                  connecting with other players.
+                  Win big on your bet by making bold predictions and connecting with other players.
                 </p>
               </div>
             </div>
@@ -153,8 +150,7 @@ function Home() {
               <div>
                 <h3 className="feature-title">Community & Risk-Free Play</h3>
                 <p className="feature-description grey">
-                  Miss up to 2 picks and still compete. Join communities to
-                  share strategies and reduce risk.
+                  Miss up to 2 picks and still compete. Join communities to share strategies and reduce risk.
                 </p>
               </div>
             </div>
@@ -163,13 +159,59 @@ function Home() {
                 <FaList size={24} />
               </div>
               <div>
-                <h3 className="feature-title">Pre-made Challenges</h3>
+                <h3 className="feature-title">Experts and Influencers</h3>
                 <p className="feature-description grey">
-                  Choose pre-made bets crafted by experts and influencers. Get
-                  involved in the fastest, easiest way.
+                  Monitor tactics by experts and influencers. Learn from the best to win big. 
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SOCIAL GAMBLING SECTION */}
+      <section className="social-gambling-section">
+        <div className="container social-gambling-inner">
+          <div className="feature-cards-column">
+            <div className="feature-card">
+              <div className="feature-icon green">
+                <FaUsers size={24} />
+              </div>
+              <div>
+                <h3 className="feature-title">Engaging Communities</h3>
+                <p className="feature-description grey">
+                  Join vibrant communities and enjoy an immersive social gambling experience.
+                </p>
+              </div>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon green">
+                <FaHeart size={24} />
+              </div>
+              <div>
+                <h3 className="feature-title">Responsible Play</h3>
+                <p className="feature-description grey">
+                  Play responsibly with built-in features promoting safer gambling habits.
+                </p>
+              </div>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon green">
+                <FaHandshake size={24} />
+              </div>
+              <div>
+                <h3 className="feature-title">Collaborative Challenges</h3>
+                <p className="feature-description grey">
+                  Work together with friends to achieve shared goals and reap the rewards.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="text-column">
+            <h2 className="section-heading">Gambling Redefined</h2>
+            <p className="section-description">
+              Experience a revolutionary way to gamble socially. Our innovative platform ensures transparency, fairness, and a thrilling social aspect.
+            </p>
           </div>
         </div>
       </section>

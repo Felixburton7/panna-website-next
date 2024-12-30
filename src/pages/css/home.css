@@ -1,0 +1,307 @@
+/* ------------------------------------------------------------- */
+/* HERO SECTION */
+.hero-section {
+    padding: 5rem 0 0rem 3.5rem; /* Add spacing from the top */
+    background: linear-gradient(
+      135deg,
+      #000 0%,
+      #001f3f 60%,
+      #000 90%
+    );
+  }
+  
+  /* Container for text & images in the hero */
+  .hero-inner {
+    display: flex;
+    align-items:center;  /* Align at the top */
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* LEFT: Text Area */
+  .hero-text {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+.hero-title {
+    font-size: 4.7rem;
+    font-weight: 610; /* Medium bold */
+}
+
+  
+  .hero-subtitle {
+    margin-top: -1rem;
+    font-size: 4.7rem;
+    margin-bottom: 2rem;
+    font-weight: 610; /* Medium bold */
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    color: #aaa;
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-button {
+    background-color: #9a1acd;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px; /* Increased for smoother borders */
+    font-size: 1rem;
+    font-weight: 500; /* Medium-bold font weight */
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+  
+  
+  .hero-button:hover {
+    opacity: 0.8;
+  }
+  
+  /* RIGHT: Overlapping phone images */
+  .hero-images {
+    flex: 1;
+    margin-right: 3.5rem;
+    display: flex;
+    justify-content: flex-end; /* Align images to the right side */
+    position: relative;        /* So the phones can be absolutely positioned if needed */
+  }
+  
+  /* Wrapper for Overlapping Phones (optional approach) */
+  .phones-wrapper {
+    position: relative;
+    width: 350px;  /* Adjust as desired */
+    height: 600px; /* Adjust as desired */
+  }
+  
+  /* Each phone container can be absolutely placed for overlap */
+  .phone-container {
+    position: absolute;
+    width: 260px;
+    height: 500px;
+  }
+  
+  /* First phone slightly higher & rotated */
+  .phone-container-1 {
+    top: 0;
+    left: 0;
+    transform: rotate(-10deg);
+    z-index: 2;
+  }
+  
+  /* Second phone slightly lower & rotated */
+  .phone-container-2 {
+    top: 80px;
+    left: 50px;
+    transform: rotate(10deg);
+    z-index: 1;
+  }
+  
+  /* Outline & app screenshot inside it */
+  .phone-outline {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  .app-screenshot {
+    position: absolute;
+    top: 4.5%;
+    left: 9%;
+    width: 82.5%;
+    height: 91%;
+    border-radius: 30px; /* Rounded corners */
+  }
+  /* 1) Add transitions to phone containers */
+.phone-container {
+  position: absolute;
+  width: 260px;
+  height: 500px;
+  /* Initial state: slightly off-position and minimal rotation */
+  opacity: 1;
+  transform: translateX(40px) rotate(2deg);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Phone 1 vs Phone 2: Start them on opposite sides (subtle angles) */
+.phone-container-1 {
+  top: 0;
+  left: 0;
+  /* Maybe shift further left if you want a bigger “come in” effect */
+  transform: translateX(-40px) rotate(-2deg);
+  z-index: 2;
+}
+.phone-container-2 {
+  top: 80px;
+  left: 50px;
+  transform: translateX(40px) rotate(2deg);
+  z-index: 1;
+}
+
+/* 2) When we add .appear (or .animate-phones) to .phones-wrapper,
+   the phones transition to final positions. */
+.phones-wrapper.appear .phone-container-1 {
+  opacity: 1;
+  transform: translateX(0) rotate(-10deg);
+}
+.phones-wrapper.appear .phone-container-2 {
+  opacity: 1;
+  transform: translateX(0) rotate(10deg);
+}
+
+  
+  /* ------------------------------------------------------------- */
+  /* WHY CHOOSE PANNA SECTION */
+  .why-choose-panna-section {
+    padding: 5rem 0;
+  }
+  
+  .why-choose-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .text-column {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .feature-cards-column {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .section-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #8f8f8f;
+  }
+  
+  .feature-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 1.5rem 0;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6a0dad, #9b59b6);
+    color: #fff;
+  }
+  
+  .feature-title {
+    color: #fff;
+  }
+  
+  .feature-description.grey {
+    color: #aaa;
+    line-height: 1.4;
+  }
+  /* ------------------------------------------------------------- */
+/* SOCIAL GAMBLING SECTION */
+.social-gambling-section {
+  padding: 3rem 0;
+}
+
+.social-gambling-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; /* Responsive wrapping */
+}
+
+.social-gambling-inner .text-column {
+  flex: 1;
+  max-width: 500px;
+}
+
+.social-gambling-inner .feature-cards-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Green icons for the new section */
+.feature-icon.green {
+  background-color: transparent;
+  color: white; /* Green color */
+}
+
+  
+  /* ------------------------------------------------------------- */
+  /* FAQ SECTION */
+  .faq-section {
+    padding: 4rem 0;
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .faq {
+    margin-bottom: 1.5rem;
+  }
+  
+  .faq-question {
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    color: #9b59b6;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .faq-answer.visible {
+    max-height: 500px;
+    opacity: 1;
+    padding: 0.5rem 0;
+  }
+  

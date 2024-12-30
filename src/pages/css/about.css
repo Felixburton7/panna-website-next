@@ -1,0 +1,412 @@
+/* ------------------------------------------------------------- */
+/* ABOUT TOP SECTION */
+.about-top-section {
+  /* padding: 4rem 0; Increased padding for better spacing */
+  background-color: #111; /* Subtle background for distinction */
+}
+
+/* ------------------------------------------------------------- */
+/* ABOUT HEADER */
+.about-header {
+  padding: 5rem 12rem; /* Added horizontal padding for responsiveness */
+  text-align: center;
+  background-color: #000; /* Optional background color for emphasis */
+}
+
+.about-header-title {
+  font-size: 4rem; /* Larger font for header */
+  font-weight: 700; /* Bolder text */
+  color: #fff;
+  line-height: 1.4;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-header-title .neon-blue {
+  color: #00f9ff; /* Bright neon blue for emphasis */
+}
+
+.play-now-container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  margin-top: 50px; /* Adds some space above the button */
+  margin-bottom: 100px;
+}
+
+.play-now-button {
+  background-color:  #9a1acd; /* Purple background */
+  color: #fff;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.play-now-button:hover {
+  background-color:linear-gradient(135deg, #6a0dad, #9b59b6); /* Darker purple on hover */
+}
+.spacing {
+    height: 50px; /* Creates the 50px gap */
+    width:100%;
+}
+
+/* ------------------------------------------------------------- */
+/* MISSION SECTION */
+.about-top-heading {
+  font-size: 2.8rem; /* Slightly larger for emphasis */
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.about-top-subheading {
+  font-size: 1.4rem; /* Larger for better readability */
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------------------------------------- */
+/* WHY SOCIAL GAMBLING */
+.about-top-why {
+  font-size: 2rem; /* Larger for impact */
+  text-align: center;
+  color: #fff; /* White for visibility */
+  margin-bottom: 1.5rem;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; /* Wider spacing between stats */
+  margin-bottom: 3rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 3rem; /* Larger numbers for emphasis */
+  font-weight: bold;
+  color:#9a1acd/* Purple for accent */
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  color: #aaa; /* Subtle gray for labels */
+}
+
+/* Vertical divider between stats */
+.about-stats .divider {
+  width: 1px;
+  height: 60px;
+  background-color: #555;
+  margin: 0 1rem;
+}
+
+/* ------------------------------------------------------------- */
+/* WHAT WE STAND FOR */
+.about-top-stand-for {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-top-text {
+  font-size: 1.2rem; /* Larger text for easier reading */
+  line-height: 1.8; /* More spacing for readability */
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 2rem; /* Spaced out and centered */
+  text-align: center;
+}
+
+/* ------------------------------------------------------------- */
+/* FOLLOW OUR JOURNEY */
+/* About Socials Section */
+.about-top-follow {
+  font-size: 2rem; /* Larger text for emphasis */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fff; /* White text for visibility */
+}
+
+.about-top-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Space between social icons */
+  margin-bottom: 5rem;
+}
+
+/* Social Icon Styles */
+.social-icon {
+  font-size: 3rem; /* Adjust size of the icon */
+  color: transparent; /* Make text transparent */
+  border-radius: 50%; /* Circle shape */
+  padding: 0.75rem; /* Space inside the circle */
+  text-align: center; /* Center align the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem; /* Set consistent width */
+  height: 3.5rem; /* Set consistent height */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon i {
+  color: #fff; /* Icon color white by default */
+}
+
+.social-icon:hover {
+  background-color:#9a1acd;; /* Purple background on hover */
+  border-color: #9a1acd; /* Change border to purple */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.social-icon:hover i {
+  color: #fff; /* Keep the icon white on hover */
+}
+
+
+/* ------------------------------------------------------------- */
+/* GENERAL DIVIDER */
+.about-divider {
+  width: 70%;
+  height: 2px; /* Thicker for more prominence */
+  margin: 2rem auto; /* Center the divider */
+}
+
+  /* ------------------------------------------------------------- */
+  /* DIRECTORS SECTION */
+  .directors-section {
+    padding: 2rem 0;
+  }
+  
+  .directors-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #9a1acd;
+  }
+  
+  .directors-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .director-card {
+    background-color: #111;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .director-img {
+    width: 100%;
+    height: 360px; /* Ensures equal height for all images */
+    object-fit: cover; /* Prevents distortion */
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .director-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .director-description {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .director-linkedin {
+    display: inline-block;
+    background: #9a1acd;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    margin-bottom: 1rem;
+  }
+  
+  .director-linkedin:hover {
+    background: #8e44ad;
+  }
+  
+  /* ------------------------------------------------------------- */
+  /* EXECUTIVE SECTION */
+/* ------------------------------------------------------------- */
+/* EXECUTIVE SECTION */
+.executive-section {
+  padding: 3rem 0;
+  text-align: center; /* Center everything within the section */
+}
+
+.exec-heading,
+.board-heading { /* Unified styling for both headings */
+  font-size: 2rem; /* Slightly larger for emphasis */
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #9a1acd; /* Accent color for the headings */
+}
+
+/* List styling */
+.exec-list,
+.board-list {
+  list-style: none;
+  margin: 0 0 2rem 0;
+  padding: 0;
+  max-width: 600px; /* Reduced max width for better focus */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex; /* Flexbox for two-column layout */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center; /* Center the list items */
+  gap: 2rem; /* Space between columns */
+}
+
+/* Individual list items */
+.exec-list li,
+.board-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-size: 1.2rem; /* Slightly larger font size for readability */
+  color: #fff; /* White text for contrast */
+  flex: 1 1 45%; /* Ensure two items per row with equal width */
+  text-align: left; /* Align text left for names */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 600px) {
+  .exec-list li,
+  .board-list li {
+    flex: 1 1 100%; /* Full-width for smaller devices */
+    text-align: center; /* Center-align text on smaller screens */
+  }
+}
+
+  
+  /* ------------------------------------------------------------- */
+  /* JOEY LEVY QUOTE */
+  .joey-levy-section {
+    padding: 3rem 0;
+    background-color: #111;
+  }
+  
+  .joey-levy-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .joey-levy-pic {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .joey-levy-quote {
+    max-width: 600px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  .joey-levy-quote p {
+    margin-bottom: 0.75rem;
+  }
+  
+  .joey-levy-quote cite {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-style: normal;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .read-note-link {
+    color: #9a1acd;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+  
+  .read-note-link:hover {
+    color: #c39bd3;
+  }
+  
+  /* ------------------------------------------------------------- */
+  /* INVESTORS SECTION */
+  .investors-section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .investors-text {
+    color: #ccc;
+    max-width: 600px;
+    margin: 0.75rem auto;
+    line-height: 1.4;
+  }
+  /* about.css */
+.about-page {
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* General Styles */
+.about-header-title {
+  font-size: 4rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.play-now-button {
+  background: #9a1acd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .about-header {
+    padding: 2rem 1rem;
+  }
+
+  .about-header-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .play-now-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .social-icon {
+    font-size: 2rem;
+  }
+}

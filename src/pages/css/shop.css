@@ -1,0 +1,36 @@
+.shop-page {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .shop-header {
+    margin-bottom: 20px;
+  }
+  
+  .shop-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 80%;
+  }
+  
+  .product-placeholder {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    /* background: #f9f9f9; */
+  }
+  
+  .product-placeholder span {
+    display: block;
+    color: #888;
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,78 @@
+/* Page Styling */
+.partners-page {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background: linear-gradient(135deg, #000000, #0d002f);
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  .partners-header {
+    margin-bottom: 40px;
+  }
+  
+  .partners-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+  }
+  
+  .partners-header p {
+    font-size: 1.2em;
+  }
+  
+  /* Content Sections */
+  .partners-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .partner-section {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Section Titles */
+  .partner-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+  }
+  
+  .section-icon {
+    margin-right: 10px;
+    color: #9a1acd;
+    font-size: 1.2em;
+  }
+  
+  /* Paragraph Text */
+  .partner-section p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #cccccc;
+  }
+  
+  /* Buttons */
+  .partner-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background: linear-gradient(90deg, #9a1acd, #6d00a8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .partner-button:hover {
+    background: linear-gradient(90deg, #6d00a8, #9a1acd);
+    transform: scale(1.05);
+  }
+  

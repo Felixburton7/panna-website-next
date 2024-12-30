@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Media from "./pages/Media";
+import Games from "./pages/Games"; 
 import About from "./pages/About";
 import Responsibility from "./pages/Responsibility";
 import GameRules from "./pages/GameRules";
@@ -24,7 +24,7 @@ function App() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/media" element={<Media />} />
+          <Route path="/games" element={<Games />} />
           <Route path="/about" element={<About />} />
           <Route path="/responsibility" element={<Responsibility />} />
           <Route path="/rules" element={<GameRules />} />
