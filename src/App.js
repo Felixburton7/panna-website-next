@@ -11,12 +11,17 @@ import GameRules from "./pages/GameRules";
 import Careers from "./pages/Careers";
 import Shop from "./pages/Shop";
 import Partners from "./pages/Partners";
+import { Helmet } from "react-helmet";
+
 
 import "./App.css";
 
 function App() {
   return (
     <div className="app-container">
+       <Helmet>
+        <title>Panna</title>
+      </Helmet>
       {/* Navigation Bar (always visible) */}
       <Navbar />
 
