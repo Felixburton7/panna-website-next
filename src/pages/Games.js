@@ -156,7 +156,7 @@ function Games() {
               <div>
                 <h3>Use Survivor to Raise Funds</h3>
                 <p>
-                  Set a creator rake to allocate up to 50% of the pot
+                  Set a creator rake to allocate the pot
                   for charity. Enjoy the game while supporting a cause!
                 </p>
               </div>
@@ -165,10 +165,9 @@ function Games() {
             <div className="lms-benefit-point">
               <div className="lms-number purple">06</div>
               <div>
-                <h3>Completely Free to Use</h3>
+                <h3>Set any buy-in up to £500</h3>
                 <p>
-                  0% commission on private pots. All payouts go directly
-                  to winners—no hidden costs.
+                  The larger the buy-in the bigger the prize. 
                 </p>
               </div>
             </div>
@@ -252,7 +251,20 @@ function Games() {
         </p>
         <button className="games-cta-button">Sign Up Now</button>
       </section>
+      <footer className="games-footer">
+        <p>
+          To use Panna, you must agree to our{" "}
+          <a href="/terms-and-conditions" className="terms-link">
+            Terms and Conditions
+          </a>{" "}
+          and{" "}
+          <a href="/privacy-policy" className="terms-link">
+            Privacy Policy
+          </a>.
+        </p>
+      </footer>
     </div>
+    
   );
 }
 

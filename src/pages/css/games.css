@@ -307,3 +307,22 @@
     margin-bottom: 1rem;
   }
 }
+/* Footer Section */
+.games-footer {
+  /* background-color: #111; */
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.terms-link {
+  color: #9a1acd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}

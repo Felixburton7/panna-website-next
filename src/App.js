@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Games from "./pages/Games"; 
+import TermsAndConditions from "./components/terms_and_conditions";
+
 import About from "./pages/About";
 import Responsibility from "./pages/Responsibility";
 import GameRules from "./pages/GameRules";
@@ -37,6 +39,8 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/partners" element={<Partners />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
         </Routes>
         <SpeedInsights />
 
