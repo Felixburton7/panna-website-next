@@ -305,3 +305,13 @@
     padding: 0.5rem 0;
   }
   
+  @media (max-width: 700px) {
+    .hero-title {
+      font-size: 2.7rem; /* Adjust as needed */
+    }
+  
+    .hero-subtitle {
+      font-size: 2.7rem; /* Adjust as needed */
+    }
+  }
+  

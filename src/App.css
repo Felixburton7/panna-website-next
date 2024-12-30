@@ -71,6 +71,18 @@ a {
   display: block;
   transition: transform 0.3s ease;
 }
+@media (max-width: 700px) {
+  .footer-logo {
+    width: 10px; /* Adjust size for smaller screens */
+    height: auto;
+  }
+
+  .age-restriction {
+    width: 10px; /* Adjust size for smaller screens */
+    height: 10px;
+  }
+}
+
 
 .footer-logo:hover {
   transform: scale(1.1); /* Slight zoom effect on hover */
@@ -95,17 +107,6 @@ a {
   transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-/* Responsive Footer Logos */
-@media (max-width: 768px) {
-  .footer-logos {
-    flex-wrap: wrap;
-  }
-  .footer-logo,
-  .age-restriction {
-    width: 60px; /* Smaller size for smaller screens */
-    height: 60px;
-  }
-}
 
 
 /* ------------------------------------------------------------- */
@@ -362,6 +363,63 @@ a {
   font-size: 1.2rem;
   color: #fff;
 }
+@media (max-width: 768px) {
+  .responsibility-page {
+    padding: 5rem 1rem; /* Reduce padding */
+  }
+
+  .container {
+    width: 100%; /* Ensure it fits smaller screens */
+  }
+
+  .intro-large {
+    font-size: 1.6rem; /* Smaller font size for headlines */
+    padding: 0 1rem; /* Add some horizontal padding */
+  }
+
+  .intro-grey {
+    font-size: 0.9rem; /* Adjust font size for paragraphs */
+    line-height: 1.4; /* Tighter spacing */
+    padding: 0 1rem; /* Add horizontal padding */
+  }
+
+  .tips-container {
+    flex-direction: column; /* Stack tips vertically */
+    gap: 1rem;
+  }
+
+  .tips-column {
+    min-width: 100%; /* Expand columns to full width */
+  }
+
+  .tip {
+    padding: 0.75rem; /* Reduce padding */
+    gap: 0.5rem; /* Reduce spacing between elements */
+  }
+
+  .tools-container {
+    flex-direction: column; /* Stack tools vertically */
+    gap: 1rem;
+  }
+
+  .tools-column {
+    min-width: 100%; /* Expand columns to full width */
+  }
+
+  .tool-box {
+    padding: 0.75rem; /* Reduce padding */
+    gap: 0.5rem;
+  }
+
+  .tool-content h3 {
+    font-size: 1rem; /* Smaller font for headings */
+  }
+
+  .tool-content p {
+    font-size: 0.85rem; /* Smaller font for descriptions */
+  }
+}
+
 
 /* ------------------------------------------------------------- */
 /* MEDIA QUERIES */
@@ -624,4 +682,25 @@ a {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: #aaa;
+}
+
+/* Responsive Footer Logos */
+@media (max-width: 768px) {
+  .footer-logos {
+    flex-wrap: wrap;
+  }
+  .footer-logo,
+  .age-restriction {
+    width: 65px; /* Smaller size for smaller screens */
+    height: 20px;
+  }
+/* Footer Logos */
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.rem;
+  margin-top: 1.5rem;
+}
+
 }
