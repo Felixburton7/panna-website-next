@@ -1,0 +1,1105 @@
+/* ------------------------------------------------------------- */
+/* Base RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------- */
+/* GLOBAL STYLES */
+html, body {
+  font-family: "Arial", sans-serif;
+  background: #000; /* Black background */
+  color: #fff;      /* White text */
+  scroll-behavior: smooth; /* Smooth scrolling between anchors/sections */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------------------------------------------------- */
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem; /* Increased top margin */
+}
+
+.navbar-left {
+  flex: 1;
+}
+
+.navbar-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar-logo {
+  padding: 0.5px;
+  height: 57px;
+  margin-top: 10px;
+}
+
+.navbar-center a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbar-center a.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a119d6; /* Purple color */
+}
+
+.navbar-right a {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.navbar-play-link {
+  border: 0.5px solid #666666;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: transparent;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Burger Icon (hidden on desktop) */
+.burger-icon {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Mobile menu (hidden by default) */
+.mobile-menu {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ------------------------------------------------------------- */
+/* MAIN CONTENT OFFSET - ensures navbar doesn't overlap content */
+.main-content {
+  margin-top: 120px; /* Adjust this if the navbar height changes */
+}
+
+/* ------------------------------------------------------------- */
+/* HERO SECTION */
+.hero-section {
+  padding: 5rem 0 3rem 0; /* Add spacing from the top */
+  background: linear-gradient(
+    135deg,
+    #000 0%,
+    #001f3f 60%,
+    #000 90%
+  );
+}
+
+/* Container for text & images in the hero */
+.hero-inner {
+  display: flex;
+  align-items: flex-start;  /* Align at the top */
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LEFT: Text Area */
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-title {
+  font-size: 4.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 4.7rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #aaa;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-button {
+  background-color: #9a1acd;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px; /* Increased for smoother borders */
+  font-size: 1rem;
+  font-weight: 500; /* Medium-bold font weight */
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+
+.hero-button:hover {
+  opacity: 0.8;
+}
+
+/* RIGHT: Overlapping phone images */
+.hero-images {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Align images to the right side */
+  position: relative;        /* So the phones can be absolutely positioned if needed */
+}
+
+/* Wrapper for Overlapping Phones (optional approach) */
+.phones-wrapper {
+  position: relative;
+  width: 350px;  /* Adjust as desired */
+  height: 600px; /* Adjust as desired */
+}
+
+/* Each phone container can be absolutely placed for overlap */
+.phone-container {
+  position: absolute;
+  width: 260px;
+  height: 500px;
+}
+
+/* First phone slightly higher & rotated */
+.phone-container-1 {
+  top: 0;
+  left: 0;
+  transform: rotate(-10deg);
+  z-index: 2;
+}
+
+/* Second phone slightly lower & rotated */
+.phone-container-2 {
+  top: 80px;
+  left: 50px;
+  transform: rotate(10deg);
+  z-index: 1;
+}
+
+/* Outline & app screenshot inside it */
+.phone-outline {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.app-screenshot {
+  position: absolute;
+  top: 4.5%;
+  left: 9%;
+  width: 82.5%;
+  height: 91%;
+  border-radius: 30px; /* Rounded corners */
+}
+
+/* ------------------------------------------------------------- */
+/* WHY CHOOSE PANNA SECTION */
+.why-choose-panna-section {
+  padding: 5rem 0;
+}
+
+.why-choose-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-column {
+  flex: 1;
+  max-width: 50%;
+}
+
+.feature-cards-column {
+  flex: 1;
+  max-width: 50%;
+}
+
+.section-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #8f8f8f;
+}
+
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 1.5rem 0;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a0dad, #9b59b6);
+  color: #fff;
+}
+
+.feature-title {
+  color: #fff;
+}
+
+.feature-description.grey {
+  color: #aaa;
+  line-height: 1.4;
+}
+
+/* ------------------------------------------------------------- */
+/* FAQ SECTION */
+.faq-section {
+  padding: 4rem 0;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.faq {
+  margin-bottom: 1.5rem;
+}
+
+.faq-question {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #9b59b6;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.faq-answer.visible {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+
+/* ------------------------------------------------------------- */
+/* FOOTER */
+.footer {
+  background: #111;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  color: #ccc;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-info,
+.footer-company {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.footer-links h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* ------------------------------------------------------------- */
+/* MEDIA QUERY: BELOW 900px */
+/* ------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .burger-icon {
+    display: block;
+  }
+
+  .navbar-center,
+  .navbar-right {
+    display: none;
+  }
+
+  .hero-inner {
+    flex-direction: column; /* Stack text over images */
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 90%;
+  }
+
+  .hero-images {
+    justify-content: center; 
+    margin-top: 2rem;
+  }
+
+  /* Adjust phone wrapper & containers for smaller screens */
+  .phones-wrapper {
+    width: 250px;
+    height: 450px;
+  }
+
+  .phone-container {
+    width: 200px;
+    height: 380px;
+  }
+
+  .phone-container-2 {
+    top: 60px;
+    left: 30px;
+  }
+
+  .why-choose-inner {
+    flex-direction: column;
+  }
+
+  .text-column,
+  .feature-cards-column {
+    max-width: 100%;
+  }
+}
+
+/* Base container for the Responsibility page */
+.responsibility-page {
+  background-color: #000; /* Matches the overall site background */
+  color: #fff;
+  padding: 2rem 0; /* Top/bottom spacing */
+}
+
+/* Main container for layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Large introductory text */
+.intro-large {
+  font-size: 2.2rem; /* Increase for a 'large' feel */
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+/* Grey subtext paragraphs */
+.intro-grey {
+  color: #aaa;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Tips heading */
+.tips-heading {
+  font-size: 1.8rem;
+  margin: 3rem 0 1rem 0; /* Spacing before and after */
+}
+
+/* Tips container with two columns */
+.tips-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+}
+
+/* Each column for the tips */
+.tips-column {
+  flex: 1; /* Two columns side by side */
+  min-width: 280px; /* Ensures columns don’t collapse too small */
+}
+
+/* Individual tip styling */
+.tip {
+  background-color: #111;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  display: flex;       /* So the number can sit next to text or above it */
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Tip number styling */
+.tip-number {
+  font-weight: bold;
+  color: #9b59b6; /* Purple accent color */
+  font-size: 1.2rem;
+}
+/* Tools Section */
+.tools-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tools-intro {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.tools-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* For two vertical columns of boxes */
+.tools-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Styling for individual tool boxes */
+.tool-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: #111;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Artistic tick inside the box */
+.tool-tick {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #9b59b6; /* Matches accent color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.tool-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.tool-content p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .tools-container {
+    flex-direction: column; /* Stack vertically for smaller screens */
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .intro-large {
+    font-size: 1.8rem;
+  }
+
+  .tips-heading {
+    font-size: 1.6rem;
+  }
+
+  .tips-container {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+
+  .tips-column {
+    max-width: 100%;
+  }
+}
+
+/* Base container for the About page */
+.about-page {
+  background: #000;
+  color: #fff;
+  padding-bottom: 2rem; /* Space at bottom */
+}
+
+/* Global container styling */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------- */
+/* MISSION SECTION */
+.mission-section {
+  padding: 2rem 0;
+}
+
+.mission-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mission-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* ------------------------------------------------------------- */
+/* DIRECTORS SECTION */
+.directors-section {
+  padding: 2rem 0;
+}
+
+.directors-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9b59b6; /* Purple accent, optional */
+  text-transform: uppercase;
+}
+
+.directors-row {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 2rem;
+}
+
+.director-card {
+  background-color: #111; /* Slightly darker background for cards */
+  flex: 1 1 300px; /* Grow/shrink basis of 300px */
+  max-width: 320px;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.director-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.director-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.director-description {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.director-linkedin {
+  display: inline-block;
+  background: #9b59b6;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease-in;
+}
+
+.director-linkedin:hover {
+  background: #8e44ad;
+}
+
+/* ------------------------------------------------------------- */
+/* EXECUTIVE & BOARD SECTIONS */
+.executive-section {
+  padding: 2rem 0;
+}
+
+.exec-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.exec-list,
+.board-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  padding-left: 0;
+}
+
+.exec-list li,
+.board-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------------------------------------------------- */
+/* JOEY LEVY QUOTE */
+.joey-levy-section {
+  padding: 2rem 0;
+  background-color: #111;
+}
+
+.joey-levy-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.joey-levy-pic {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.joey-levy-quote {
+  max-width: 600px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.joey-levy-quote p {
+  margin-bottom: 0.75rem;
+}
+
+.joey-levy-quote cite {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-style: normal;
+  font-weight: bold;
+  color: #fff;
+}
+
+.read-note-link {
+  color: #9b59b6;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.read-note-link:hover {
+  color: #c39bd3;
+}
+
+/* ------------------------------------------------------------- */
+/* INVESTORS SECTION */
+.investors-section {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.investors-text {
+  color: #ccc;
+  max-width: 600px;
+  margin: 0.75rem auto;
+  line-height: 1.4;
+}
+
+/* ------------------------------------------------------------- */
+/* JOIN THE TEAM SECTION */
+.join-team-section {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.join-team-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.join-team-desc {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.job-openings-link {
+  background: #9b59b6;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.job-openings-link:hover {
+  background: #8e44ad;
+}
+
+/* ------------------------------------------------------------- */
+/* HELP SECTION */
+.help-section {
+  padding: 2rem 0;
+  background-color: #111;
+}
+
+.help-heading {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+}
+
+.help-container p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.help-container h3 {
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* ------------------------------------------------------------- */
+/* MEDIA QUERIES */
+/* ------------------------------------------------------------- */
+/* DIRECTORS SECTION */
+.directors-section {
+  padding: 2rem 0;
+}
+
+.directors-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+  text-transform: uppercase;
+}
+
+.directors-row {
+  display: flex;
+  justify-content: center; /* Centering directors' cards */
+  gap: 2rem;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.director-card {
+  background-color: #111;
+  flex: 1 1 300px;
+  max-width: 320px;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+/* Careers Page Styles */
+.careers-page {
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.careers-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.careers-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #aaa;
+}
+
+/* Filters Section */
+.filters-section {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-dropdown label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #9b59b6;
+}
+
+.filter-dropdown select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #444;
+  background-color: #111;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Job Listings */
+.job-listings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.job-card {
+  background-color: #111;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.job-description {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.job-details {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.no-jobs {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #aaa;
+}
+
+.mission-page {
+  background: #000;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.mission-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mission-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mission-intro {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.highlights-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.highlights-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+}
+
+.highlights-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  color: #9b59b6;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.mission-details {
+  margin-bottom: 3rem;
+}
+
+.mission-details-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+}
+
+.mission-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.social-partners-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.social-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  margin: 0 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+  opacity: 0.8;
+}
+
+.team-partners-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background: #111;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 200px;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.member-name {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.mission-footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #222;
+}
+
+.footer-text a {
+  color: #9b59b6;
+  text-decoration: none;
+}
+
+.footer-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
