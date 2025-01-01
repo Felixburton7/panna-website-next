@@ -8,7 +8,7 @@
 /* ------------------------------------------------------------- */
 /* ABOUT HEADER */
 .about-header {
-  padding: 5rem 12rem; /* Added horizontal padding for responsiveness */
+  padding: 5rem 10rem; /* Added horizontal padding for responsiveness */
   text-align: center;
   background-color: #000; /* Optional background color for emphasis */
 }
@@ -29,12 +29,12 @@
 .play-now-container {
   display: flex;
   justify-content: center; /* Centers the button horizontally */
-  margin-top: 50px; /* Adds some space above the button */
-  margin-bottom: 100px;
+  margin-top: 60px; /* Adds some space above the button */
+  margin-bottom: 90px;
+  
 }
 
-.play-now-button {
-  background-color:  #9a1acd; /* Purple background */
+.learn-more-button {
   color: #fff;
   padding: 10px 20px; /* Adjust padding as needed */
   border: none;
@@ -42,10 +42,11 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
+  background: linear-gradient(90deg, #9a1acd, #6d00a8);
 }
 
-.play-now-button:hover {
-  background-color:linear-gradient(135deg, #6a0dad, #9b59b6); /* Darker purple on hover */
+.learn-more-button:hover {
+  background: linear-gradient(90deg,  #6d00a8,#9a1acd);
 }
 .spacing {
     height: 50px; /* Creates the 50px gap */
@@ -95,7 +96,6 @@
 .stat-value {
   font-size: 3rem; /* Larger numbers for emphasis */
   font-weight: bold;
-  color:#9a1acd/* Purple for accent */
 }
 
 .stat-label {
@@ -383,30 +383,59 @@
   padding: 10px 20px;
   border-radius: 5px;
 }
+/* General Responsive Styles */
+@media (max-width: 700px) {
+  .about-header-title,
+  .about-top-subheading,
+  .stat-value,
+  .stat-label,
+  .about-top-text,
+  .about-top-follow,
+  .social-icon,
+  .director-name,
+  .director-description,
+  .exec-list li,
+  .board-list li,
+  .joey-levy-quote {
+    font-size: calc(130%); /* Reduce font size for all elements */
+  }
+}
 
-/* Responsive Styles */
-@media (max-width: 900px) {
+/* Specific Small-Screen Adjustments */
+@media (max-width: 700px) {
   .about-header {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem; /* Adjust padding for smaller screens */
   }
 
   .about-header-title {
-    font-size: 2rem;
-    line-height: 1.2;
+    font-size: 1.8rem; /* Smaller font for header title */
+    line-height: 1.2; /* Adjusted line height */
   }
 
   .about-stats {
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: column; /* Stack stats vertically */
+    gap: 1rem; /* Reduced gap for compact layout */
   }
 
   .play-now-button {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
+    width: 100%; /* Full-width button for smaller screens */
+    font-size: 0.9rem; /* Smaller button font size */
   }
 
   .social-icon {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Adjusted size for smaller icons */
+  }
+
+  .director-card {
+    width: 90%; /* Make director cards more compact */
+  }
+
+  .joey-levy-container {
+    flex-direction: column; /* Stack quote sections vertically */
+    gap: 1rem; /* Reduce spacing for compact view */
+  }
+
+  .joey-levy-pic {
+    width: 150px; /* Smaller image for responsiveness */
   }
 }

@@ -95,7 +95,7 @@ function About() {
           </h1>
           <div className="play-now-container">
             <Link to="/responsibility">
-              <button className="play-now-button">Learn more</button>
+              <button className="learn-more-button">Learn more</button>
             </Link>
           </div>
         </div>

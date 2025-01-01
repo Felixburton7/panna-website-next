@@ -47,7 +47,9 @@
   }
   
   .hero-button {
-    background-color: #9a1acd;
+    /* background-color: #9a1acd; */
+    background: linear-gradient(90deg, #9a1acd, #6d00a8);
+
     color: #fff;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -307,7 +309,7 @@
   
   @media (max-width: 700px) {
     .hero-section {
-    padding: 5rem  3.5rem; /* Add spacing from the top */
+    padding: 4rem  1.5rem; /* Add spacing from the top */
     background: linear-gradient(
       135deg,
       #000 0%,
@@ -340,7 +342,7 @@
 
     /* WHY CHOOSE PANNA SECTION */
   .why-choose-panna-section {
-    padding: 5rem 3rem;
+    padding: 5rem 1.5rem;
   }
   
   .why-choose-inner {
@@ -407,7 +409,7 @@
 
   /* SOCIAL GAMBLING SECTION */
 .social-gambling-section {
-  padding: 3rem 3rem;
+  padding: 3rem 1.5rem;
 }
 
 .social-gambling-inner {
