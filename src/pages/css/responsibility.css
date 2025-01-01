@@ -1,0 +1,68 @@
+
+/* Tools Section */
+.tools-heading {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
+  }
+  
+  .tools-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .tools-column {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .tool-box {
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .tool-tick {
+    background-color: #9a1acd;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tool-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tool-content p {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 900px) {
+    .intro-large {
+      font-size: 1.8rem;
+    }
+  
+    .tips-container,
+    .tools-container {
+      flex-direction: column;
+    }
+  
+    .tips-column,
+    .tools-column {
+      max-width: 100%;
+    }
+  }

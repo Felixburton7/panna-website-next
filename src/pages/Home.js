@@ -150,7 +150,7 @@ function Home() {
               <div>
                 <h3 className="feature-title">Community & Risk-Free Play</h3>
                 <p className="feature-description grey">
-                  Miss up to 2 picks and still compete. Join communities to share strategies and reduce risk.
+                 Compete in multiple leagues or create your own. Build a community and share strategies to reduce risk. 
                 </p>
               </div>
             </div>

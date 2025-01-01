@@ -306,12 +306,134 @@
   }
   
   @media (max-width: 700px) {
+    .hero-section {
+    padding: 5rem  3.5rem; /* Add spacing from the top */
+    background: linear-gradient(
+      135deg,
+      #000 0%,
+      #001f3f 60%,
+      #000 90%
+    );
+  }
+    .hero-inner {
+      display: flex;
+      align-items:center;  /* Align at the top */
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     .hero-title {
-      font-size: 2.7rem; /* Adjust as needed */
+      font-size: 2.2rem; /* Adjust as needed */
     }
   
     .hero-subtitle {
-      font-size: 2.7rem; /* Adjust as needed */
+      font-size: 2.2rem; /* Adjust as needed */
     }
+
+    .hero-description {
+      font-size: 1rem;
+      color: #aaa;
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
+
+    /* WHY CHOOSE PANNA SECTION */
+  .why-choose-panna-section {
+    padding: 5rem 3rem;
+  }
+  
+  .why-choose-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .text-column {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .feature-cards-column {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .section-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #8f8f8f;
+  }
+  
+  .feature-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 1.5rem 0;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6a0dad, #9b59b6);
+    color: #fff;
+  }
+  
+  .feature-title {
+    color: #fff;
+  }
+  
+  .feature-description.grey {
+    color: #aaa;
+    line-height: 1.4;
+  }
+
+  /* SOCIAL GAMBLING SECTION */
+.social-gambling-section {
+  padding: 3rem 3rem;
+}
+
+.social-gambling-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; /* Responsive wrapping */
+}
+
+.social-gambling-inner .text-column {
+  flex: 1;
+  max-width: 500px;
+}
+
+.social-gambling-inner .feature-cards-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Green icons for the new section */
+.feature-icon.green {
+  background-color: transparent;
+  color: white; /* Green color */
+}
+
   }
   
