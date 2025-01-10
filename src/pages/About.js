@@ -8,7 +8,7 @@ import director2 from "../assets/directorWJ.png";
 import director3 from "../assets/mockup2.png";
 import joeyLevyPic from "../assets/joey_levy.png";
 
-function FlickerStat({ finalValue, minValue, maxValue, prefix, suffix, flickerDuration = 7000 }) {
+function FlickerStat({ finalValue, minValue, maxValue, prefix, suffix, flickerDuration = 8000 }) {
   const [currentValue, setCurrentValue] = useState(finalValue); // display value
   const [hasLanded, setHasLanded] = useState(false);
 
