@@ -9,7 +9,7 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/newLogo.png";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
