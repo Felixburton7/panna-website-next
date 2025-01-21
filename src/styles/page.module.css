@@ -1,0 +1,355 @@
+/* src/styles/Home.module.css */
+
+/* HERO SECTION */
+.homePage {
+  font-family: Arial, sans-serif;
+}
+
+.heroSection {
+  padding: 5rem 0 0rem 3.5rem; /* Add spacing from the top */
+  background: linear-gradient(
+    135deg,
+    #000 0%,
+    #001f3f 60%,
+    #000 90%
+  );
+}
+
+/* Container for text & images in the hero */
+.container {
+  width: 100%;
+}
+
+.heroInner {
+  display: flex;
+  align-items: center; /* Align vertically center */
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LEFT: Text Area */
+.heroText {
+  flex: 1;
+  max-width: 50%;
+}
+
+.heroTitle {
+  font-size: 4.7rem;
+  font-weight: 600; /* Medium bold */
+}
+
+.heroSubtitle {
+  margin-top: -1rem;
+  font-size: 4.7rem;
+  margin-bottom: 2rem;
+  font-weight: 600; /* Medium bold */
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: #aaa;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.heroButton {
+  /* background-color: #9a1acd; */
+  background: linear-gradient(90deg, #9a1acd, #6d00a8);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px; /* Increased for smoother borders */
+  font-size: 1rem;
+  font-weight: 500; /* Medium-bold font weight */
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.heroButton:hover {
+  opacity: 0.8;
+}
+
+/* RIGHT: Overlapping phone images */
+.heroImages {
+  flex: 1;
+  margin-right: 3.5rem;
+  display: flex;
+  justify-content: flex-end; /* Align images to the right side */
+  position: relative; /* So the phones can be absolutely positioned if needed */
+}
+
+/* Wrapper for Overlapping Phones */
+.phonesWrapper {
+  position: relative;
+  width: 350px; /* Adjust as desired */
+  height: 600px; /* Adjust as desired */
+  transition: all 0.8s ease;
+}
+
+.phoneContainer {
+  position: absolute;
+  width: 260px;
+  height: 500px;
+  /* Initial state: slightly off-position and minimal rotation */
+  opacity: 1;
+  transform: translateX(40px) rotate(2deg);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Phone 1 slightly rotated */
+.phoneContainer1 {
+  top: 0;
+  left: 0;
+  transform: translateX(-40px) rotate(-2deg);
+  z-index: 2;
+}
+
+.phoneContainer2 {
+  top: 80px;
+  left: 50px;
+  transform: translateX(40px) rotate(2deg);
+  z-index: 1;
+}
+
+/* Outline & app screenshot inside it */
+.phoneOutline {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.appScreenshot {
+  position: absolute;
+  top: 4.5%;
+  left: 9%;
+  width: 82.5%;
+  height: 91%;
+  border-radius: 30px; /* Rounded corners */
+}
+
+/* When .appear is added to .phonesWrapper */
+.appear .phoneContainer1 {
+  opacity: 1;
+  transform: translateX(0) rotate(-10deg);
+}
+
+.appear .phoneContainer2 {
+  opacity: 1;
+  transform: translateX(0) rotate(10deg);
+}
+
+/* WHY CHOOSE PANNA SECTION */
+.whyChoosePannaSection {
+  padding: 5rem 0;
+}
+
+.whyChooseInner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.textColumn {
+  flex: 1;
+  max-width: 50%;
+}
+
+.featureCardsColumn {
+  flex: 1;
+  max-width: 50%;
+}
+
+.sectionHeading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #8f8f8f;
+}
+
+.featureCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 1.5rem 0;
+}
+
+.featureIcon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a0dad, #9b59b6);
+  color: #fff;
+}
+
+.featureTitle {
+  color: #fff;
+}
+
+.featureDescription {
+  color: #aaa;
+}
+
+/* GREEN ICONS FOR SOCIAL GAMBLING SECTION */
+.socialGamblingSection {
+  padding: 3rem 0;
+}
+
+.socialGamblingInner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; /* Responsive wrapping */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.socialGamblingInner .textColumn {
+  flex: 1;
+  max-width: 500px;
+}
+
+.socialGamblingInner .featureCardsColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Green icons for the new section */
+.green {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+}
+
+/* FAQ SECTION */
+.faqSection {
+  padding: 4rem 0;
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqHeading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.faq {
+  margin-bottom: 1.5rem;
+}
+
+.faqQuestion {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  color: #9b59b6;
+}
+
+.faqAnswer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.visible {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .heroSection {
+    padding: 4rem 1.5rem; /* Add spacing from the top */
+    background: linear-gradient(
+      135deg,
+      #000 0%,
+      #001f3f 60%,
+      #000 90%
+    );
+  }
+
+  .heroInner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem; /* Adjust as needed */
+    text-align: center;
+  }
+
+  .heroSubtitle {
+    font-size: 2.2rem; /* Adjust as needed */
+    text-align: center;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+    color: #aaa;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .whyChoosePannaSection {
+    padding: 5rem 1.5rem;
+  }
+
+  .whyChooseInner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textColumn {
+    max-width: 100%;
+  }
+
+  .featureCardsColumn {
+    max-width: 100%;
+  }
+
+  .socialGamblingInner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socialGamblingInner .textColumn,
+  .socialGamblingInner .featureCardsColumn {
+    max-width: 100%;
+  }
+}
