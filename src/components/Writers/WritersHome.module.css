@@ -1,0 +1,90 @@
+/* Base Styles */
+.writers-home {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    color: #ffffff; /* Lighter base text color */
+  }
+  
+  .writers-header {
+    margin-bottom: 40px;
+    color: #ffffff; /* Lighter header color */
+    text-align: center;
+  }
+  
+  .writers-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #0055ff; /* Slightly lighter headline */
+  }
+  
+  .writers-header p {
+    font-size: 1.2em;
+    color: #ffffff;; /* Softer subtitle color */
+  }
+  
+  /* Section Styles */
+  .writers-section {
+    margin-bottom: 40px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee; /* Lighter border */
+  }
+  
+  .writers-section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #ffffff;; /* Lighter section title */
+  }
+  
+  .writers-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #ffffff;; /* Softer paragraph text */
+  }
+  
+  .writers-section ul {
+    font-size: 1.1em;
+    margin-left: 20px; /* Indent bullet points */
+    padding-left: 20px; /* Additional padding for indentation */
+    list-style: disc;
+    color: #666; /* Lighter list text */
+  }
+  
+  .writers-section ul li {
+    margin-bottom: 10px; /* Spacing between bullet points */
+    color: #ffffff;; /* Softer bullet points */
+  }
+  
+  /* Responsive Styles for Phones */
+  @media (max-width: 768px) {
+    .writers-header h1 {
+      font-size: 1.3em;
+    }
+  
+    .writers-header p {
+      font-size: 1em;
+    }
+  
+    .writers-section h2 {
+      font-size: 1em;
+    }
+  
+    .writers-section p,
+    .writers-section ul {
+      font-size: 1em;
+    }
+  
+    .writers-home {
+      margin: 15px;
+    }
+  
+    .writers-section {
+      margin-bottom: 30px;
+      padding: 8px 0;
+    }
+  
+    .writers-section ul {
+      margin-left: 15px; /* Smaller indentation for bullet points */
+      padding-left: 15px;
+    }
+  }

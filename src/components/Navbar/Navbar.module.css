@@ -97,7 +97,7 @@
 
   .burger-icon {
     display: block; /* show burger on mobile */
-    margin-right: 5px;
+
   }
 }
 
@@ -215,4 +215,33 @@ Adjust spacing for Games link if needed
 
 .social-icon:hover {
   colour: #9a1acd;
+}
+
+/* Hide center/right nav on narrower screens by default. */
+@media (max-width: 700px) {
+  .navbar-center,
+  .navbar-right {
+    display: none;
+  }
+
+  .burger-icon {
+    display: block; /* show burger on mobile */
+    margin-right: 5px;
+
+  }
+  /* "Play Now" wrapper and link */
+.navbar-play-wrapper {
+  padding: 0 1.5rem; /* Extra spacing around the play button */
+}
+
+.navbar-play-link {
+  border: 1px solid #383838;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  white-space: nowrap; /* Prevent text wrap */
+}
 }

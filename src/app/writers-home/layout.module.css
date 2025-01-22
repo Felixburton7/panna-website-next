@@ -7,12 +7,12 @@
 .mainContent {
   flex: 1;
   padding: 35px;
-  margin-left: 100px; 
+  margin-left: 50px; 
   transition: margin-left 0.3s ease;
 }
 
 @media (max-width: 700px) {
   .mainContent {
-    margin-left: 30;
+    margin-left: 20px;
   }
 }

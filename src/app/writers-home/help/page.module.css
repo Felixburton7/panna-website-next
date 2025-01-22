@@ -1,1 +1,40 @@
 /* This is src/app/writers-home/help/page.module.css */
+/* Base Container */
+.help-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+  }
+  
+  /* Heading */
+  .help-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  /* Paragraph */
+  .help-paragraph {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+  }
+  
+  /* List */
+  .help-list {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .help-list-item {
+    margin-bottom: 0.8rem;
+  }
+  
+  .help-list-item strong {
+    color: #0055ff; /* Highlight the bold text */
+  }

@@ -55,6 +55,21 @@
     height: 60px;
     font-size: 1rem;
   }
+  /* Footer Logos */
+.footerLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.footerLogo {
+  width: 3..5rem; /* Adjust the logo size */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
 }
 
 .footerLogo:hover {

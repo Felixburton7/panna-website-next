@@ -2,7 +2,7 @@
 .sidebar {
   background: #010101; /* Matches sidebar background */
   color: #fff;
-  width: 200px; /* Full expanded width */
+  width: 150px; /* Full expanded width */
   height: 100vh; /* Full height */
   padding: 50px;
   overflow-y: auto;
@@ -60,7 +60,7 @@
 
 /* Highlight links on hover */
 .sidebar a:hover {
-  color: #6e07c1;
+  color: #0055ff
 }
 
 /* Overlay styling */
@@ -91,3 +91,25 @@
   align-items: start;
   justify-content: center;
 }
+
+
+/* Hide center/right nav on narrower screens by default. */
+@media (max-width: 700px) {
+/* Sidebar base styling */
+/* Burger Button Styling */
+.burgerIcon {
+  position: fixed;
+  top: 0; /* 100px down from the top */
+  left: 0;
+  height: 100vh; /* Full height */
+  width: 50px; /* Always visible and matches sidebar collapsed width */
+  background: #010101; /* Matches sidebar background */
+  color: #c6c6c6;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 20; /* Above the sidebar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}}

@@ -1,72 +1,110 @@
 /* Container Styling */
 .container {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
+  padding: 10px; /* Reduced padding */
+  max-width: 900px; /* Maintains the same maximum width */
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.heading {
+  font-size: 2rem; /* Smaller font size */
+  font-weight: bold;
+}
+
+/* Button Styling */
+.newArticleButton {
+  padding: 8px 16px; /* Reduced padding */
+  border: 2px solid #101010;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #555;
+  font-size: 0.9rem; /* Smaller font size */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.newArticleButton:hover {
+  background-color: #f1f1f1;
+  border: 2px solid #101010;
+  color: #333;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Reduced margin */
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+/* Articles List */
+.articlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Reduced gap */
+}
+
+/* Article Card */
+.articleCard {
+  padding: 10px; /* Reduced padding */
+  border: 2px solid #292929;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+.articleCard:hover {
+  box-shadow: 0 3px 8px rgba(149, 0, 179, 0.15); /* Slightly smaller shadow on hover */
+}
+
+.articleTitle {
+  font-size: 1.2rem; /* Smaller font size */
+  font-weight: bold;
+  margin-bottom: 5px; /* Reduced margin */
+  color: #9900df;
+}
+
+/* Responsive Styling for Phones */
+@media (max-width: 768px) {
+  .container {
+    padding: 8px; /* Smaller padding for phones */
   }
-  
-  /* Header */
+
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: flex-start;
+    gap: 0.5rem; /* Add some spacing */
   }
-  
+
   .heading {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.2rem; /* Smaller heading size for phones */
   }
-  
-  /* Button Styling */
+
   .newArticleButton {
-    padding: 10px 20px;
-    border: 2px solid #101010;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #555;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    padding: 6px 12px; /* Even smaller padding */
+    font-size: 0.6rem; /* Reduced font size */
   }
-  
-  .newArticleButton:hover {
-    background-color: #f1f1f1;
-      border: 2px solid #101010;
-    color: #333;
-  }
-  
-  /* Error Message */
+
   .error {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 0.8rem; /* Smaller error text */
   }
-  
-  /* Articles List */
+
   .articlesList {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 0.8rem; /* Smaller gap between articles */
   }
-  
-  /* Article Card */
+
   .articleCard {
-    padding: 15px;
-    border: 2px solid #292929;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    padding: 8px; /* Reduced padding for cards */
   }
-  
-  .articleCard:hover {
-    box-shadow: 0 4px 10px rgba(149, 0, 179, 0.15);
-  }
-  
+
   .articleTitle {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #9900df;
+    font-size: 1rem; /* Smaller title font size */
   }
-  
+}
