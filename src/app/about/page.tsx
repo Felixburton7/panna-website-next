@@ -25,7 +25,8 @@ const FlickerStat: React.FC<FlickerStatProps> = ({
   flickerDuration = 8000,
 }) => {
   const [currentValue, setCurrentValue] = useState(finalValue);
-  const [hasLanded, setHasLanded] = useState(false);
+const [hasLanded, setHasLanded] = useState(false);
+
 
   useEffect(() => {
     const startTime = Date.now();

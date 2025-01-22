@@ -1,10 +1,25 @@
+
+"use client"; // Required for Next.js app directory components
+
 import React from "react";
-import "../pages/css/terms_conditions.css"; // Make sure this path is correct.
+import styles from "./page.module.css";
+import Link from "next/link";
+
 
 function TermsAndConditions() {
   return (
-    <div className="terms-page">
-      <div className="terms-content">
+    <div className={styles["terms-page"]}>
+      <header className={styles["terms-header"]}>
+        <h1>Terms and Conditions</h1>
+        <nav>
+          <ul className={styles["nav-links"]}>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+      </header>
+      <div className={styles["terms-content"]}>
         <h1>Terms and Conditions</h1>
 
         {/* --------------------------------------
