@@ -228,11 +228,13 @@ const About: React.FC = () => {
           </ul>
         </div>
       </section>
+      
 
       {/* JOEY LEVY QUOTE */}
       <section className={styles["joey-levy-section"]}>
         <div className={`${styles.container} ${styles["joey-levy-container"]}`}>
           <blockquote className={styles["joey-levy-quote"]}>
+            
             <p>
               “If we believe that social-betting will be the predominant way
               people bet on sports in the UK, then someone should launch

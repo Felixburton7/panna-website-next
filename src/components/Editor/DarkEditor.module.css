@@ -1,0 +1,154 @@
+/* Dark Container */
+.darkContainer {
+    min-height: 100vh;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ddd;
+    font-family: "Arial", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* 
+     ========== PLACEHOLDER + FLOATING LABEL STYLE ==========
+     We'll handle the "floating label" effect by:
+     - Using a parent container with 'position: relative;'
+     - Using ::before as a label if the field has text (the .filled class).
+  */
+  .fieldWrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    direction: ltr;
+    text-align: left;
+  }
+  
+  /* Large placeholder text if empty. Once typed, we shrink the label. */
+  .fieldWrapper:focus-within::before,
+  .fieldWrapper.filled::before {
+    /* If this wrapper has .filled or is focused, 
+       show the small label in the top left */
+    content: attr(data-label);
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    font-size: 0.8rem;
+    color: #999;
+    transition: 0.2s ease;
+  }
+  
+  /* The contentEditable itself */
+  .editableField {
+    min-height: 2.5rem; /* Enough space for 1 line if empty */
+    padding: 0;
+    outline: none;
+    cursor: text;
+    font-weight: 600;
+    font-size: 1.6rem; 
+    color: #fff;
+  }
+  
+  /* If empty, show a big placeholder */
+  .editableField:empty::before {
+    content: attr(data-placeholder);
+    color: #666;
+  }
+  
+  /* For a bigger content area (Main Content) */
+  .editableField.multiline {
+    min-height: 8rem; /* Expand this as needed */
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  /* 
+    We also add a 'wordLimitExceeded' class to highlight 
+    if the user tries to exceed 700 words 
+  */
+  .wordLimitExceeded {
+    outline: 1px solid red;
+  }
+  
+  /* ========== META FIELDS (DATE, ARTICLE TYPE, CATEGORY) ========== */
+  .metaFields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .metaGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .metaLabel {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  .metaInput,
+  .metaSelect {
+    background-color: #3e3e3e;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: #ddd;
+    padding: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+  }
+  
+  .metaInput:focus,
+  .metaSelect:focus {
+    outline: none;
+    border-color: #ccc;
+  }
+  
+  /* ========== BUTTONS ========== */
+  .buttonGroup {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .submitButton {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #0066cc;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #005bb5;
+    border-color: #005bb5;
+  }
+  
+  .saveDraftButton {
+    background-color: #777;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .saveDraftButton:hover {
+    background-color: #666;
+    border-color: #666;
+  }
+  
+  /* ========== STATUS MESSAGE ========== */
+  .statusMessage {
+    margin-top: 1rem;
+    color: #f16d6d;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+   

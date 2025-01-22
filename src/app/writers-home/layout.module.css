@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+}
+
+/* Leave enough space on desktop for the sidebar, 
+   but none on mobile where it's off-screen by default. */
+.mainContent {
+  flex: 1;
+  padding: 35px;
+  margin-left: 100px; 
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .mainContent {
+    margin-left: 30;
+  }
+}

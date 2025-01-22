@@ -1,0 +1,82 @@
+/* Container Styling */
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #767676;
+  }
+  
+  /* Error Message */
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Drafts List */
+  .articlesList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Draft Card */
+  .articleCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    border: 2px solid #292929;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .articleCard:hover {
+    box-shadow: 0 4px 10px rgba(149, 0, 179, 0.15);
+    background-color: #0f0f0f;
+  }
+  
+  .articleDetails {
+    max-width: 75%;
+  }
+  
+  .articleTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #9900df;
+  }
+  
+  /* Edit Draft Button */
+  .editDraftButton {
+    padding: 10px 20px;
+    border: 2px solid #151515;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #969696;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    align-self: flex-start;
+  }
+  
+  .editDraftButton:hover {
+    background-color: #282828;
+    color: #fff;
+  }
+  

@@ -1,0 +1,150 @@
+/* src/app/writers-home/articles/new/page.module.css */
+
+/* Container Styling */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Heading */
+  .heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #7b7b7b;
+  }
+  
+  /* Form Styling */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Form Group */
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Label Styling */
+  .label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #c9c9c9;
+  }
+  
+  /* Input Fields */
+  .input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: border-color 0.3s;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .input:focus {
+    border-color: #ffffff;
+    outline: none;
+  }
+  
+  /* Read-Only Author Field */
+  .readOnly {
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+  }
+  
+  /* Dropdown Styling */
+  .select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23999" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1em;
+    transition: border-color 0.3s;
+    font-size: 1rem;
+    color: #888;
+  }
+  
+  .select:focus {
+    border-color: #888;
+    outline: none;
+  }
+  
+  /* Editor Styling */
+  .editorContent {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 150px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #ffffff;
+  }
+  
+  /* Buttons Container */
+  .buttonGroup {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Submit Button */
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .submitButton:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Save Draft Button */
+  .saveDraftButton {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .saveDraftButton:hover {
+    background-color: #444;
+  }
+  
+  /* Status Message */
+  .statusMessage {
+    margin-top: 1rem;
+    color: #d9534f;
+    font-weight: 500;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .buttonGroup {
+      flex-direction: column;
+    }
+  
+    .submitButton,
+    .saveDraftButton {
+      width: 100%;
+    }
+  }
+  

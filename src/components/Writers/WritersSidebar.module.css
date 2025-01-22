@@ -1,0 +1,93 @@
+/* Sidebar base styling */
+.sidebar {
+  background: #010101; /* Matches sidebar background */
+  color: #fff;
+  width: 200px; /* Full expanded width */
+  height: 100vh; /* Full height */
+  padding: 50px;
+  overflow-y: auto;
+
+  /* Fixed positioning */
+  position: fixed;
+  top: 70;
+  left: 20;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  z-index: 15; /* Ensure it overlays content */
+}
+
+/* Collapsed sidebar */
+.sidebar.hidden {
+  width: 50px; /* Collapsed width */
+  transform: translateX(-150px); /* Hides the sidebar */
+  padding: 10px; /* Smaller padding */
+}
+
+/* Sidebar links */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Full link styles (visible when sidebar is expanded) */
+.sidebar a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1rem;
+  display: inline-block;
+  transition: color 0.2s, opacity 0.3s;
+  opacity: 1;
+}
+
+/* Hide text when sidebar is collapsed */
+.sidebar.hidden a {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* Always show icons */
+.sidebar li .icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Highlight links on hover */
+.sidebar a:hover {
+  color: #6e07c1;
+}
+
+/* Overlay styling */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Burger Button Styling */
+.burgerIcon {
+  position: fixed;
+  top: 14.5%; /* 100px down from the top */
+  left: 0;
+  height: 100vh; /* Full height */
+  width: 50px; /* Always visible and matches sidebar collapsed width */
+  background: #010101; /* Matches sidebar background */
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 20; /* Above the sidebar */
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}

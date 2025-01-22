@@ -1,0 +1,84 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; /* Adds space from the top */
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .loginForm {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .loginForm label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    text-align: left; /* Align labels to the right */
+  }
+  
+  .loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid grey; /* Grey border */
+    border-radius: 5px;
+    font-size: 14px;
+    background: transparent; /* Transparent background */
+    color: white; /* White text */
+  }
+  
+  .loginForm input:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight border on focus */
+  }
+  
+  .loginForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2002c9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .loginForm button:hover {
+    background-color: #0056b3;
+  }
+  
+  .loginForm button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design: Adjust sizes for smaller screens */
+  @media (max-width: 700px) {
+    .loginForm input {
+      padding: 8px; /* Reduce padding */
+      font-size: 12px; /* Smaller font size */
+    }
+  
+    .loginForm button {
+      padding: 8px; /* Reduce padding */
+      font-size: 14px; /* Smaller font size */
+    }
+  
+    .loginForm {
+      padding: 15px; /* Reduce form padding */
+    }
+  }

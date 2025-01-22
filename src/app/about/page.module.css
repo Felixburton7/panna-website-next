@@ -73,6 +73,7 @@
   height: 1px;
   background-color: #252525; /* Darker grey for consistency */
   margin: 3rem auto; /* Centres the divider horizontally */
+  text-align: center;
 }
 
 /* ------------------------------------------------------------- */

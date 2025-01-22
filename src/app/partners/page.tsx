@@ -22,9 +22,13 @@ const Partners: React.FC = () => {
           <p>
             Passionate about writing? Contribute articles to our news feed and share insights, stories, and tips with the Panna community.
           </p>
-          <a href="mailto:info@panna.app?subject=Contribute as Writer" className={styles["partner-button"]}>
+          <a href="/login" className={styles["partner-button"]}>
+Login to Writer's Portal
+</a>
+
+          {/* <a href="mailto:info@panna.app?subject=Contribute as Writer" className={styles["partner-button"]}>
             Contribute as Writer
-          </a>
+          </a> */}
         </section>
 
         {/* Ambassador Section */}
