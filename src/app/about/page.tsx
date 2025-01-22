@@ -3,10 +3,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import "./page.module.css";
+import styles from "./page.module.css"; // Importing CSS Module
 import Link from "next/link";
-import { FaTiktok, FaTwitter, FaInstagram, FaDiscord } from "react-icons/fa"; // Replacing FontAwesome icons with react-icons
-import { ReactTyped as Typed } from "react-typed"; // If used in this page
+import { FaTiktok, FaTwitter, FaInstagram, FaDiscord } from "react-icons/fa"; // Using react-icons
 
 interface FlickerStatProps {
   finalValue: number;
@@ -17,24 +16,28 @@ interface FlickerStatProps {
   flickerDuration?: number;
 }
 
-function FlickerStat({ finalValue, minValue, maxValue, prefix, suffix, flickerDuration = 8000 }: FlickerStatProps) {
-  const [currentValue, setCurrentValue] = useState(finalValue); // display value
+const FlickerStat: React.FC<FlickerStatProps> = ({
+  finalValue,
+  minValue,
+  maxValue,
+  prefix,
+  suffix,
+  flickerDuration = 8000,
+}) => {
+  const [currentValue, setCurrentValue] = useState(finalValue);
   const [hasLanded, setHasLanded] = useState(false);
 
   useEffect(() => {
-    // We'll flicker for 'flickerDuration' ms, then set final.
     const startTime = Date.now();
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
 
       if (elapsed >= flickerDuration) {
-        // Stop flickering, land on finalValue
         clearInterval(interval);
         setCurrentValue(finalValue);
         setHasLanded(true);
       } else {
-        // Flicker: pick random number in [minValue, maxValue]
         const randomNum = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
         setCurrentValue(randomNum);
       }
@@ -43,26 +46,17 @@ function FlickerStat({ finalValue, minValue, maxValue, prefix, suffix, flickerDu
     return () => clearInterval(interval);
   }, [finalValue, minValue, maxValue, flickerDuration]);
 
-  // If you have special formatting for “Top 10” vs. “#1”
-  // you can just do prefix + currentValue + suffix:
   const displayText = `${prefix}${currentValue}${suffix}`;
 
-  return (
-    <h3 className="stat-value">
-      {displayText}
-    </h3>
-  );
-}
+  return <h3 className={styles["stat-value"]}>{displayText}</h3>;
+};
 
 const About: React.FC = () => {
-  // Stats array for the "Why Social Gambling?" section
-  // Each has final numeric value, plus min/max for flicker,
-  // and optional prefix or suffix.
   const statsData = [
     {
-      finalValue: 1,         // final number to display
-      minValue: 0,           // random flicker lower bound
-      maxValue: 10,           // random flicker upper bound
+      finalValue: 1,
+      minValue: 0,
+      maxValue: 10,
       prefix: "#",
       suffix: "",
       label: "Sports League",
@@ -94,32 +88,34 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="about-page">
+    <div className={styles["about-page"]}>
 
       {/* ABOUT TOP SECTION */}
-      <section className="about-top-section">
-        <div className="about-header">
-          <h1 className="about-header-title">
-            <span className="neon-blue">Panna</span> challenges traditional gambling, creating a new platform that’s social, transparent, and fair.
+      <section className={styles["about-top-section"]}>
+        <div className={styles["about-header"]}>
+          <h1 className={styles["about-header-title"]}>
+            <span className={styles["neon-blue"]}>Panna</span> challenges traditional gambling, creating a new platform that’s social, transparent, and fair.
           </h1>
-          <div className="play-now-container">
+          <div className={styles["play-now-container"]}>
             <Link href="/responsibility">
-              <button className="learn-more-button">Learn more</button>
+              <button className={styles["learn-more-button"]}>Learn more</button>
             </Link>
           </div>
         </div>
-
-        <div className="container">
-          <h1 className="about-top-heading purple-text">Our Mission</h1>
-          <p className="about-top-subheading">
+  {/* Divider */}
+  <div className={styles["about-divider"]}></div>
+  
+        <div className={styles.container}>
+          <h1 className={`${styles["about-top-heading"]} ${styles["purple-text"]}`}>Our Mission</h1>
+          <p className={styles["about-top-subheading"]}>
             Changing the gambling industry for the better. We believe in creating a more engaging, fair, and social experience for everyone.
           </p>
 
-          <h2 className="about-top-why white-text">Why Social Gambling?</h2>
-          <div className="about-stats">
+          <h2 className={`${styles["about-top-why"]} ${styles["white-text"]}`}>Why Social Gambling?</h2>
+          <div className={styles["about-stats"]}>
             {statsData.map((stat, idx) => (
               <React.Fragment key={idx}>
-                <div className="stat">
+                <div className={styles.stat}>
                   {/* FlickerStat displays the flickering number */}
                   <FlickerStat
                     finalValue={stat.finalValue}
@@ -129,33 +125,33 @@ const About: React.FC = () => {
                     suffix={stat.suffix}
                     flickerDuration={1500} /* 1.5s flicker total */
                   />
-                  <p className="stat-label">{stat.label}</p>
+                  <p className={styles["stat-label"]}>{stat.label}</p>
                 </div>
-                {idx < statsData.length - 1 && <div className="divider"></div>}
+                {idx < statsData.length - 1 && <div className={styles.divider}></div>}
               </React.Fragment>
             ))}
           </div>
 
-          <h2 className="about-top-stand-for">What We Stand For</h2>
-          <p className="about-top-text">
+          <h2 className={styles["about-top-stand-for"]}>What We Stand For</h2>
+          <p className={styles["about-top-text"]}>
             At Panna, we are redefining gambling by making it more social,
             transparent, and responsible. By fostering community connections
             and integrating modern tools, we aim to ensure that gambling is
             not only fun but also safe and within limits.
           </p>
-          <p className="about-top-text">
+          <p className={styles["about-top-text"]}>
             Our focus on innovation and community-driven gameplay creates a new
             type of experience that brings people together. We are here to make
             social gambling the preferred choice for millions of players.
           </p>
 
-          <h2 className="about-top-follow">Follow our Journey</h2>
-          <div className="about-top-socials">
+          <h2 className={styles["about-top-follow"]}>Follow our Journey</h2>
+          <div className={styles["about-top-socials"]}>
             <a
               href="https://tiktok.com"
               target="_blank"
               rel="noreferrer"
-              className="social-icon"
+              className={styles["social-icon"]}
               aria-label="TikTok"
             >
               <FaTiktok />
@@ -164,7 +160,7 @@ const About: React.FC = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noreferrer"
-              className="social-icon"
+              className={styles["social-icon"]}
               aria-label="Twitter"
             >
               <FaTwitter />
@@ -173,7 +169,7 @@ const About: React.FC = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="social-icon"
+              className={styles["social-icon"]}
               aria-label="Instagram"
             >
               <FaInstagram />
@@ -182,7 +178,7 @@ const About: React.FC = () => {
               href="https://discord.com"
               target="_blank"
               rel="noreferrer"
-              className="social-icon"
+              className={styles["social-icon"]}
               aria-label="Discord"
             >
               <FaDiscord />
@@ -190,15 +186,15 @@ const About: React.FC = () => {
           </div>
 
           {/* Divider */}
-          <div className="about-divider"></div>
+          <div className={styles["about-divider"]}></div>
         </div>
       </section>
 
       {/* EXECUTIVE SECTION */}
-      <section className="executive-section">
-        <div className="container">
-          <h2 className="exec-heading">Founders &amp; Executive Team</h2>
-          <ul className="exec-list">
+      <section className={styles["executive-section"]}>
+        <div className={styles.container}>
+          <h2 className={styles["exec-heading"]}>Founders &amp; Executive Team</h2>
+          <ul className={styles["exec-list"]}>
             <li>
               Felix Burton -{" "}
               <a
@@ -234,9 +230,9 @@ const About: React.FC = () => {
       </section>
 
       {/* JOEY LEVY QUOTE */}
-      <section className="joey-levy-section">
-        <div className="container joey-levy-container">
-          <blockquote className="joey-levy-quote">
+      <section className={styles["joey-levy-section"]}>
+        <div className={`${styles.container} ${styles["joey-levy-container"]}`}>
+          <blockquote className={styles["joey-levy-quote"]}>
             <p>
               “If we believe that social-betting will be the predominant way
               people bet on sports in the UK, then someone should launch
@@ -249,14 +245,14 @@ const About: React.FC = () => {
       </section>
 
       {/* JOIN TEAM SECTION */}
-      <section className="join-team-section">
-        <div className="container">
-          <h2 className="join-team-heading">Join the team</h2>
-          <p className="join-team-desc">
+      <section className={styles["join-team-section"]}>
+        <div className={styles.container}>
+          <h2 className={styles["join-team-heading"]}>Join the team</h2>
+          <p className={styles["join-team-desc"]}>
             Come build with us in Oxford, UK, as we make sports &amp; betting
             better.
           </p>
-          <a href="#job-openings" className="job-openings-link">
+          <a href="#job-openings" className={styles["job-openings-link"]}>
             See job openings
           </a>
         </div>

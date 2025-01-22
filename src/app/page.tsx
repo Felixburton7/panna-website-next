@@ -1,12 +1,22 @@
-// src/app/page.tsx
-
 "use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import styles from "../styles/page.module.css"; // Import CSS Module
-import { Typewriter } from "react-simple-typewriter"; // Import Typewriter
-import { FaRocket, FaBolt, FaList, FaUsers, FaHeart, FaHandshake } from "react-icons/fa";
+import styles from "../styles/home/page.module.css";
+import { Typewriter } from "react-simple-typewriter";
+import {
+  FaRocket,
+  FaBolt,
+  FaList,
+  FaUsers,
+  FaHeart,
+  FaHandshake,
+  FaTiktok,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+  FaDiscord,
+} from "react-icons/fa";
 
 interface FAQItem {
   question: string;
@@ -42,7 +52,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can I set up a private game on Panna?",
     answer:
-      "Yes! You can create private pots to play against your friends. Customize the game mode, stake, and payout structure, then share the invite link or code.",
+      "Yes! You can create private pots to play against your friends. Customise the game mode, stake, and payout structure, then share the invite link or code.",
   },
   {
     question: "Does Panna have a referral scheme?",
@@ -58,10 +68,11 @@ const faqItems: FAQItem[] = [
 
 const Home: React.FC = () => {
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
-  const [animatePhones, setAnimatePhones] = useState<boolean>(false);
+  const [phonesVisible, setPhonesVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    setAnimatePhones(true);
+    // Trigger phone “appear” animation on mount
+    setPhonesVisible(true);
   }, []);
 
   const toggleFAQ = (index: number) => {
@@ -78,29 +89,31 @@ const Home: React.FC = () => {
             <h2 className={styles.heroSubtitle}>
               <Typewriter
                 words={[
-                  "Re-imagined",
-                  "Higher stakes",
+                  "Live",
+                  "High stakes",
                   "Your way",
                   "Done better",
                   "More social",
                 ]}
-                loop={0} // 0 = infinite
+                loop={0} // Infinite
                 cursor
-                cursorStyle="_"
+                cursorStyle="|"
                 typeSpeed={70}
                 deleteSpeed={50}
                 delaySpeed={1000}
               />
             </h2>
             <p className={styles.heroDescription}>
-              Your go-to platform for social betting with friends or competing globally. Explore
-              innovative social gambling features, including group pools, leaderboards, and
-              community challenges.
+              Your go-to platform for social betting with friends or competing globally.
+              Explore innovative social gambling features, including group pools, leaderboards,
+              and community challenges.
             </p>
             <button className={styles.heroButton}>Play Now</button>
           </div>
+
           <div className={styles.heroImages}>
-            <div className={`${styles.phonesWrapper} ${animatePhones ? styles.appear : ""}`}>
+            <div className={`${styles.phonesWrapper} ${phonesVisible ? styles.appear : ""}`}>
+              {/* Phone #1 */}
               <div className={`${styles.phoneContainer} ${styles.phoneContainer1}`}>
                 <Image
                   src="/assets/app_screenshot_outline.png"
@@ -117,6 +130,7 @@ const Home: React.FC = () => {
                   height={400}
                 />
               </div>
+              {/* Phone #2 */}
               <div className={`${styles.phoneContainer} ${styles.phoneContainer2}`}>
                 <Image
                   src="/assets/app_screenshot_outline.png"
@@ -138,18 +152,89 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* SNIPPETS SECTION (Endless Scrolling Rows) */}
+      <section className={styles.snippetsSection}>
+        <div className={styles.snippetsWrapper}>
+          {/* Row 1 */}
+          <div className={`${styles.snippetsRow} ${styles.row1}`}>
+            {/* Original Snippets */}
+            <div className={styles.snippet}>Play with Panna</div>
+            <div className={styles.snippet}>Bet Smarter, Together</div>
+            <div className={styles.snippet}>Peer-to-Peer Fun</div>
+            <div className={styles.snippet}>Win Big in Community</div>
+            <div className={styles.snippet}>Challenge Your Friends</div>
+            <div className={styles.snippet}>Real-Time Updates</div>
+            <div className={styles.snippet}>Leaderboard Rankings</div>
+            <div className={styles.snippet}>Exclusive Pools</div>
+            {/* Duplicated Snippets for Seamless Scrolling */}
+            <div className={styles.snippet}>Play with Panna</div>
+            <div className={styles.snippet}>Bet Smarter, Together</div>
+            <div className={styles.snippet}>Peer-to-Peer Fun</div>
+            <div className={styles.snippet}>Win Big in Community</div>
+            <div className={styles.snippet}>Challenge Your Friends</div>
+            <div className={styles.snippet}>Real-Time Updates</div>
+            <div className={styles.snippet}>Leaderboard Rankings</div>
+            <div className={styles.snippet}>Exclusive Pools</div>
+          </div>
+          {/* Row 2 */}
+          <div className={`${styles.snippetsRow} ${styles.row2}`}>
+            {/* Original Snippets */}
+            <div className={styles.snippet}>Join the Action</div>
+            <div className={styles.snippet}>Competitive Play</div>
+            <div className={styles.snippet}>Social Interactions</div>
+            <div className={styles.snippet}>Daily Challenges</div>
+            <div className={styles.snippet}>Win Exclusive Rewards</div>
+            <div className={styles.snippet}>Track Your Bets</div>
+            <div className={styles.snippet}>Customisable Games</div>
+            <div className={styles.snippet}>Instant Notifications</div>
+            {/* Duplicated Snippets for Seamless Scrolling */}
+            <div className={styles.snippet}>Join the Action</div>
+            <div className={styles.snippet}>Competitive Play</div>
+            <div className={styles.snippet}>Social Interactions</div>
+            <div className={styles.snippet}>Daily Challenges</div>
+            <div className={styles.snippet}>Win Exclusive Rewards</div>
+            <div className={styles.snippet}>Track Your Bets</div>
+            <div className={styles.snippet}>Customisable Games</div>
+            <div className={styles.snippet}>Instant Notifications</div>
+          </div>
+          {/* Row 3 */}
+          <div className={`${styles.snippetsRow} ${styles.row3}`}>
+            {/* Original Snippets */}
+            <div className={styles.snippet}>Unlock Achievements</div>
+            <div className={styles.snippet}>Global Competitions</div>
+            <div className={styles.snippet}>Smart Betting Tools</div>
+            <div className={styles.snippet}>Community Events</div>
+            <div className={styles.snippet}>Secure Transactions</div>
+            <div className={styles.snippet}>24/7 Support</div>
+            <div className={styles.snippet}>Personalised Stats</div>
+            <div className={styles.snippet}>Referral Bonuses</div>
+            {/* Duplicated Snippets for Seamless Scrolling */}
+            <div className={styles.snippet}>Unlock Achievements</div>
+            <div className={styles.snippet}>Global Competitions</div>
+            <div className={styles.snippet}>Smart Betting Tools</div>
+            <div className={styles.snippet}>Community Events</div>
+            <div className={styles.snippet}>Secure Transactions</div>
+            <div className={styles.snippet}>24/7 Support</div>
+            <div className={styles.snippet}>Personalised Stats</div>
+            <div className={styles.snippet}>Referral Bonuses</div>
+          </div>
+        </div>
+      </section>
+
       {/* WHY CHOOSE PANNA SECTION */}
       <section className={styles.whyChoosePannaSection}>
         <div className={`${styles.container} ${styles.whyChooseInner}`}>
           <div className={styles.textColumn}>
             <h2 className={styles.sectionHeading}>Join a Community</h2>
             <p className={styles.sectionDescription}>
-              Join a community of like-minded sports enthusiasts and elevate your betting experience.
-              Compete with friends and others in the community, share insights, and test your skills.
-              Play together, but the winnings are yours alone.
+              Join a community of like-minded sports enthusiasts and elevate your
+              betting experience. Compete with friends and others in the community, 
+              share insights, and test your skills. Play together, but the winnings
+              are yours alone.
             </p>
           </div>
           <div className={styles.featureCardsColumn}>
+            {/* Feature Card 1 */}
             <div className={styles.featureCard}>
               <div className={`${styles.featureIcon} ${styles.purple}`}>
                 <FaRocket size={24} />
@@ -157,10 +242,12 @@ const Home: React.FC = () => {
               <div>
                 <h3 className={styles.featureTitle}>Massive Wins</h3>
                 <p className={`${styles.featureDescription} ${styles.grey}`}>
-                  Win big on your bet by making bold predictions and connecting with other players.
+                  Win big on your bet by making bold predictions and connecting
+                  with other players.
                 </p>
               </div>
             </div>
+            {/* Feature Card 2 */}
             <div className={styles.featureCard}>
               <div className={`${styles.featureIcon} ${styles.purple}`}>
                 <FaBolt size={24} />
@@ -168,11 +255,12 @@ const Home: React.FC = () => {
               <div>
                 <h3 className={styles.featureTitle}>Community & Risk-Free Play</h3>
                 <p className={`${styles.featureDescription} ${styles.grey}`}>
-                  Compete in multiple leagues or create your own. Build a community and share
-                  strategies to reduce risk.
+                  Compete in multiple leagues or create your own. Build a
+                  community and share strategies to reduce risk.
                 </p>
               </div>
             </div>
+            {/* Feature Card 3 */}
             <div className={styles.featureCard}>
               <div className={`${styles.featureIcon} ${styles.purple}`}>
                 <FaList size={24} />
@@ -180,7 +268,8 @@ const Home: React.FC = () => {
               <div>
                 <h3 className={styles.featureTitle}>Experts and Influencers</h3>
                 <p className={`${styles.featureDescription} ${styles.grey}`}>
-                  Monitor tactics by experts and influencers. Learn from the best to win big.
+                  Monitor tactics by experts and influencers. Learn from the best
+                  to win big.
                 </p>
               </div>
             </div>
@@ -188,10 +277,24 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* GREY DIVIDER */}
+      <hr className={styles.greyDivider} />
+
       {/* SOCIAL GAMBLING SECTION */}
       <section className={styles.socialGamblingSection}>
         <div className={`${styles.container} ${styles.socialGamblingInner}`}>
+          <div className={styles.textColumn}>
+            <h2 className={styles.sectionHeading}>Gambling Redefined</h2>
+            <p className={styles.sectionDescription}>
+            Experience a revolutionary way to gamble socially. Our innovative
+        platform ensures transparency, fairness, and a thrilling social
+        aspect. Social gambling is the future, seamlessly blending cutting-edge
+        technology with community interaction to create a more engaging and
+        immersive gambling experience for everyone.
+            </p>
+          </div>
           <div className={styles.featureCardsColumn}>
+            {/* Feature Card 1 */}
             <div className={styles.featureCard}>
               <div className={`${styles.featureIcon} ${styles.green}`}>
                 <FaUsers size={24} />
@@ -199,10 +302,12 @@ const Home: React.FC = () => {
               <div>
                 <h3 className={styles.featureTitle}>Engaging Communities</h3>
                 <p className={`${styles.featureDescription} ${styles.grey}`}>
-                  Join vibrant communities and enjoy an immersive social gambling experience.
+                  Join vibrant communities and enjoy an immersive social gambling
+                  experience.
                 </p>
               </div>
             </div>
+            {/* Feature Card 2 */}
             <div className={styles.featureCard}>
               <div className={`${styles.featureIcon} ${styles.green}`}>
                 <FaHeart size={24} />
@@ -210,10 +315,12 @@ const Home: React.FC = () => {
               <div>
                 <h3 className={styles.featureTitle}>Responsible Play</h3>
                 <p className={`${styles.featureDescription} ${styles.grey}`}>
-                  Play responsibly with built-in features promoting safer gambling habits.
+                  Play responsibly with built-in features promoting safer
+                  gambling habits.
                 </p>
               </div>
             </div>
+            {/* Feature Card 3 */}
             <div className={styles.featureCard}>
               <div className={`${styles.featureIcon} ${styles.green}`}>
                 <FaHandshake size={24} />
@@ -221,19 +328,44 @@ const Home: React.FC = () => {
               <div>
                 <h3 className={styles.featureTitle}>Collaborative Challenges</h3>
                 <p className={`${styles.featureDescription} ${styles.grey}`}>
-                  Work together with friends to achieve shared goals and reap the rewards.
+                  Work together with friends to achieve shared goals and reap the
+                  rewards.
                 </p>
               </div>
             </div>
           </div>
-          <div className={styles.textColumn}>
-            <h2 className={styles.sectionHeading}>Gambling Redefined</h2>
-            <p className={styles.sectionDescription}>
-              Experience a revolutionary way to gamble socially. Our innovative platform ensures
-              transparency, fairness, and a thrilling social aspect.
-            </p>
+        </div>
+      </section>
+
+      {/* FOLLOW US SECTION */}
+      <section className={styles.followUsSection}>
+        <hr className={styles.greyDivider} />
+        <div className={styles.followUsContainer}>
+          <h2 className={styles.followUsHeading}>Follow us</h2>
+          <p className={styles.followUsDescription}>
+            Play-by-play. Moment-by-moment. Come join the family as we turn the 
+            world into our betting and fantasy playground. The future of sports, 
+            fantasy, and betting just got better.
+          </p>
+          <div className={styles.socialIcons}>
+            <div className={styles.iconCircle}>
+              <FaTiktok />
+            </div>
+            <div className={styles.iconCircle}>
+              <FaInstagram />
+            </div>
+            <div className={styles.iconCircle}>
+              <FaTwitter />
+            </div>
+            <div className={styles.iconCircle}>
+              <FaYoutube />
+            </div>
+            <div className={styles.iconCircle}>
+              <FaDiscord />
+            </div>
           </div>
         </div>
+        <hr className={styles.greyDivider} />
       </section>
 
       {/* FAQ SECTION */}

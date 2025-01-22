@@ -2,8 +2,8 @@
 
 "use client";
 
-import React, { useState, useEffect } from "react";
-import "./page.module.css"; // Corrected CSS import path
+import React, { useState, useEffect, useRef } from "react";
+import styles from "./page.module.css"; // Importing CSS module
 import { FaCalendarCheck, FaBook, FaLink } from "react-icons/fa";
 import Image from "next/image";
 
@@ -17,9 +17,43 @@ const Games: React.FC = () => {
   // State to trigger phone animations
   const [animatePhones, setAnimatePhones] = useState(false);
 
+  // Refs for sections to observe
+  const lastManStandingRef = useRef<HTMLDivElement>(null);
+  const benefitsRef = useRef<HTMLDivElement>(null);
+  const howItWorksRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Trigger minimal angle "appear" effect once component mounts
     setAnimatePhones(true);
+
+    const options = {
+      threshold: 0.2,
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles["fade-in-up"]);
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (lastManStandingRef.current) {
+      observer.observe(lastManStandingRef.current);
+    }
+    if (benefitsRef.current) {
+      observer.observe(benefitsRef.current);
+    }
+    if (howItWorksRef.current) {
+      observer.observe(howItWorksRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   const toggleFAQ = (index: number) => {
@@ -46,39 +80,50 @@ const Games: React.FC = () => {
   ];
 
   return (
-    <div className="games-page">
+    <div className={styles["games-page"]}>
       {/*
         -------------------------------------------------------------
         1. HERO SECTION
       */}
-      <section className="games-hero-section">
-        <div className="games-hero-container">
-          <div className="games-hero-text">
-            <h1 className="games-hero-title">Game Modes</h1>
-            <p className="games-hero-subtitle">
+      <section className={styles["games-hero-section"]}>
+        <div className={styles["games-hero-container"]}>
+          <div className={styles["games-hero-text"]}>
+            <h1 className={styles["games-hero-title"]}>Game Modes</h1>
+            <p className={styles["games-hero-subtitle"]}>
               Explore unique games, challenge your friends,
               and enjoy the thrill of social betting.
             </p>
+            {/* Increased spacing below subtitle */}
+            <div className={styles["subtitle-spacing"]}></div>
             {/* Minimal angles + subtle transition */}
             <div
-              className={`hero-phone-images ${
-                animatePhones ? "animate-phones" : ""
+              className={`${styles["hero-phone-images"]} ${
+                animatePhones ? styles["animate-phones"] : ""
               }`}
             >
-              <div className="phone-image phone-image-1">
+              <div className={`${styles["phone-image"]} ${styles["phone-image-1"]}`}>
                 <Image
-                  src="/assets/phone_mockup_2.png"
-                  alt="Top Phone Mockup"
-                  className="games-phone-mockup"
+                  src="/assets/phone_mockup_1.png"
+                  alt="Front Phone Mockup"
+                  className={styles["games-phone-mockup"]}
                   width={220}
                   height={400}
                 />
               </div>
-              <div className="phone-image phone-image-2">
+              <div className={`${styles["phone-image"]} ${styles["phone-image-2"]}`}>
+                <Image
+                  src="/assets/phone_mockup_2.png"
+                  alt="Middle Phone Mockup"
+                  className={styles["games-phone-mockup"]}
+                  width={220}
+                  height={400}
+                />
+              </div>
+              <div className={`${styles["phone-image"]} ${styles["phone-image-3"]}`}>
                 <Image
                   src="/assets/phone_mockup_3.png"
                   alt="Back Phone Mockup"
-                  className="games-phone-mockup"
+                  className={styles["games-phone-mockup"]}
                   width={220}
                   height={400}
                 />
@@ -92,9 +137,9 @@ const Games: React.FC = () => {
         -------------------------------------------------------------
         2. LAST MAN STANDING INTRO
       */}
-      <section className="last-man-standing-intro">
-        <h2 className="lms-title">Last Man Standing</h2>
-        <p className="lms-subtitle">
+      <section className={styles["last-man-standing-intro"]} ref={lastManStandingRef}>
+        <h2 className={styles["lms-title"]}>Last Man Standing</h2>
+        <p className={styles["lms-subtitle"]}>
           <strong>Survivor:</strong> Will you be the last man standing?
           Try Survivor — our take on the classic ‘Last Man Standing’ game.
           Pick one team each week that you think will win to progress
@@ -106,15 +151,15 @@ const Games: React.FC = () => {
         -------------------------------------------------------------
         3. LAST MAN STANDING BENEFITS
       */}
-      <section className="games-section lms-benefits-section">
-        <div className="games-section-inner benefits-row">
+      <section className={`${styles["games-section"]} ${styles["lms-benefits-section"]}`} ref={benefitsRef}>
+        <div className={`${styles["games-section-inner"]} ${styles["benefits-row"]}`}>
           {/* TEXT (Left) */}
-          <div className="benefits-left">
-            <h2 className="games-section-heading">How It Works</h2>
+          <div className={styles["benefits-left"]}>
+            <h2 className={styles["games-section-heading"]}>How It Works</h2>
 
             {/* Bullet points */}
-            <div className="lms-benefit-point">
-              <div className="lms-number purple">01</div>
+            <div className={styles["lms-benefit-point"]}>
+              <div className={`${styles["lms-number"]} ${styles["purple"]}`}>01</div>
               <div>
                 <h3>Survivor: Our Take on 'Last Man Standing'</h3>
                 <p>
@@ -125,8 +170,8 @@ const Games: React.FC = () => {
               </div>
             </div>
 
-            <div className="lms-benefit-point">
-              <div className="lms-number purple">02</div>
+            <div className={styles["lms-benefit-point"]}>
+              <div className={`${styles["lms-number"]} ${styles["purple"]}`}>02</div>
               <div>
                 <h3>Eliminate Last Man Standing Hassles</h3>
                 <p>
@@ -136,8 +181,8 @@ const Games: React.FC = () => {
               </div>
             </div>
 
-            <div className="lms-benefit-point">
-              <div className="lms-number purple">03</div>
+            <div className={styles["lms-benefit-point"]}>
+              <div className={`${styles["lms-number"]} ${styles["purple"]}`}>03</div>
               <div>
                 <h3>We Manage Money and Payouts</h3>
                 <p>
@@ -147,8 +192,8 @@ const Games: React.FC = () => {
               </div>
             </div>
 
-            <div className="lms-benefit-point">
-              <div className="lms-number purple">04</div>
+            <div className={styles["lms-benefit-point"]}>
+              <div className={`${styles["lms-number"]} ${styles["purple"]}`}>04</div>
               <div>
                 <h3>Private or Public Pots</h3>
                 <p>
@@ -158,8 +203,8 @@ const Games: React.FC = () => {
               </div>
             </div>
 
-            <div className="lms-benefit-point">
-              <div className="lms-number purple">05</div>
+            <div className={styles["lms-benefit-point"]}>
+              <div className={`${styles["lms-number"]} ${styles["purple"]}`}>05</div>
               <div>
                 <h3>Use Survivor to Raise Funds</h3>
                 <p>
@@ -169,8 +214,8 @@ const Games: React.FC = () => {
               </div>
             </div>
 
-            <div className="lms-benefit-point">
-              <div className="lms-number purple">06</div>
+            <div className={styles["lms-benefit-point"]}>
+              <div className={`${styles["lms-number"]} ${styles["purple"]}`}>06</div>
               <div>
                 <h3>Set any buy-in up to £500</h3>
                 <p>
@@ -181,11 +226,11 @@ const Games: React.FC = () => {
           </div>
 
           {/* PHONE (Right) */}
-          <div className="benefits-right">
+          <div className={styles["benefits-right"]}>
             <Image
               src="/assets/phone_mockup_1.png"
               alt="Phone Mockup for Benefits"
-              className="games-phone-shadow"
+              className={styles["games-phone-shadow"]}
               width={250}
               height={400}
             />
@@ -197,24 +242,24 @@ const Games: React.FC = () => {
         -------------------------------------------------------------
         4. HOW IT WORKS SECTION
       */}
-      <section className="games-section how-it-works">
-        <h2 className="games-section-title">
+      <section className={`${styles["games-section"]} ${styles["how-it-works"]}`} ref={howItWorksRef}>
+        <h2 className={styles["games-section-title"]}>
           Create A Survivor Pot &amp; Play
         </h2>
-        <div className="games-how-steps">
-          <div className="games-step">
-            <FaCalendarCheck size={36} className="games-step-icon" />
-            <h3 className="games-step-title">Step 1: Select Fixtures</h3>
+        <div className={styles["games-how-steps"]}>
+          <div className={styles["games-step"]}>
+            <FaCalendarCheck size={36} className={styles["games-step-icon"]} />
+            <h3 className={styles["games-step-title"]}>Step 1: Select Fixtures</h3>
             <p>Choose matches and teams to include in your pot.</p>
           </div>
-          <div className="games-step">
-            <FaBook size={36} className="games-step-icon" />
-            <h3 className="games-step-title">Step 2: Set Rules</h3>
+          <div className={styles["games-step"]}>
+            <FaBook size={36} className={styles["games-step-icon"]} />
+            <h3 className={styles["games-step-title"]}>Step 2: Set Rules</h3>
             <p>Customize entry fees, stakes, and payout distribution.</p>
           </div>
-          <div className="games-step">
-            <FaLink size={36} className="games-step-icon" />
-            <h3 className="games-step-title">Step 3: Invite Friends</h3>
+          <div className={styles["games-step"]}>
+            <FaLink size={36} className={styles["games-step-icon"]} />
+            <h3 className={styles["games-step-title"]}>Step 3: Invite Friends</h3>
             <p>Share your pot link and compete with your friends.</p>
           </div>
         </div>
@@ -224,22 +269,22 @@ const Games: React.FC = () => {
         -------------------------------------------------------------
         5. FAQ SECTION
       */}
-      <section className="games-section games-faq">
-        <h2 className="games-section-title">FAQs</h2>
-        <div className="games-faq-container">
+      <section className={`${styles["games-section"]} ${styles["games-faq"]}`}>
+        <h2 className={styles["games-section-title"]}>FAQs</h2>
+        <div className={styles["games-faq-container"]}>
           {faqData.map((item, index) => (
-            <div className="games-faq-item" key={index}>
+            <div className={styles["games-faq-item"]} key={index}>
               <button
-                className={`games-faq-question ${
-                  activeFAQ === index ? "open" : ""
+                className={`${styles["games-faq-question"]} ${
+                  activeFAQ === index ? styles["open"] : ""
                 }`}
                 onClick={() => toggleFAQ(index)}
               >
                 {item.question}
               </button>
               <div
-                className={`games-faq-answer ${
-                  activeFAQ === index ? "visible" : ""
+                className={`${styles["games-faq-answer"]} ${
+                  activeFAQ === index ? styles["visible"] : ""
                 }`}
               >
                 {item.answer}
@@ -253,21 +298,21 @@ const Games: React.FC = () => {
         -------------------------------------------------------------
         6. FOOTER CTA
       */}
-      <section className="games-section games-footer-cta">
-        <h2 className="games-section-title">Get Started with Panna</h2>
-        <p className="games-section-subtitle">
+      <section className={`${styles["games-section"]} ${styles["games-footer-cta"]}`}>
+        <h2 className={styles["games-section-title"]}>Get Started with Panna</h2>
+        <p className={styles["games-section-subtitle"]}>
           Join the community and revolutionize social betting.
         </p>
-        <button className="games-cta-button">Sign Up Now</button>
+        <button className={styles["games-cta-button"]}>Sign Up Now</button>
       </section>
-      <footer className="games-footer">
+      <footer className={styles["games-footer"]}>
         <p>
           To use Panna, you must agree to our{" "}
-          <a href="/terms-and-conditions" className="terms-link">
+          <a href="/terms-and-conditions" className={styles["terms-link"]}>
             Terms and Conditions
           </a>{" "}
           and{" "}
-          <a href="/privacy-policy" className="terms-link">
+          <a href="/privacy-policy" className={styles["terms-link"]}>
             Privacy Policy
           </a>.
         </p>

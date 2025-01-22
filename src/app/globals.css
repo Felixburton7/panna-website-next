@@ -1,52 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+/* src/app/globals.css */
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
-
-
-body {
-  margin: 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 650;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-}
-
-button {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-}
-
-/* CODE IMPORTED */
 /* ------------------------------------------------------------- */
 /* Base RESET */
 * {
@@ -56,12 +9,38 @@ button {
 }
 
 /* ------------------------------------------------------------- */
+/* Apply Poppins Font Using CSS Variable */
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* ------------------------------------------------------------- */
 /* GLOBAL STYLES */
-html, body {
-  font-family: "Arial", sans-serif;
-  background: #000; /* Black background */
+html,
+body {
+  font-family: var(--font-poppins), sans-serif;
+  background: #010101; /* Black background */
   color: #fff;      /* White text */
   scroll-behavior: smooth; /* Smooth scrolling between anchors/sections */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 650;
+}
+
+p {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+}
+
+button {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 800;
 }
 
 a {
@@ -69,149 +48,13 @@ a {
   color: inherit;
 }
 
-
 /* ------------------------------------------------------------- */
 /* MAIN CONTENT OFFSET - ensures navbar doesn't overlap content */
 .main-content {
   margin-top: 80px; /* Adjust this if the navbar height changes */
 }
 
-
-
 /* ------------------------------------------------------------- */
-/* ------------------------------------------------------------- */
-/* FOOTER */
-.footer {
-  background: #000000;
-  padding: 2rem 0;
-  margin-top: 2rem;
-  color: #ccc;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-info,
-.footer-company {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Footer Logos */
-.footer-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  margin-top: 1.5rem;
-}
-
-.footer-logo {
-  width: 7rem; /* Adjust the logo size */
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-@media (max-width: 700px) {
-  .footer-logo {
-    width: 10px; /* Adjust size for smaller screens */
-    height: auto;
-  }
-
-  .age-restriction {
-    width: 10px; /* Adjust size for smaller screens */
-    height: 10px;
-  }
-}
-
-
-.footer-logo:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
-.age-restriction {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: linear-gradient(Purple);
-  color:white;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.age-restriction:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
-
-
-/* ------------------------------------------------------------- */
-/* MEDIA QUERY: BELOW 900px */
-/* ------------------------------------------------------------- */
-@media (max-width: 900px) {
-  .burger-icon {
-    display: block;
-  }
-
-  .navbar-center,
-  .navbar-right {
-    display: none;
-  }
-
-  .hero-inner {
-    flex-direction: column; /* Stack text over images */
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-text {
-    max-width: 90%;
-  }
-
-  .hero-images {
-    justify-content: center; 
-    margin-top: 2rem;
-  }
-
-  /* Adjust phone wrapper & containers for smaller screens */
-  .phones-wrapper {
-    width: 250px;
-    height: 450px;
-  }
-
-  .phone-container {
-    width: 200px;
-    height: 380px;
-  }
-
-  .phone-container-2 {
-    top: 60px;
-    left: 30px;
-  }
-
-  .why-choose-inner {
-    flex-direction: column;
-  }
-
-  .text-column,
-  .feature-cards-column {
-    max-width: 100%;
-  }
-}
-
 /* RESPONSIBILITY PAGE */
 .responsibility-page {
   background-color: #000;
@@ -342,9 +185,10 @@ a {
   }
 }
 
+/* ------------------------------------------------------------- */
 /* Base container for the About page */
 .about-page {
-  background: #000;
+  background-color: #010101;
   color: #fff;
   padding-bottom: 2rem; /* Space at bottom */
 }
@@ -357,22 +201,21 @@ a {
 }
 
 /* ------------------------------------------------------------- */
-/* MISSION SECTION */
-
-
-/* ------------------------------------------------------------- */
 /* JOIN THE TEAM SECTION */
 .join-team-section {
+  background-color: #010101;
   padding: 2rem 0;
   text-align: center;
 }
 
 .join-team-heading {
+  background-color: #010101;
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .join-team-desc {
+    background-color: #010101;
   color: #ccc;
   margin-bottom: 1rem;
 }
@@ -413,68 +256,9 @@ a {
   font-size: 1.2rem;
   color: #fff;
 }
-@media (max-width: 768px) {
-  .responsibility-page {
-    padding: 5rem 1rem; /* Reduce padding */
-  }
-
-  .container {
-    width: 100%; /* Ensure it fits smaller screens */
-  }
-
-  .intro-large {
-    font-size: 1.6rem; /* Smaller font size for headlines */
-    padding: 0 1rem; /* Add some horizontal padding */
-  }
-
-  .intro-grey {
-    font-size: 0.9rem; /* Adjust font size for paragraphs */
-    line-height: 1.4; /* Tighter spacing */
-    padding: 0 1rem; /* Add horizontal padding */
-  }
-
-  .tips-container {
-    flex-direction: column; /* Stack tips vertically */
-    gap: 1rem;
-  }
-
-  .tips-column {
-    min-width: 100%; /* Expand columns to full width */
-  }
-
-  .tip {
-    padding: 0.75rem; /* Reduce padding */
-    gap: 0.5rem; /* Reduce spacing between elements */
-  }
-
-  .tools-container {
-    flex-direction: column; /* Stack tools vertically */
-    gap: 1rem;
-  }
-
-  .tools-column {
-    min-width: 100%; /* Expand columns to full width */
-  }
-
-  .tool-box {
-    padding: 0.75rem; /* Reduce padding */
-    gap: 0.5rem;
-  }
-
-  .tool-content h3 {
-    font-size: 1rem; /* Smaller font for headings */
-  }
-
-  .tool-content p {
-    font-size: 0.85rem; /* Smaller font for descriptions */
-  }
-}
-
 
 /* ------------------------------------------------------------- */
 /* MEDIA QUERIES */
-/* ------------------------------------------------------------- */
-/* DIRECTORS SECTION */
 .directors-section {
   padding: 2rem 0;
 }
@@ -501,6 +285,7 @@ a {
   padding: 1rem;
   text-align: center;
 }
+
 /* Careers Page Styles */
 .careers-page {
   padding: 2rem;
@@ -744,22 +529,19 @@ a {
     width: 65px; /* Smaller size for smaller screens */
     height: 20px;
   }
-/* Footer Logos */
-.footer-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.rem;
-  margin-top: 1.5rem;
+  /* Footer Logos */
+  .footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
 }
 
-}
-
-
+/* ------------------------------------------------------------- */
 /* Careers responsiveness */
-/* Base Styles (Already provided above) */
-/* Add your base styles here */
-
+/* ------------------------------------------------------------- */
 /* Responsive Styles for Screens Smaller Than 700px */
 @media screen and (max-width: 700px) {
   .careers-page {

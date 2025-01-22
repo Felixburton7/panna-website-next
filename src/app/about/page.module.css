@@ -1,39 +1,56 @@
-/* src/app/about/page.module.css */
+/* ------------------------------------------------------------- */
+/* BASE ABOUT PAGE CONTAINER */
+.about-page {
+  background-color: #010101; /* Darker grey for consistency */
+  color: #fff;
+  padding-bottom: 2rem; /* Some space at the bottom */
+  font-family: Arial, sans-serif; /* Default font */
+}
+
+/* A container utility for sections */
+.container {
+  background-color: #010101; /* Darker grey for consistency */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 /* ------------------------------------------------------------- */
 /* ABOUT TOP SECTION */
 .about-top-section {
-  background-color: #111; /* Subtle background for distinction */
+  background-color: #010101; /* Darker grey for consistency */
 }
 
-/* ------------------------------------------------------------- */
-/* ABOUT HEADER */
+/* About Header */
 .about-header {
-  padding: 5rem 10rem; /* Added horizontal padding for responsiveness */
+  padding: 5rem 4rem; /* Added horizontal padding for responsiveness */
   text-align: center;
-  background-color: #000; /* Optional background color for emphasis */
+  background-color: #010101; /* Darker grey for consistency */
 }
 
 .about-header-title {
-  font-size: 4rem; /* Larger font for header */
+  font-size: 3.7rem; /* Larger font for header */
   font-weight: 700; /* Bolder text */
   color: #fff;
   line-height: 1.4;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
-.about-header-title .neon-blue {
+/* Neon Blue accent text */
+.neon-blue {
   color: #00f9ff; /* Bright neon blue for emphasis */
 }
 
 .play-now-container {
   display: flex;
-  justify-content: center; /* Centers the button horizontally */
+  justify-content: center; /* Centres the button horizontally */
   margin-top: 60px; /* Adds some space above the button */
-  margin-bottom: 90px;
+  margin-bottom: 90px; /* Space below if needed */
 }
 
+/* "Learn More" button styling */
 .learn-more-button {
   color: #fff;
   padding: 10px 20px; /* Adjust padding as needed */
@@ -43,19 +60,29 @@
   font-size: 1rem;
   font-weight: bold;
   background: linear-gradient(90deg, #9a1acd, #6d00a8);
+  transition: background 0.3s ease;
 }
 
 .learn-more-button:hover {
-  background: linear-gradient(90deg,  #6d00a8, #9a1acd);
+  background: linear-gradient(90deg, #6d00a8, #9a1acd);
+}
+
+/* A subtle divider between sections */
+.about-divider {
+  width: 80%; /* Consistent width with other dividers */
+  height: 1px;
+  background-color: #252525; /* Darker grey for consistency */
+  margin: 3rem auto; /* Centres the divider horizontally */
 }
 
 /* ------------------------------------------------------------- */
-/* MISSION SECTION */
+/* TOP MISSION & WHY SOCIAL GAMBLING */
 .about-top-heading {
   font-size: 2.8rem; /* Slightly larger for emphasis */
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   text-align: center;
+  color: #ffffff; /* Purple accent for headings */
 }
 
 .about-top-subheading {
@@ -68,8 +95,7 @@
   margin-right: auto;
 }
 
-/* ------------------------------------------------------------- */
-/* WHY SOCIAL GAMBLING */
+/* "Why Social Gambling" heading */
 .about-top-why {
   font-size: 2rem; /* Larger for impact */
   text-align: center;
@@ -77,6 +103,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* Stats row for "Why Social Gambling" */
 .about-stats {
   display: flex;
   justify-content: center;
@@ -85,48 +112,52 @@
   margin-bottom: 3rem;
 }
 
+/* Each individual stat container */
 .stat {
   text-align: center;
 }
 
+/* The flicker number or the final displayed number */
 .stat-value {
-  font-size: 3rem; /* Larger numbers for emphasis */
+  font-size: 4rem; /* Larger numbers for emphasis */
   font-weight: bold;
+  color: #9b59b6; /* Purple colour for the flicker numbers */
 }
 
+/* The label below the number */
 .stat-label {
-  font-size: 1.2rem;
-  color: #aaa; /* Subtle gray for labels */
+  font-size: 1.1rem;
+  color: #aaa;
 }
 
-/* Vertical divider between stats */
-.about-stats .divider {
+/* Optional vertical divider between stats */
+.divider {
   width: 1px;
   height: 60px;
   background-color: #555;
   margin: 0 1rem;
 }
 
-/* ------------------------------------------------------------- */
-/* WHAT WE STAND FOR */
+/* What We Stand For */
 .about-top-stand-for {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2rem;
+  color: #fff;
 }
 
+/* Center text paragraphs in this section */
 .about-top-text {
   font-size: 1.2rem; /* Larger text for easier reading */
   line-height: 1.8; /* More spacing for readability */
   color: #ccc;
   max-width: 800px;
-  margin: 0 auto 2rem; /* Spaced out and centered */
+  margin: 0 auto 2rem; /* Centred and spaced out */
   text-align: center;
 }
 
 /* ------------------------------------------------------------- */
 /* FOLLOW OUR JOURNEY */
-/* About Socials Section */
 .about-top-follow {
   font-size: 2rem; /* Larger text for emphasis */
   text-align: center;
@@ -144,76 +175,85 @@
 /* Social Icon Styles */
 .social-icon {
   font-size: 3rem; /* Adjust size of the icon */
-  color: #fff; /* Icon color white */
+  color: #fff; /* Icon colour white */
   border-radius: 50%; /* Circle shape */
   padding: 0.75rem; /* Space inside the circle */
-  text-align: center; /* Center align the icon */
+  text-align: center; /* Centre align the icon */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem; /* Set consistent width */
-  height: 5rem; /* Set consistent height */
+  width: 5rem; /* Consistent size */
+  height: 5rem;
   transition: all 0.3s ease; /* Smooth hover effect */
 }
 
 .social-icon:hover {
   background-color: #9a1acd; /* Purple background on hover */
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  transform: scale(1.1); /* Slight zoom effect */
 }
 
 /* ------------------------------------------------------------- */
-/* EXECUTIVE SECTION */
-/* ------------------------------------------------------------- */
+/* EXECUTIVE SECTION (FOUNDERS & TEAM) */
 .executive-section {
+  background-color: #010101; /* Darker grey for consistency */
+  margin-top: 3rem;
   padding: 3rem 0;
-  text-align: center; /* Center everything within the section */
+  text-align: center; /* Centre everything within the section */
 }
 
 .exec-heading {
-  font-size: 2rem; /* Slightly larger for emphasis */
+  font-size: 2rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  text-align: center;
-  color: #9a1acd; /* Accent color for the headings */
+  color: #9a1acd; /* Accent colour for the headings */
 }
 
-/* List styling */
 .exec-list {
   list-style: none;
   margin: 0 0 2rem 0;
   padding: 0;
-  max-width: 600px; /* Reduced max width for better focus */
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  display: flex; /* Flexbox for two-column layout */
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  justify-content: center; /* Center the list items */
-  gap: 2rem; /* Space between columns */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-/* Individual list items */
 .exec-list li {
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-  font-size: 1.2rem; /* Slightly larger font size for readability */
-  color: #fff; /* White text for contrast */
-  flex: 1 1 45%; /* Ensure two items per row with equal width */
-  text-align: left; /* Align text left for names */
+  width: 220px; /* Force a small card-like width */
+  border: 1px solid #1f1f1f; /* Grey border */
+  background: transparent; /* Transparent background */
+  border-radius: 18px;
+  padding: 1rem;
+  text-align: center; /* So name is centred */
+  position: relative; /* For potential icon positioning */
 }
 
-/* Adjust for smaller screens */
-@media (max-width: 600px) {
-  .exec-list li {
-    flex: 1 1 100%; /* Full-width for smaller devices */
-    text-align: center; /* Center-align text on smaller screens */
-  }
+.exec-link {
+  color: #0e76a8; /* LinkedIn blue */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.exec-link:hover {
+  color: #9a1acd; /* Change to purple on hover */
+}
+
+.exec-name {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem; /* Increased margin for spacing */
+  font-weight: bold;
 }
 
 /* ------------------------------------------------------------- */
-/* JOEY LEVY QUOTE */
+/* JOEY LEVY QUOTE SECTION */
 .joey-levy-section {
   padding: 3rem 0;
-  background-color: #111;
+  background-color: #010101; /* Darker grey for consistency */
 }
 
 .joey-levy-container {
@@ -229,6 +269,8 @@
   font-style: italic;
   line-height: 1.6;
   color: #ccc;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .joey-levy-quote p {
@@ -255,94 +297,106 @@
 }
 
 /* ------------------------------------------------------------- */
-/* INVESTORS SECTION */
-.investors-section {
+/* JOIN TEAM SECTION */
+.join-team-section {
   padding: 2rem 0;
-  text-align: center;
+  text-align: center; /* Centre the entire section */
 }
 
-.investors-text {
+.join-team-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.join-team-desc {
   color: #ccc;
-  max-width: 600px;
-  margin: 0.75rem auto;
-  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 
-/* ------------------------------------------------------------- */
-/* General Styles */
-.about-page {
-  font-family: Arial, sans-serif;
-  color: #fff;
-}
-
-/* ------------------------------------------------------------- */
-/* General Responsive Styles */
-.about-header-title {
-  font-size: 4rem;
-  text-align: center;
-  margin: 20px 0;
-}
-
-.play-now-button {
+/* 'job-openings-link' style */
+.job-openings-link {
   background: #9a1acd;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-right: 1rem; /* Add a little spacing if next to another button */
+  transition: background 0.3s ease;
 }
 
-/* General Responsive Styles */
+.job-openings-link:hover {
+  background: #8e44ad;
+}
+
+/* ADD: Email Button (Purple Gradient) */
+.email-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #9a1acd, #6d00a8);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.email-button:hover {
+  background: linear-gradient(90deg, #6d00a8, #9a1acd);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 700px) {
-  .about-header-title,
+  .about-header {
+    padding: 2rem 1rem; /* Adjust for smaller screens */
+  }
+
+  .about-header-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
   .about-top-subheading,
   .stat-value,
   .stat-label,
   .about-top-text,
   .about-top-follow,
-  .social-icon,
-  .director-name,
-  .director-description,
   .exec-list li,
   .joey-levy-quote {
-    font-size: calc(130%); /* Reduce font size for all elements */
-  }
-}
-
-/* Specific Small-Screen Adjustments */
-@media (max-width: 700px) {
-  .about-header {
-    padding: 2rem 1rem; /* Adjust padding for smaller screens */
-  }
-
-  .about-header-title {
-    font-size: 1.8rem; /* Smaller font for header title */
-    line-height: 1.2; /* Adjusted line height */
+    font-size: 100%; /* Slightly reduced for smaller screens */
   }
 
   .about-stats {
     flex-direction: column; /* Stack stats vertically */
-    gap: 1rem; /* Reduced gap for compact layout */
+    gap: 1rem;
   }
 
-  .play-now-button {
-    width: 100%; /* Full-width button for smaller screens */
-    font-size: 0.9rem; /* Smaller button font size */
+  .learn-more-button {
+    width: 100%; /* Full-width button on small screens */
+    font-size: 0.9rem;
   }
 
   .social-icon {
     font-size: 1.8rem; /* Adjusted size for smaller icons */
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .exec-list {
+    flex-direction: column; /* Single column layout for smaller screens */
+    align-items: center;
   }
 
   .exec-list li {
-    width: 100%; /* Make executive list items full-width */
-    text-align: center; /* Center-align text on smaller screens */
+    width: 80%;
   }
 
   .joey-levy-container {
-    flex-direction: column; /* Stack quote sections vertically */
-    gap: 1rem; /* Reduce spacing for compact view */
-  }
-
-  .joey-levy-pic {
-    width: 150px; /* Smaller image for responsiveness */
+    flex-direction: column;
+    gap: 1rem; 
   }
 }

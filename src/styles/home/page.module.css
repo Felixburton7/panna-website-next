@@ -1,0 +1,672 @@
+/* ------------------------------------------------------------- */
+/* BASE STYLES FOR HOME PAGE */
+.homePage {
+  font-family: Arial, sans-serif;
+  background: #010101; /* Original black background */
+  color: #fff;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------- */
+/* HERO SECTION */
+.heroSection {
+  padding: 5rem 0 0rem 3.5rem;
+  background: linear-gradient(
+    135deg,
+    #000 0%,
+    #001f3f 60%,
+    #000 90%
+  ); /* Original gradient */
+  margin-bottom: 5rem; /* Extra bottom margin */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroText {
+  flex: 1;
+  max-width: 50%;
+}
+
+.heroTitle {
+  font-size: 4.7rem;
+  font-weight: 700;
+}
+
+.heroSubtitle {
+  margin-top: -1rem;
+  font-size: 4.7rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: #aaa;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.heroButton {
+  background: linear-gradient(90deg, #9a1acd, #6d00a8);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.heroButton:hover {
+  opacity: 0.8;
+}
+
+.heroImages {
+  flex: 1;
+  margin-right: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.phonesWrapper {
+  position: relative;
+  width: 350px;
+  height: 600px;
+  transition: all 0.8s ease;
+}
+
+.phoneContainer {
+  position: absolute;
+  width: 260px;
+  height: 500px;
+  opacity: 1;
+  transform: translateX(40px) rotate(2deg);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.phoneContainer1 {
+  top: 0;
+  left: 0;
+  transform: translateX(-40px) rotate(-2deg);
+  z-index: 2;
+}
+
+.phoneContainer2 {
+  top: 80px;
+  left: 50px;
+  transform: translateX(40px) rotate(2deg);
+  z-index: 1;
+}
+
+.phoneOutline {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.appScreenshot {
+  position: absolute;
+  top: 4.5%;
+  left: 9%;
+  width: 82.5%;
+  height: 91%;
+  border-radius: 30px;
+}
+
+.appear .phoneContainer1 {
+  opacity: 1;
+  transform: translateX(0) rotate(-10deg);
+}
+
+.appear .phoneContainer2 {
+  opacity: 1;
+  transform: translateX(0) rotate(10deg);
+}
+
+/* ------------------------------------------------------------- */
+/* SNIPPETS SECTION */
+.snippetsSection {
+  padding: 2rem 0;
+  overflow: hidden;
+  background: #010101; /* Original black background */
+
+  /* background-color: #000; Original black background */
+  margin-top: -5rem; /* Extra bottom margin for spacing */
+}
+
+.snippetsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.snippetsRow {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  /* Duplicate content for seamless scrolling */
+  animation: scrollRow1 60s linear infinite;
+}
+
+.snippetsRow.duplicate {
+  animation: scrollRow2 60s linear infinite;
+}
+
+.snippetsRow.duplicate2 {
+  animation: scrollRow3 60s linear infinite;
+}
+
+.snippet {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: rgba(143, 143, 143, 0.9); /* More opaque and faded text */
+  border: 1px solid rgba(143, 143, 143, 0.9); /* Matching faded border */
+  border-radius: 30px;
+  background: transparent;
+  font-size: 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ROW SPEEDS: define keyframes for each row’s scrolling */
+@keyframes scrollRow1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRow2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRow3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* WHY CHOOSE PANNA SECTION */
+.whyChoosePannaSection {
+  padding: 5rem 0;
+}
+
+.whyChooseInner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.whyChooseInner .textColumn {
+  flex: 1;
+  max-width: 50%;
+}
+
+.whyChooseInner .featureCardsColumn {
+  flex: 1;
+  max-width: 50%;
+}
+
+.whyChooseInner .sectionHeading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.whyChooseInner .sectionDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #8f8f8f;
+}
+
+.whyChooseInner .featureCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: transparent;
+  padding: 1.5rem 0;
+}
+
+.whyChooseInner .featureIcon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.whyChooseInner .purple {
+  background: linear-gradient(135deg, #6a0dad, #9b59b6);
+}
+
+.whyChooseInner .featureTitle {
+  color: #fff;
+}
+
+.whyChooseInner .featureDescription {
+  color: #aaa;
+}
+
+.whyChooseInner .grey {
+  color: #aaa !important;
+}
+
+/* ------------------------------------------------------------- */
+/* GREY DIVIDER */
+.greyDivider {
+  border: none;
+  height: 1px;
+  background-color: rgba(102, 102, 102, 0.8); /* More opaque and faded */
+  width: 90%;
+  margin: 2rem auto;
+}/* ------------------------------------------------------------- */
+/* SOCIAL GAMBLING SECTION */
+.socialGamblingSection {
+  padding: 5rem 0; /* Match padding of whyChoosePannaSection */
+}
+
+.socialGamblingInner {
+  display: flex;
+  align-items: flex-start; /* Align items similarly to whyChooseInner */
+  justify-content: space-between;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.socialGamblingInner .textColumn {
+  flex: 1;
+  max-width: 50%; /* Consistent with whyChooseInner */
+}
+
+.socialGamblingInner .featureCardsColumn {
+  flex: 1;
+  max-width: 50%;
+}
+
+.socialGamblingInner .sectionHeading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.socialGamblingInner .sectionDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #8f8f8f;
+}
+
+.socialGamblingInner .featureCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: transparent;
+  padding: 1.5rem 0;
+}
+
+.socialGamblingInner .featureIcon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* British spelling */
+  border-radius: 50%;
+  color: #fff;
+}
+
+.socialGamblingInner .green {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+}
+
+.socialGamblingInner .featureTitle {
+  color: #fff;
+  font-size: 1.2rem; /* Ensure consistency */
+  font-weight: 600;
+}
+
+.socialGamblingInner .featureDescription {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.socialGamblingInner .grey {
+  color: #aaa !important;
+}
+
+
+
+/* ------------------------------------------------------------- */
+/* FOLLOW US SECTION */
+.followUsSection {
+  padding: 3rem 0;
+  margin-bottom: 5rem; /* Extra space below to avoid overlap */
+}
+
+.followUsContainer {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.followUsHeading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.followUsDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #8f8f8f;
+  max-width: 600px;
+  margin: 0.5rem auto 2rem auto;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.iconCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(34, 34, 34, 0.9); /* More opaque and faded */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.iconCircle:hover {
+  background-color: rgba(68, 68, 68, 0.9); /* More opaque and faded on hover */
+}
+
+/* ------------------------------------------------------------- */
+/* FAQ SECTION */
+.faqSection {
+  padding: 4rem 0;
+  margin-bottom: 5rem; /* Extra space below to avoid overlap */
+}
+
+.faqContainer {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqHeading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.faq {
+  margin-bottom: 1.5rem;
+}
+
+.faqQuestion {
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  color: #9b59b6;
+}
+
+.faqAnswer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  color: #aaa;
+}
+
+.visible {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+
+/* ------------------------------------------------------------- */
+/* SCROLL ANIMATION CLASSES */
+/* Removed fadeInUp and related transforms to prevent overlap */
+/* If animations are still desired, apply them to internal content */
+
+/* Example: Animate content within sections without shifting the entire section */
+.fadeInUpContent {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.visible.fadeInUpContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  .heroSubtitle {
+    font-size: 3.5rem;
+  }
+  .heroImages {
+    margin-right: 2rem;
+  }
+  .phonesWrapper {
+    width: 300px;
+    height: 500px;
+  }
+  .phoneContainer {
+    width: 220px;
+    height: 440px;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroText {
+    max-width: 100%;
+  }
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  .heroSubtitle {
+    font-size: 2.8rem;
+  }
+  .phonesWrapper {
+    width: 250px;
+    height: 450px;
+  }
+  .phoneContainer {
+    width: 180px;
+    height: 360px;
+  }
+  .appScreenshot {
+    top: 5%;
+    left: 9%;
+    width: 82%;
+    height: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  /* HERO */
+  .heroSection {
+    padding: 4rem 1rem;
+    margin-bottom: 4rem; /* Reduced bottom margin for better spacing */
+  }
+  .heroInner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .heroTitle {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .heroSubtitle {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .heroDescription {
+    font-size: 1rem;
+    color: #aaa;
+    max-width: 90%;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+  }
+  .heroButton {
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+  .heroImages {
+    margin-top: 2rem;
+    margin-right: 0;
+  }
+  .phonesWrapper {
+    width: 200px;
+    height: 360px;
+  }
+  .phoneContainer {
+    width: 160px;
+    height: 320px;
+  }
+
+  /* SNIPPETS SECTION */
+  .snippetsSection {
+    padding: 2rem 1rem;
+    margin-bottom: 4rem;
+  }
+  .snippetsWrapper {
+    width: 100%;
+  }
+  .snippetsRow {
+    gap: 0.5rem;
+  }
+
+  .snippet {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* WHY CHOOSE PANNA SECTION */
+  .whyChoosePannaSection {
+    padding: 3rem 1rem;
+    margin-bottom: 4rem; /* Slightly smaller */
+  }
+  .whyChooseInner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .whyChooseInner .textColumn,
+  .whyChooseInner .featureCardsColumn {
+    max-width: 100%;
+    width: 100%; /* Ensure full width */
+  }
+  .whyChooseInner .sectionHeading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE DESIGN ADJUSTMENTS FOR SOCIAL GAMBLING SECTION */
+@media (max-width: 700px) {
+  /* SOCIAL GAMBLING SECTION */
+  .socialGamblingSection {
+    padding: 3rem 1rem;
+    margin-bottom: 4rem; /* Slightly smaller for better spacing */
+  }
+  .socialGamblingInner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .socialGamblingInner .textColumn,
+  .socialGamblingInner .featureCardsColumn {
+    max-width: 100%;
+    width: 100%; /* Ensure full width on smaller screens */
+  }
+  .socialGamblingInner .sectionHeading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
+
+  /* FOLLOW US SECTION */
+  .followUsSection {
+    padding: 3rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* FAQ SECTION */
+  .faqSection {
+    padding: 3rem 1rem;
+    margin-bottom: 4rem;
+  }
+  .faqHeading {
+    font-size: 1.8rem;
+  }
+}
