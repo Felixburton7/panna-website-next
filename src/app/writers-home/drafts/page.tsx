@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 interface Article {
   id: string;
   title: string;
-  author: string;
+  author_id: string;
   date: string;
   article_type: string;
   category: string;
@@ -25,10 +25,26 @@ export default function DraftsPage() {
   useEffect(() => {
     const fetchDrafts = async () => {
       try {
+        // Get the currently logged-in user
+        const {
+          data: { user },
+          error: userError,
+        } = await supabase.auth.getUser();
+
+        if (userError) {
+          throw userError;
+        }
+        if (!user) {
+          setErrorMsg("No user is currently logged in.");
+          return;
+        }
+
+        // Fetch only drafts (is_draft = true) for this user
         const { data, error } = await supabase
           .from("articles")
           .select("*")
-          .eq("is_draft", true); // Fetch only drafts
+          .eq("is_draft", true)
+          .eq("author_id", user.id);
 
         if (error) {
           console.error("Error fetching drafts:", error);
@@ -61,7 +77,7 @@ export default function DraftsPage() {
             <div className={styles.articleDetails}>
               <h3 className={styles.articleTitle}>{draft.title}</h3>
               <p>
-                <strong>Author:</strong> {draft.author}
+                <strong>Author ID:</strong> {draft.author_id}
               </p>
               <p>
                 <strong>Date:</strong> {draft.date}

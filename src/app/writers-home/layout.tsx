@@ -1,10 +1,14 @@
 "use client";
 
-import React from 'react';
-import WritersSidebar from '@/components/Writers/WritersSidebar';
-import styles from './layout.module.css';
+import React from "react";
+import WritersSidebar from "@/components/Writers/WritersSidebar";
+import styles from "./layout.module.css";
 
-export default function WritersHomeLayout({ children }: { children: React.ReactNode }) {
+export default function WritersHomeLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className={styles.container}>
       <WritersSidebar />

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
-import styles from "../../../../components/Editor/DarkEditor.module.css"; // the shared dark minimal style file
+import styles from "../../../../components/Editor/DarkEditor.module.css"; // Shared dark minimal style file
 
 // Helpers
 function countWords(str: string) {
@@ -16,22 +16,25 @@ export default function NewArticlePage() {
 
   // Fields
   const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  const [authorName, setAuthorName] = useState(""); // We’ll display this in the UI, but the DB stores author_id
   const [mainContent, setMainContent] = useState("");
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [articleType, setArticleType] = useState("Opinion");
   const [category, setCategory] = useState("Transfers");
   const [statusMsg, setStatusMsg] = useState("");
 
-  // Refs for the contentEditable elements to manipulate caret if needed
+  // Refs for contentEditable elements
   const headingRef = useRef<HTMLDivElement>(null);
   const authorRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Fetch current user name (if logged in)
+  // Fetch current user’s profile name (if logged in)
   useEffect(() => {
-    const fetchAuthor = async () => {
-      const { data: { session }, error } = await supabase.auth.getSession();
+    const fetchAuthorName = async () => {
+      const {
+        data: { session },
+        error,
+      } = await supabase.auth.getSession();
       if (error) {
         console.error("Error fetching session:", error);
       } else if (session) {
@@ -45,12 +48,12 @@ export default function NewArticlePage() {
         if (profileError) {
           console.error("Error fetching profile:", profileError);
         } else if (profileData) {
-          setAuthor(profileData.full_name || "");
+          setAuthorName(profileData.full_name || "");
         }
       }
     };
 
-    fetchAuthor();
+    fetchAuthorName();
   }, []);
 
   // Word-limit logic for Main Content
@@ -73,12 +76,29 @@ export default function NewArticlePage() {
     }
   };
 
+  // Insert into the 'articles' table
   const handleSave = async (isDraft: boolean) => {
     try {
+      // Get the current user ID
+      const {
+        data: { session },
+        error: sessionError,
+      } = await supabase.auth.getSession();
+
+      if (sessionError) {
+        throw sessionError;
+      }
+      if (!session) {
+        setStatusMsg("No user is currently logged in. Cannot create an article.");
+        return;
+      }
+
+      // Insert a new article record
+      const userId = session.user.id;
       const { error } = await supabase.from("articles").insert([
         {
           title,
-          author,
+          author_id: userId, // foreign key linking to profiles(id)
           date,
           article_type: articleType,
           category,
@@ -92,10 +112,12 @@ export default function NewArticlePage() {
       } else {
         setStatusMsg(isDraft ? "Draft saved!" : "Article submitted!");
         if (!isDraft) {
+          // Send the user to the published articles list
           router.push("/writers-home/articles");
         }
       }
     } catch (err: any) {
+      console.error("Unexpected error:", err);
       setStatusMsg(`Unexpected error: ${err.message}`);
     }
   };
@@ -120,9 +142,11 @@ export default function NewArticlePage() {
         />
       </div>
 
-      {/* AUTHOR */}
+      {/* AUTHOR (NAME ONLY FOR DISPLAY) */}
       <div
-        className={`${styles.fieldWrapper} ${isFilled(author) ? "filled" : ""}`}
+        className={`${styles.fieldWrapper} ${
+          isFilled(authorName) ? "filled" : ""
+        }`}
         data-label="Author"
       >
         <div
@@ -131,8 +155,12 @@ export default function NewArticlePage() {
           data-placeholder="Author Name"
           contentEditable
           suppressContentEditableWarning
-          onInput={(e) => setAuthor(e.currentTarget.textContent ?? "")}
-        />
+          // This ensures any manual edit changes the displayed name,
+          // though it won't affect the author_id foreign key
+          onInput={(e) => setAuthorName(e.currentTarget.textContent ?? "")}
+        >
+          {authorName}
+        </div>
       </div>
 
       {/* MAIN CONTENT */}
