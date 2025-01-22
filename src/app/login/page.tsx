@@ -37,7 +37,7 @@ export default function LoginPage() {
 
   return (
     <div className={styles.loginContainer}>
-      <h1>Writers’ Portal</h1>
+      <h1>Writer's Portal</h1>
       <form onSubmit={handleLogin} className={styles.loginForm}>
         <label htmlFor="email">Email</label>
         <input

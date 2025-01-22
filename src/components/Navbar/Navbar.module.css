@@ -97,6 +97,7 @@
 
   .burger-icon {
     display: block; /* show burger on mobile */
+    margin-right: 5px;
   }
 }
 
@@ -185,9 +186,25 @@
 
 /* ------------------------------------------------------------- */
 /* CUSTOM STYLES FOR THE 'GAMES' LINK */
-.games-link {
-  margin-left: 120px; /* Adjust this value as needed */
+/* Ensure consistent margins for mobile menu links */
+.mobile-menu .mobile-link {
+  margin-left: 1rem; /* Consistent left alignment */
+  width: calc(100% - 2rem); /* Adjust width to avoid overflow */
+  padding: 1rem; /* Adjust padding as needed */
+  border-top: 1px solid #222222; /* Divider between links */
 }
+
+/* Remove divider for the first link */
+.mobile-menu .mobile-link:first-child {
+  border-top: none;
+}
+
+Adjust spacing for Games link if needed
+.mobile-menu .games-link {
+  margin-left: 0rem; /* Consistent with other links */
+}
+
+
 
 /* Additional styling for social icons on nav-right (desktop) */
 .social-icon {

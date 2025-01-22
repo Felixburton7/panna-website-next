@@ -1,3 +1,5 @@
+// src/app/components/Navbar/Navbar.tsx
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -60,7 +62,7 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Center Navigation (Desktop Only) */}
+  {/* Center Navigation (Desktop Only) */}
         <div className={styles["navbar-center"]}>
           <Link
             href="/games"
