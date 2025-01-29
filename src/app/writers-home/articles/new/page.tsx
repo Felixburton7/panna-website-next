@@ -61,7 +61,7 @@ export default function NewArticlePage() {
     let text = (e.currentTarget.textContent ?? "").replace(/\n/g, " ");
     const words = countWords(text);
 
-    if (words > 700) {
+    if (words > 1000) {
       // Trim to 700 words
       const trimmed = text.split(/\s+/).slice(0, 700).join(" ");
       setMainContent(trimmed);
@@ -173,7 +173,7 @@ export default function NewArticlePage() {
         <div
           ref={contentRef}
           className={`${styles.editableField} ${styles.multiline}`}
-          data-placeholder="Main Content (up to 700 words)"
+          data-placeholder="Main Content (up to 1000 words)"
           contentEditable
           suppressContentEditableWarning
           onInput={handleMainContentInput}
