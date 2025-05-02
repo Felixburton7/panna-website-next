@@ -40,7 +40,7 @@ function Footer() {
 
           {/* Gambling Commission Logo */}
           <a
-            href="https://www.gamblingcommission.gov.uk/"
+            href="https://www.gamblingcommission.gov.uk/public-register/business/detail/64928"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Gambling Commission Website"
