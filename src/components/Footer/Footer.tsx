@@ -25,6 +25,7 @@ function Footer() {
           </p>
         </div>
 
+
         {/* Footer Logos */}
         <div className={styles.footerLogos}>
           {/* 18+ */}
@@ -70,6 +71,7 @@ function Footer() {
             />
           </a>
 
+          {/* BeGambleAware Logo */}
           {/* BeGambleAware Logo */}
           <a
             href="https://www.begambleaware.org/"
