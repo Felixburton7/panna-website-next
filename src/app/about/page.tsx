@@ -71,9 +71,9 @@ const About: React.FC = () => {
       label: "For the players",
     },
     {
-      // finalValue: 10,
-      // minValue: 1,
-      // maxValue: 10,
+      finalValue: 10,
+      minValue: 1,
+      maxValue: 10,
       prefix: "Top ",
       suffix: "",
       label: "Social Gambling Platform in UK",
