@@ -90,7 +90,7 @@ const Home: React.FC = () => {
               <Typewriter
                 words={[
                   "Live",
-                  "High stakes",
+                  "Low stakes",
                   "Your way",
                   "Done better",
                   "More social",
