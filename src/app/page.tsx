@@ -240,9 +240,9 @@ const Home: React.FC = () => {
                 <FaRocket size={24} />
               </div>
               <div>
-                <h3 className={styles.featureTitle}>Massive Wins</h3>
+                <h3 className={styles.featureTitle}>Play against your mates!</h3>
                 <p className={`${styles.featureDescription} ${styles.grey}`}>
-                  Win big on your bet by making bold predictions and connecting
+                  Win big on your bet against mates by making bold predictions and connecting
                   with other players.
                 </p>
               </div>
