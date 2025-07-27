@@ -1,46 +1,51 @@
 import React from "react";
-import gamblingCommissionLogo from "../assets/gambling_commision_logo.png"; // Correct file name
+import { Link } from "react-router-dom";
+import gamblingCommissionLogo from "../assets/gambling_comission_logo.png";
 import gamstopLogo from "../assets/gamstop_logo.png";
 import begambleawareLogo from "../assets/begambleaware_logo.png";
+import "./Footer.css";
+
 function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer-content">
-        {/* Top Info */}
-        <div className="footer-info">
-          © 2024 Prosper Sports Limited. All rights reserved.
+      <div className="footer-container">
+        {/* Copyright */}
+        <div className="footer-copyright">
+          © 2025 Prosper Sports Limited
         </div>
 
-        <div className="footer-company">
-          <p>
-            Prosper Sports Limited is a company registered in England and Wales
-            (Company Number '15694810'). Prosper Sports Limited is licensed and
-            regulated in Great Britain by the Gambling Commission under account
-            number '64928'.
-          </p>
+        {/* Footer Links */}
+        <div className="footer-links">
+          <Link to="/privacy-policy" className="footer-link">
+            Privacy Policy
+          </Link>
+          <Link to="/terms-conditions" className="footer-link">
+            Terms & Conditions
+          </Link>
+          <Link to="/complaints-disputes" className="footer-link">
+            Complaints & Disputes
+          </Link>
+          <Link to="/safer-gambling" className="footer-link">
+            Safer Gambling
+          </Link>
         </div>
 
-        {/* Footer Logos */}
+        {/* Regulatory Logos */}
         <div className="footer-logos">
           {/* 18+ */}
-          <a
-            href="https://www.begambleaware.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="age-restriction">18+</div>
-          </a>
+          <div className="age-restriction">18+</div>
 
           {/* Gambling Commission Logo */}
           <a
             href="https://www.gamblingcommission.gov.uk/"
             target="_blank"
             rel="noopener noreferrer"
+            className="regulatory-link"
           >
             <img
               src={gamblingCommissionLogo}
               alt="Gambling Commission"
-              className="footer-logo"
+              className="regulatory-logo"
             />
           </a>
 
@@ -49,8 +54,13 @@ function Footer() {
             href="https://www.gamstop.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
+            className="regulatory-link"
           >
-            <img src={gamstopLogo} alt="Gamstop" className="footer-logo" />
+            <img 
+              src={gamstopLogo} 
+              alt="Gamstop" 
+              className="regulatory-logo" 
+            />
           </a>
 
           {/* BeGambleAware Logo */}
@@ -58,11 +68,12 @@ function Footer() {
             href="https://www.begambleaware.org/"
             target="_blank"
             rel="noopener noreferrer"
+            className="regulatory-link"
           >
             <img
               src={begambleawareLogo}
               alt="Be Gamble Aware"
-              className="footer-logo"
+              className="regulatory-logo"
             />
           </a>
         </div>

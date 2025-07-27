@@ -1,22 +1,18 @@
 
 
 // export default App;
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Analytics } from "@vercel/analytics/react"; // Import Vercel Analytics
+import { Analytics } from "@vercel/analytics/react";
+import { Helmet } from "react-helmet";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Games from "./pages/Games";
-import TermsAndConditions from "./components/terms_and_conditions";
-import About from "./pages/About";
-import Responsibility from "./pages/Responsibility";
-import GameRules from "./pages/GameRules";
-import Careers from "./pages/Careers";
-import Shop from "./pages/Shop";
-import Partners from "./pages/Partners";
-import { Helmet } from "react-helmet";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import ComplaintsDisputes from "./pages/ComplaintsDisputes";
+import SaferGambling from "./pages/SaferGambling";
 
 import "./App.css";
 
@@ -24,8 +20,10 @@ function App() {
   return (
     <div className="app-container">
       <Helmet>
-        <title>Panna</title>
+        <title>Panna - The newest social sports betting app</title>
+        <meta name="description" content="Panna provides a platform to connect and play your favourite fantasy sports games" />
       </Helmet>
+      
       {/* Navigation Bar (always visible) */}
       <Navbar />
 
@@ -33,14 +31,10 @@ function App() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/responsibility" element={<Responsibility />} />
-          <Route path="/rules" element={<GameRules />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/complaints-disputes" element={<ComplaintsDisputes />} />
+          <Route path="/safer-gambling" element={<SaferGambling />} />
         </Routes>
         <SpeedInsights />
       </div>

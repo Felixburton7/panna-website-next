@@ -1,0 +1,99 @@
+.footer {
+  background: #000000;
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #888;
+  font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-link {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.age-restriction {
+  background: #23AC55;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.regulatory-link {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.regulatory-link:hover {
+  opacity: 0.8;
+}
+
+.regulatory-logo {
+  height: 40px;
+  width: auto;
+  max-width: 120px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-logos {
+    gap: 1rem;
+  }
+  
+  .regulatory-logo {
+    height: 30px;
+    max-width: 80px;
+  }
+} 
