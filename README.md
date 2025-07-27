@@ -127,3 +127,4 @@ The app is configured for Vercel deployment with:
 ## Support
 
 For questions or issues, please contact the development team.
+# Force deployment
