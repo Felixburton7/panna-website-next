@@ -22,9 +22,6 @@ function Footer() {
           <Link to="/terms-conditions" className="footer-link">
             Terms & Conditions
           </Link>
-          <Link to="/complaints-disputes" className="footer-link">
-            Complaints & Disputes
-          </Link>
           <Link to="/safer-gambling" className="footer-link">
             Safer Gambling
           </Link>
@@ -32,9 +29,6 @@ function Footer() {
 
         {/* Regulatory Logos */}
         <div className="footer-logos">
-          {/* 18+ */}
-          <div className="age-restriction">18+</div>
-
           {/* Gambling Commission Logo */}
           <a
             href="https://www.gamblingcommission.gov.uk/"

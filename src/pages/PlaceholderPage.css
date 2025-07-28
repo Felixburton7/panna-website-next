@@ -31,6 +31,110 @@
   font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Privacy Policy Specific Styles */
+.policy-date {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.placeholder-content section {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.placeholder-content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-bottom: 2px solid #23AC55;
+  padding-bottom: 0.5rem;
+}
+
+.placeholder-content section p {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.placeholder-content ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.placeholder-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #ccc;
+  font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.placeholder-content strong {
+  color: #23AC55;
+  font-weight: 600;
+}
+
+.external-link {
+  color: #23AC55;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.external-link:hover {
+  color: #1e8f47;
+  text-decoration: none;
+}
+
+/* Safer Gambling Specific Styles */
+.safeguards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.safeguard-item {
+  background: rgba(35, 172, 85, 0.1);
+  border: 1px solid rgba(35, 172, 85, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.safeguard-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(35, 172, 85, 0.2);
+}
+
+.safeguard-item h3 {
+  color: #23AC55;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.safeguard-item p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.closing-statement {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #23AC55;
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  font-family: 'Uber Move', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .placeholder-content {
@@ -44,6 +148,31 @@
   .placeholder-content p {
     font-size: 1rem;
   }
+  
+  .placeholder-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .placeholder-content ul {
+    padding-left: 1rem;
+  }
+  
+  .safeguards-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .safeguard-item {
+    padding: 1.25rem;
+  }
+  
+  .safeguard-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .closing-statement {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -53,5 +182,13 @@
   
   .placeholder-content p {
     font-size: 0.9rem;
+  }
+  
+  .placeholder-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .placeholder-content ul {
+    padding-left: 1rem;
   }
 } 

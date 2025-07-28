@@ -5,16 +5,43 @@ function SaferGambling() {
   return (
     <div className="placeholder-page">
       <div className="placeholder-content">
-        <h1>Safer Gambling</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </p>
+        <h1>Safer Gambling at Panna</h1>
+        
+        <section>
+          <p>
+            At Panna, we take safer gambling seriously. We're committed to promoting responsible play and protecting the well-being of our users. Gambling should be a fun and enjoyable experience—not a cause of stress or financial difficulty.
+          </p>
+          
+          <p>
+            To support this, we've built a range of tools and safeguards into our platform:
+          </p>
+          
+          <div className="safeguards-list">
+            <div className="safeguard-item">
+              <h3>Age Verification</h3>
+              <p>Strict age checks ensure that only adults can access our platform.</p>
+            </div>
+            
+            <div className="safeguard-item">
+              <h3>Self-Exclusion Tools</h3>
+              <p>Set limits, take breaks, or opt out completely with easy-to-use self-exclusion features.</p>
+            </div>
+            
+            <div className="safeguard-item">
+              <h3>Support Resources</h3>
+              <p>Access professional help and support through trusted organisations directly from the app.</p>
+            </div>
+            
+            <div className="safeguard-item">
+              <h3>Transparent Information</h3>
+              <p>We provide clear and accessible information on the risks of gambling and how to gamble responsibly.</p>
+            </div>
+          </div>
+          
+          <p className="closing-statement">
+            We believe in keeping gambling safe, informed, and balanced.
+          </p>
+        </section>
       </div>
     </div>
   );
