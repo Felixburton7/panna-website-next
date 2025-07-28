@@ -128,3 +128,4 @@ The app is configured for Vercel deployment with:
 
 For questions or issues, please contact the development team.
 # Force deployment
+# Trigger Vercel deployment
