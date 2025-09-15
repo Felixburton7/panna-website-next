@@ -16,19 +16,19 @@ function ContactUs() {
             <div className="contact-item">
               <h3>General Inquiries</h3>
               <p>For general questions about Panna, partnerships, or media inquiries:</p>
-              <p><strong>Email:</strong> <a href="mailto:hello@panna.com" className="contact-link">hello@panna.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:info@panna-app.uk" className="contact-link">info@panna-app.uk</a></p>
             </div>
             
             <div className="contact-item">
               <h3>Customer Support</h3>
               <p>Need help with your account, games, or technical issues?</p>
-              <p><strong>Email:</strong> <a href="mailto:support@panna.com" className="contact-link">support@panna.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:support@panna-app.uk" className="contact-link">support@panna-app.uk</a></p>
             </div>
             
             <div className="contact-item">
               <h3>Business Inquiries</h3>
               <p>Interested in partnerships, sponsorships, or business opportunities?</p>
-              <p><strong>Email:</strong> <a href="mailto:business@panna.com" className="contact-link">business@panna.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:business@panna-app.uk" className="contact-link">business@panna-app.uk</a></p>
             </div>
             
             <div className="contact-item">
