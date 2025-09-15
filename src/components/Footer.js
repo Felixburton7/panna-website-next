@@ -25,6 +25,9 @@ function Footer() {
           <Link to="/safer-gambling" className="footer-link">
             Safer Gambling
           </Link>
+          <Link to="/contact-us" className="footer-link">
+            Contact Us
+          </Link>
         </div>
 
         {/* Regulatory Logos */}
