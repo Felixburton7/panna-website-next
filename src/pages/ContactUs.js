@@ -24,19 +24,6 @@ function ContactUs() {
               <p>Need help with your account, games, or technical issues?</p>
               <p><strong>Email:</strong> <a href="mailto:support@panna-app.uk" className="contact-link">support@panna-app.uk</a></p>
             </div>
-            
-            <div className="contact-item">
-              <h3>Business Inquiries</h3>
-              <p>Interested in partnerships, sponsorships, or business opportunities?</p>
-              <p><strong>Email:</strong> <a href="mailto:business@panna-app.uk" className="contact-link">business@panna-app.uk</a></p>
-            </div>
-            
-            <div className="contact-item">
-              <h3>Responsible Gambling Support</h3>
-              <p>If you need help with gambling-related concerns:</p>
-              <p><strong>GamCare:</strong> <a href="https://www.gamcare.org.uk/" target="_blank" rel="noopener noreferrer" className="contact-link">www.gamcare.org.uk</a></p>
-              <p><strong>BeGambleAware:</strong> <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer" className="contact-link">www.begambleaware.org</a></p>
-            </div>
           </div>
           
           <div className="response-time">
