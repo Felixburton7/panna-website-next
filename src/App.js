@@ -13,6 +13,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import ComplaintsDisputes from "./pages/ComplaintsDisputes";
 import SaferGambling from "./pages/SaferGambling";
+import ContactUs from "./pages/ContactUs";
 
 import "./App.css";
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/complaints-disputes" element={<ComplaintsDisputes />} />
           <Route path="/safer-gambling" element={<SaferGambling />} />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
         <SpeedInsights />
       </div>
