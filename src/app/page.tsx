@@ -237,6 +237,9 @@ const HowToPlayCarousel: React.FC = () => {
         />
 
         <h3 className={styles.stepTitle}>{currentStepData.title}</h3>
+        
+        {/* Step Description */}
+        <p className={styles.stepDescription}>{currentStepData.description}</p>
 
         {/* Progress Indicators */}
         <div className={styles.progressIndicators}>

@@ -375,6 +375,16 @@
   text-align: center;
 }
 
+.stepDescription {
+  font-size: 1rem;
+  color: #8f8f8f;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0 auto 1.5rem auto;
+  max-width: 600px;
+  padding: 0 1rem;
+}
+
 
 /* Progress Indicators */
 .progressIndicators {
@@ -600,6 +610,10 @@
   .stepTitle {
     font-size: 1.3rem;
   }
+  .stepDescription {
+    font-size: 0.95rem;
+    max-width: 550px;
+  }
   .downloadButton {
     font-size: 1rem;
     padding: 0.9rem 2rem;
@@ -652,6 +666,10 @@
   }
   .stepTitle {
     font-size: 1.2rem;
+  }
+  .stepDescription {
+    font-size: 0.95rem;
+    max-width: 500px;
   }
   .downloadButton {
     font-size: 0.95rem;
@@ -833,6 +851,12 @@
     font-size: 1.1rem;
     text-align: center;
     margin: 1rem 0 0.5rem 0;
+  }
+  .stepDescription {
+    font-size: 0.9rem;
+    margin: 0 auto 1rem auto;
+    padding: 0 0.5rem;
+    max-width: 100%;
   }
   .progressIndicators {
     gap: 0.4rem;
