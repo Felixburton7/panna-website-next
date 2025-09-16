@@ -1,0 +1,106 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/privacy-policy/page.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.page_page__wCurA {
+  min-height: 100vh;
+  background: #000000;
+  color: white;
+  padding-top: 80px;
+  padding-bottom: 200px;
+}
+
+.page_content__owVNA {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.8;
+}
+
+.page_content__owVNA h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-family: var(--font-poppins), sans-serif;
+  text-align: center;
+}
+
+.page_policyDate__TQtll {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page_content__owVNA section {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.page_content__owVNA h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-family: var(--font-poppins), sans-serif;
+  border-bottom: 2px solid #23AC55;
+  padding-bottom: 0.5rem;
+}
+
+.page_content__owVNA section p {
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #ccc;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.page_content__owVNA ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.page_content__owVNA li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #ccc;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.page_content__owVNA strong {
+  color: #23AC55;
+  font-weight: 600;
+}
+
+.page_externalLink__gXyOD {
+  color: #23AC55;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.page_externalLink__gXyOD:hover {
+  color: #1e8f47;
+  text-decoration: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .page_content__owVNA {
+    padding: 0 1rem;
+  }
+  
+  .page_content__owVNA h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page_content__owVNA p {
+    font-size: 1rem;
+  }
+  
+  .page_content__owVNA h2 {
+    font-size: 1.5rem;
+  }
+  
+  .page_content__owVNA ul {
+    padding-left: 1rem;
+  }
+}

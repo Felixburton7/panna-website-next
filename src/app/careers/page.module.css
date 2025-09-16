@@ -1,0 +1,140 @@
+/* Careers Page Styles */
+.careers-page {
+    padding: 2rem;
+    background-color: #010101;
+    color: #fff;
+  }
+  
+  .careers-title {
+    
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .careers-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #aaa;
+  }
+  
+  /* Filters Section */
+  .filters-section {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-dropdown label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #9b59b6;
+  }
+  
+  .filter-dropdown select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #444;
+    background-color: #111;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  /* Job Listings */
+  .job-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .job-card {
+    background-color: #111;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+  }
+  
+  .job-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .job-description {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-details {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .no-jobs {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #aaa;
+  }
+
+  /* Base Styles (Already provided above) */
+/* Add your base styles here */
+
+/* Responsive Styles for Screens Smaller Than 700px */
+@media screen and (max-width: 700px) {
+    .careers-page {
+      padding: 1rem;
+    }
+  
+    .careers-title {
+      font-size: 1.8rem; /* Smaller font size for the title */
+      margin-bottom: 0.5rem;
+    }
+  
+    .careers-description {
+      font-size: 0.9rem; /* Smaller font size for description */
+      margin-bottom: 1.5rem;
+    }
+  
+    .filters-section {
+      flex-direction: column; /* Stack filters vertically */
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .filter-dropdown label {
+      font-size: 0.8rem; /* Adjust label font size */
+    }
+  
+    .filter-dropdown select {
+      padding: 0.4rem;
+      font-size: 0.9rem; /* Smaller dropdown font size */
+    }
+  
+    .job-listings {
+      gap: 1rem; /* Reduce spacing between job cards */
+    }
+  
+    .job-card {
+      padding: 1rem; /* Reduce padding in job cards */
+    }
+  
+    .job-title {
+      font-size: 1.2rem; /* Smaller job title font size */
+    }
+  
+    .job-description {
+      font-size: 0.9rem; /* Smaller job description font size */
+    }
+  
+    .job-details {
+      font-size: 0.8rem; /* Smaller job details font size */
+    }
+  
+    .no-jobs {
+      font-size: 1rem; /* Adjust no-jobs message font size */
+    }
+  }

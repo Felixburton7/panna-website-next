@@ -1,0 +1,851 @@
+/* ------------------------------------------------------------- */
+/* BASE STYLES FOR HOME PAGE */
+.homePage {
+  font-family: Arial, sans-serif;
+  background: #FAFAFA; /* Light gray background */
+  color: #1a1a1a;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------- */
+/* HERO SECTION */
+.heroSection {
+  padding: 5rem 0 0rem 3.5rem;
+  background: #0A674A; /* Solid green background */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem; /* Extra bottom margin */
+}
+
+/* Background image overlay for hero */
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/football_goalscorer.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.1; /* Much more faded image */
+  z-index: 1;
+}
+
+/* Gradient overlay to fade from navbar color to hero color */
+.heroSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 64, 45, 1) 0%,
+    rgba(0, 64, 45, 0.8) 20%,
+    rgba(10, 103, 74, 0.7) 70%,
+    rgba(10, 103, 74, 1) 100%
+  );
+  z-index: 2;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3; /* Above the overlay */
+}
+
+.heroText {
+  flex: 1;
+  max-width: 50%;
+}
+
+.heroTitle {
+  font-size: 4.7rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.heroSubtitle {
+  margin-top: -1rem;
+  font-size: 4.7rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.heroButton {
+  background: #FDFF4E; /* Yellow accent color */
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.heroButton:hover {
+  opacity: 0.8;
+}
+
+.heroImages {
+  flex: 1;
+  margin-right: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.phonesWrapper {
+  position: relative;
+  width: 350px;
+  height: 600px;
+  transition: all 0.8s ease;
+}
+
+.phoneContainer {
+  position: absolute;
+  width: 260px;
+  height: 500px;
+  opacity: 1;
+  transform: translateX(40px) rotate(2deg);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.phoneContainer1 {
+  top: 0;
+  left: 0;
+  transform: translateX(-40px) rotate(-2deg);
+  z-index: 2;
+}
+
+.phoneContainer2 {
+  top: 80px;
+  left: 50px;
+  transform: translateX(40px) rotate(2deg);
+  z-index: 1;
+}
+
+.phoneOutline {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.appScreenshot {
+  position: absolute;
+  top: 4.5%;
+  left: 9%;
+  width: 82.5%;
+  height: 91%;
+  border-radius: 30px;
+}
+
+.appear .phoneContainer1 {
+  opacity: 1;
+  transform: translateX(0) rotate(-10deg);
+}
+
+.appear .phoneContainer2 {
+  opacity: 1;
+  transform: translateX(0) rotate(10deg);
+}
+
+/* ------------------------------------------------------------- */
+/* SNIPPETS SECTION */
+.snippetsSection {
+  padding: 2rem 0;
+  overflow: hidden;
+  background: #FAFAFA; /* Light gray background */
+  margin-top: -5rem; /* Extra bottom margin for spacing */
+}
+
+.snippetsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.snippetsRow {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  /* Duplicate content for seamless scrolling */
+  animation: scrollRow1 60s linear infinite;
+}
+
+.snippetsRow.duplicate {
+  animation: scrollRow2 60s linear infinite;
+}
+
+.snippetsRow.duplicate2 {
+  animation: scrollRow3 60s linear infinite;
+}
+
+.snippet {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: rgba(70, 70, 70, 0.9); /* More opaque and faded text */
+  border: 1px solid rgba(70, 70, 70, 0.9); /* Matching faded border */
+  border-radius: 30px;
+  background: transparent;
+  font-size: 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ROW SPEEDS: define keyframes for each row's scrolling */
+@keyframes scrollRow1 {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRow2 {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRow3 {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* HOW TO PLAY SECTION */
+.howToPlaySection {
+  padding: 5rem 0;
+  background: #FAFAFA;
+}
+
+.howToPlayHeading {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #0A674A;
+  letter-spacing: 2px;
+}
+
+.howToPlaySubheading {
+  font-size: 1rem;
+  text-align: center;
+  color: #0A674A;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+}
+
+/* Carousel Container */
+.carouselContainer {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: transparent;
+  padding: 2rem;
+}
+
+/* Navigation Arrows */
+.carouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  color: #0A674A;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselArrow:hover {
+  color: #127656;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carouselArrowLeft {
+  left: -30px;
+}
+
+.carouselArrowRight {
+  right: -30px;
+}
+
+/* Main Content */
+.carouselContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  justify-content: space-between;
+}
+
+/* Phone Display Container */
+.phoneDisplayContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.phoneScreenshot {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Overlaid Screenshots Container */
+.overlaidScreenshots {
+  position: relative;
+  width: 180px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlaidScreenshot1 {
+  position: absolute;
+  z-index: 2;
+  transform: rotate(-8deg) translateX(-15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.overlaidScreenshot2 {
+  position: absolute;
+  z-index: 1;
+  transform: rotate(12deg) translateX(15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0A674A;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+
+/* Progress Indicators */
+.progressIndicators {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.progressDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #D1D5DB;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.progressDot.active {
+  background: #0A674A;
+  transform: scale(1.2);
+}
+
+.progressDot:hover {
+  background: #9CA3AF;
+}
+
+/* Download Button */
+.downloadButton {
+  background: linear-gradient(135deg, #0A674A, #127656);
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  box-shadow: 0 4px 15px rgba(10, 103, 74, 0.3);
+}
+
+.downloadButton:hover {
+  background: linear-gradient(135deg, #127656, #0A674A);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 103, 74, 0.4);
+}
+
+/* ------------------------------------------------------------- */
+/* GREY DIVIDER */
+.greyDivider {
+  border: none;
+  height: 1px;
+  background-color: rgba(90, 90, 90, 0.8); /* More opaque and faded */
+  width: 80%;
+  margin: 3rem auto; /* Consistent top and bottom margin */
+}
+
+
+
+/* ------------------------------------------------------------- */
+/* FOLLOW US SECTION */
+.followUsSection {
+  padding: 3rem 0;
+  margin-bottom: 5rem; /* Extra space below to avoid overlap */
+}
+
+.followUsContainer {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.followUsHeading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.followUsDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #8f8f8f;
+  max-width: 600px;
+  margin: 0.5rem auto 2rem auto;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.iconCircle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: rgba(34, 34, 34, 0.9); /* More opaque and faded */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: background-color 0.3s ease;
+}
+
+.iconCircle:hover {
+  background-color: rgba(68, 68, 68, 0.9); /* More opaque and faded on hover */
+}
+
+/* ------------------------------------------------------------- */
+/* FAQ SECTION */
+.faqSection {
+  padding: 4rem 0;
+  margin-bottom: 5rem; /* Extra space below to avoid overlap */
+}
+
+.faqContainer {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqHeading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.faq {
+  margin-bottom: 1.5rem;
+}
+
+.faqQuestion {
+  background: none;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  color: #0A674A;
+}
+
+.faqAnswer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  color: #333;
+}
+
+.visible {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+
+/* ------------------------------------------------------------- */
+/* SCROLL ANIMATION CLASSES */
+/* Removed fadeInUp and related transforms to prevent overlap */
+/* If animations are still desired, apply them to internal content */
+
+/* Example: Animate content within sections without shifting the entire section */
+.fadeInUpContent {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.visible.fadeInUpContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  .heroSubtitle {
+    font-size: 3.5rem;
+  }
+  .heroImages {
+    margin-right: 2rem;
+  }
+  .phonesWrapper {
+    width: 300px;
+    height: 500px;
+  }
+  .phoneContainer {
+    width: 220px;
+    height: 440px;
+  }
+  
+  /* HOW TO PLAY RESPONSIVE */
+  .howToPlayHeading {
+    font-size: 2.8rem;
+    font-weight: 800;
+  }
+  .carouselContainer {
+    padding: 1.5rem;
+  }
+  .phoneScreenshot {
+    width: 120px;
+    height: auto;
+  }
+  .overlaidScreenshots {
+    width: 150px;
+    height: 270px;
+  }
+  .stepTitle {
+    font-size: 1.3rem;
+  }
+  .downloadButton {
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroText {
+    max-width: 100%;
+  }
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  .heroSubtitle {
+    font-size: 2.8rem;
+  }
+  .phonesWrapper {
+    width: 250px;
+    height: 450px;
+  }
+  .phoneContainer {
+    width: 180px;
+    height: 360px;
+  }
+  .appScreenshot {
+    top: 5%;
+    left: 9%;
+    width: 82%;
+    height: 90%;
+  }
+  
+  /* HOW TO PLAY RESPONSIVE */
+  .howToPlayHeading {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  .carouselArrowLeft {
+    left: -20px;
+  }
+  .carouselArrowRight {
+    right: -20px;
+  }
+  .phoneScreenshot {
+    width: 100px;
+    height: auto;
+  }
+  .overlaidScreenshots {
+    width: 130px;
+    height: 230px;
+  }
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+  .downloadButton {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  /* HERO */
+  .heroSection {
+    padding: 4rem 1rem;
+    margin-bottom: 4rem; /* Reduced bottom margin for better spacing */
+  }
+  .heroInner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .heroTitle {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .heroSubtitle {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .heroDescription {
+    font-size: 1rem;
+    color: #aaa;
+    max-width: 90%;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+  }
+  .heroButton {
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+  .heroImages {
+    margin-top: 2rem;
+    margin-right: 0;
+  }
+  .phonesWrapper {
+    width: 200px;
+    height: 360px;
+  }
+  .phoneContainer {
+    width: 160px;
+    height: 320px;
+  }
+
+  /* SNIPPETS SECTION */
+  .snippetsSection {
+    padding: 2rem 1rem;
+    margin-bottom: 4rem;
+  }
+  .snippetsWrapper {
+    width: 100%;
+  }
+  .snippetsRow {
+    gap: 0.5rem;
+  }
+
+  .snippet {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* WHY CHOOSE PANNA SECTION */
+  .whyChoosePannaSection {
+    padding: 1rem 1rem;
+    margin-bottom: 1rem; /* Slightly smaller */
+  }
+  .whyChooseInner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .whyChooseInner .textColumn,
+  .whyChooseInner .featureCardsColumn {
+    max-width: 100%;
+    width: 100%; /* Ensure full width */
+  }
+  .whyChooseInner .sectionHeading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+/* ------------------------------------------------------------- */
+
+  /* FOLLOW US SECTION */
+  .followUsSection {
+    padding: 1rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .iconCircle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(34, 34, 34, 0.9); /* More opaque and faded */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .iconCircle:hover {
+    background-color: rgba(68, 68, 68, 0.9); /* More opaque and faded on hover */
+  }
+.greyDivider {
+  margin-bottom: 5rem;
+  margin-top: 10rem;
+}
+  /* FAQ SECTION */
+  .faqSection {
+    padding: 3rem 1rem;
+    margin-bottom: 4rem;
+  }
+  .faqHeading {
+    font-size: 1.8rem;
+  }
+  
+  /* HOW TO PLAY MOBILE */
+  .howToPlaySection {
+    padding: 3rem 1rem;
+  }
+  .howToPlayHeading {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .howToPlaySubheading {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .carouselContainer {
+    width: 95%;
+    padding: 1.5rem 1rem;
+  }
+  .carouselContent {
+    min-height: 350px;
+  }
+  .carouselArrow {
+    width: 35px;
+    height: 35px;
+  }
+  .carouselArrowLeft {
+    left: -15px;
+  }
+  .carouselArrowRight {
+    right: -15px;
+  }
+  .phoneScreenshot {
+    width: 90px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .overlaidScreenshots {
+    width: 110px;
+    height: 200px;
+  }
+  .overlaidScreenshot1 {
+    transform: rotate(-6deg) translateX(-10px);
+  }
+  .overlaidScreenshot2 {
+    transform: rotate(10deg) translateX(10px);
+  }
+  .stepTitle {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .progressIndicators {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .progressDot {
+    width: 10px;
+    height: 10px;
+  }
+  .downloadButton {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+}

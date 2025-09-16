@@ -47,7 +47,7 @@
   
   .section-icon {
     margin-right: 10px;
-    color: #9a1acd;
+    color: #08B386;
     font-size: 1.2em;
   }
   
@@ -64,7 +64,7 @@
     padding: 10px 20px;
     font-size: 1em;
     color: white;
-    background: linear-gradient(90deg, #9a1acd, #6d00a8);
+    background: linear-gradient(90deg, #0A674A, #127656);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -72,7 +72,7 @@
   }
   
   .partner-button:hover {
-    background: linear-gradient(90deg, #6d00a8, #9a1acd);
+    background: linear-gradient(90deg, #127656, #1D9272);
     transform: scale(1.05);
   }
   

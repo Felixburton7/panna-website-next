@@ -1,0 +1,151 @@
+.page {
+  min-height: 100vh;
+  background: #000000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 200px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.content section {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-family: var(--font-poppins), sans-serif;
+  border-bottom: 2px solid #23AC55;
+  padding-bottom: 0.5rem;
+}
+
+.contactMethods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.contactItem {
+  background: rgba(35, 172, 85, 0.1);
+  border: 1px solid rgba(35, 172, 85, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(35, 172, 85, 0.2);
+}
+
+.contactItem h3 {
+  color: #23AC55;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.contactItem p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.contactLink {
+  color: #23AC55;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.contactLink:hover {
+  color: #1e8f47;
+  text-decoration: none;
+}
+
+.responseTime {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #23AC55;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.responseTime p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.closingStatement {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #23AC55;
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .content {
+    padding: 0 1rem;
+  }
+  
+  .content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .contactMethods {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contactItem {
+    padding: 1.25rem;
+  }
+  
+  .contactItem h3 {
+    font-size: 1.2rem;
+  }
+  
+  .responseTime {
+    padding: 1rem;
+  }
+
+  .closingStatement {
+    font-size: 1.1rem;
+  }
+}

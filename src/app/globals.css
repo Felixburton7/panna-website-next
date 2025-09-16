@@ -1,0 +1,427 @@
+/* src/app/globals.css */
+
+/* ------------------------------------------------------------- */
+/* Base RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------- */
+/* Apply Poppins Font Using CSS Variable */
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* ------------------------------------------------------------- */
+/* GLOBAL STYLES */
+html,
+body {
+  font-family: var(--font-poppins), sans-serif;
+  background: #010101; /* Black background */
+  color: #fff;      /* White text */
+  scroll-behavior: smooth; /* Smooth scrolling between anchors/sections */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 650;
+}
+
+p {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+}
+
+button {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------------------------------------------------- */
+/* MAIN CONTENT OFFSET - ensures navbar doesn't overlap content */
+.main-content {
+  margin-top: 80px; /* Adjust this if the navbar height changes */
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIBILITY PAGE */
+.responsibility-page {
+  background-color: #000;
+  color: #fff;
+  padding: 10rem 10rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Intro Text */
+.intro-large {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro-grey {
+  color: #aaa;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Tips Section */
+.tips-heading {
+  font-size: 1.8rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.tips-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tips-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.tip {
+  background-color: #111;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tip-number {
+  font-size: 1.2rem;
+  color: #9b59b6;
+  font-weight: bold;
+}
+
+/* Tools Section */
+.tools-heading {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.tools-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tools-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.tool-box {
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tool-tick {
+  background-color: #0A674A;
+  color: #fff;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.tool-content p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .intro-large {
+    font-size: 1.8rem;
+  }
+
+  .tips-container,
+  .tools-container {
+    flex-direction: column;
+  }
+
+  .tips-column,
+  .tools-column {
+    max-width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* Base container for the About page */
+.about-page {
+  background-color: #010101;
+  color: #fff;
+  padding-bottom: 2rem; /* Space at bottom */
+}
+
+/* Global container styling */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------- */
+/* JOIN THE TEAM SECTION */
+.join-team-section {
+  background-color: #010101;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.join-team-heading {
+  background-color: #010101;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.join-team-desc {
+    background-color: #010101;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.job-openings-link {
+  background: #0A674A;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.job-openings-link:hover {
+  background: #8e44ad;
+}
+
+/* ------------------------------------------------------------- */
+/* HELP SECTION */
+.help-section {
+  padding: 2rem 0;
+  background-color: #111;
+}
+
+.help-heading {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+}
+
+.help-container p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.help-container h3 {
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* ------------------------------------------------------------- */
+/* MEDIA QUERIES */
+.directors-section {
+  padding: 2rem 0;
+}
+
+.directors-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9b59b6;
+  text-transform: uppercase;
+}
+
+.directors-row {
+  display: flex;
+  justify-content: center; /* Centering directors' cards */
+  gap: 2rem;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.director-card {
+  background-color: #111;
+  flex: 1 1 300px;
+  max-width: 320px;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Careers Page Styles */
+.careers-page {
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.careers-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.careers-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #aaa;
+}
+
+/* Filters Section */
+.filters-section {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-dropdown label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #9b59b6;
+}
+
+.filter-dropdown select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #444;
+  background-color: #111;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Job Listings */
+.job-listings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.job-card {
+  background-color: #111;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.job-description {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.job-details {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.no-jobs {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #aaa;
+}
+
+/* ------------------------------------------------------------- */
+/* Careers responsiveness */
+/* ------------------------------------------------------------- */
+/* Responsive Styles for Screens Smaller Than 700px */
+@media screen and (max-width: 700px) {
+  .careers-page {
+    padding: 1rem;
+  }
+
+  .careers-title {
+    font-size: 1.8rem; /* Smaller font size for the title */
+    margin-bottom: 0.5rem;
+  }
+
+  .careers-description {
+    font-size: 0.9rem; /* Smaller font size for description */
+    margin-bottom: 1.5rem;
+  }
+
+  .filters-section {
+    flex-direction: column; /* Stack filters vertically */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-dropdown label {
+    font-size: 0.8rem; /* Adjust label font size */
+  }
+
+  .filter-dropdown select {
+    padding: 0.4rem;
+    font-size: 0.9rem; /* Smaller dropdown font size */
+  }
+
+  .job-listings {
+    gap: 1rem; /* Reduce spacing between job cards */
+  }
+
+  .job-card {
+    padding: 1rem; /* Reduce padding in job cards */
+  }
+
+  .job-title {
+    font-size: 1.2rem; /* Smaller job title font size */
+  }
+
+  .job-description {
+    font-size: 0.9rem; /* Smaller job description font size */
+  }
+
+  .job-details {
+    font-size: 0.8rem; /* Smaller job details font size */
+  }
+
+  .no-jobs {
+    font-size: 1rem; /* Adjust no-jobs message font size */
+  }
+}

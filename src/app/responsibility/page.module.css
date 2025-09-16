@@ -1,0 +1,256 @@
+/* responsibility/page.module.css */
+
+.responsibilityPage {
+  background: #FAFAFA; /* Light gray background to match home page */
+  padding: 2rem 0;
+  width: 100%;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 70px auto 0;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Introductory Text */
+.introLarge {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.introGrey {
+  color: #8f8f8f;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Tips Section */
+.tipsHeading {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.tipsContainer {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.greyBox {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(10, 103, 74, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(10, 103, 74, 0.1);
+}
+
+.tipsColumn {
+  flex: 1;
+  min-width: 300px;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.tipNumber {
+  background-color: #0A674A;
+  color: #fff;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.tip p {
+  color: #8f8f8f;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Tools Section */
+.toolsHeading {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.toolsIntro {
+  color: #8f8f8f;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.toolsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.toolsColumn {
+  flex: 1;
+  min-width: 300px;
+}
+
+.toolBox {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(10, 103, 74, 0.1);
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  box-shadow: 0 4px 15px rgba(10, 103, 74, 0.1);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toolTick {
+  background-color: #0A674A;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.toolContent h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.toolContent p {
+  color: #8f8f8f;
+  font-size: 0.9rem;
+}
+
+
+/* Additional Responsible Gambling Section */
+.additionalHeading {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.additionalSection {
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.additionalSection p {
+  color: #8f8f8f;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9; /* Increased opacity for better readability */
+}
+
+.button {
+  background-color: #0A674A;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #127656;
+}
+
+/* Scroll Animation */
+.animateUp {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .introLarge {
+    font-size: 1.8rem;
+  }
+
+  .tipsContainer,
+  .toolsContainer {
+    flex-direction: column;
+  }
+
+  .tipsColumn,
+  .toolsColumn {
+    max-width: 100%;
+  }
+
+  .toolBox {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .introLarge {
+    font-size: 1.6rem;
+  }
+
+  .tipsHeading,
+  .toolsHeading,
+  .mainTitle,
+  .additionalHeading {
+    font-size: 1.6rem;
+  }
+
+  .toolContent h3 {
+    font-size: 1rem;
+  }
+
+  .additionalSection {
+    padding: 1.5rem;
+  }
+}

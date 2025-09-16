@@ -42,7 +42,7 @@
 }
 
 .nav-links a:hover {
-  color: #9a1acd; /* Updated color */
+  color: #08B386; /* Updated color */
   text-decoration: underline;
 }
 
@@ -71,8 +71,8 @@
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  color: #9a1acd; /* Updated color */
-  border-bottom: 2px solid #9a1acd; /* Updated color */
+  color: #08B386; /* Updated color */
+  border-bottom: 2px solid #08B386; /* Updated color */
   padding-bottom: 0.5rem;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .footer-links a:hover {
-  color: #9a1acd; /* Updated color */
+  color: #08B386; /* Updated color */
   text-decoration: underline;
 }
 

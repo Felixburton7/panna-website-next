@@ -61,7 +61,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #9a1acd, #6d00a8);
+  background: linear-gradient(90deg, #0A674A, #127656);
 }
 
 
@@ -149,7 +149,7 @@
 /* "Play Now" button */
 .mobile-menu .play-now-button {
   margin-top: 2rem; /* Space above the button */
-  background: linear-gradient(90deg, #9a1acd, #6d00a8);
+  background: linear-gradient(90deg, #0A674A, #127656);
 
   color: #fff; /* White text for contrast */
   font-weight: bold; /* Bold text for emphasis */

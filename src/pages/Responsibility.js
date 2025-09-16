@@ -1,4 +1,5 @@
 import React from "react";
+import "../pages/css/responsibility.css";
 
 function Responsibility() {
   return (

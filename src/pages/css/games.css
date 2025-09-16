@@ -1,8 +1,8 @@
 /* ------------------------------------------------------------- */
 /* GAMES PAGE BASE STYLES */
 .games-page {
-  background: linear-gradient(135deg, #000, #1c0137); /* Purple/black gradient */
-  color: #fff;
+  background: #FAFAFA; /* Light gray background to match home page */
+  color: #1a1a1a;
   font-family: sans-serif;
   overflow-x: hidden;
   padding: 0;
@@ -21,13 +21,14 @@
   font-size: 2.4rem;
   margin-bottom: 2rem;
   font-weight: bold;
+  color: #0A674A;
 }
 
 /* ------------------------------------------------------------- */
 /* 1. HERO SECTION (Header) */
 .games-hero-section {
   padding: 5rem 0 3rem 0;
-  background: linear-gradient(135deg, #000 0%, #01003f 60%, #000 90%);
+  background: #0A674A; /* Green background to match home page theme */
 }
 .games-hero-container {
   width: 90%;
@@ -39,10 +40,11 @@
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  color: #fff;
 }
 .games-hero-subtitle {
   font-size: 1.2rem;
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 800px;
   margin: 0 auto 2.5rem auto;
   line-height: 1.6;
@@ -90,13 +92,13 @@
 .games-phone-mockup {
   width: 220px;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(154, 26, 205, 0.4);
+  box-shadow: 0 0 20px rgba(10, 103, 74, 0.4);
 }
 
 /* CTA button styling */
 .games-cta-button {
   background-color: transparent;
-  border: 2px solid #9a1acd;
+  border: 2px solid #0A674A;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -105,9 +107,9 @@
   transition: all 0.3s ease;
 }
 .games-cta-button:hover {
-  color: #9a1acd;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(154, 26, 205, 0.5);
+  color: #fff;
+  background-color: #0A674A;
+  box-shadow: 0 0 10px rgba(10, 103, 74, 0.5);
 }
 
 /* ------------------------------------------------------------- */
@@ -122,10 +124,11 @@
   font-size: 2.5rem;
   margin-top: 6rem;
   margin-bottom: 1rem;
+  color: #0A674A;
 }
 .lms-subtitle {
   font-size: 1.1rem;
-  color: #ccc;
+  color: #8f8f8f;
   line-height: 1.6;
 }
 
@@ -151,11 +154,12 @@
 .games-section-heading {
   font-size: 2rem;
   margin-bottom: 2rem;
+  color: #0A674A;
 }
 .games-phone-shadow {
   width: 250px;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(154, 26, 205, 0.4);
+  box-shadow: 0 0 20px rgba(10, 103, 74, 0.4);
 }
 
 /* Each bullet point has a gradient circle with a number */
@@ -169,7 +173,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6a0dad, #9b59b6);
+  background: linear-gradient(135deg, #0A674A, #127656);
   color: #fff;
   font-weight: bold;
   display: flex;
@@ -181,9 +185,10 @@
 .lms-benefit-point h3 {
   margin-bottom: 0.3rem;
   font-size: 1.1rem;
+  color: #1a1a1a;
 }
 .lms-benefit-point p {
-  color: #ccc;
+  color: #8f8f8f;
   line-height: 1.4;
 }
 
@@ -201,22 +206,25 @@
 }
 .games-step {
   flex: 1 1 250px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(10, 103, 74, 0.1);
   border-radius: 8px;
   padding: 1.5rem;
   margin: 0 0.5rem;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(10, 103, 74, 0.1);
 }
 .games-step:hover {
   transform: translateY(-5px);
 }
 .games-step-icon {
-  color: #9a1acd;
+  color: #0A674A;
   margin-bottom: 0.5rem;
 }
 .games-step-title {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  color: #1a1a1a;
 }
 
 /* ------------------------------------------------------------- */
@@ -234,7 +242,7 @@
 }
 .games-faq-question {
   background: none;
-  color: #fff;
+  color: #1a1a1a;
   border: none;
   cursor: pointer;
   font-size: 1.1rem;
@@ -245,7 +253,7 @@
   transition: color 0.3s ease;
 }
 .games-faq-question:hover {
-  color: #9a1acd;
+  color: #0A674A;
 }
 .games-faq-answer {
   max-height: 0;
@@ -257,7 +265,7 @@
   max-height: 300px;
   opacity: 1;
   padding: 0.5rem 0;
-  color: #ccc;
+  color: #8f8f8f;
 }
 
 /* ------------------------------------------------------------- */
@@ -268,7 +276,7 @@
 }
 .games-section-subtitle {
   font-size: 1rem;
-  color: #ccc;
+  color: #8f8f8f;
   margin-bottom: 2rem;
 }
 
@@ -309,8 +317,8 @@
 }
 /* Footer Section */
 .games-footer {
-  /* background-color: #111; */
-  color: #fff;
+  background-color: #FAFAFA;
+  color: #8f8f8f;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
@@ -318,7 +326,7 @@
 }
 
 .terms-link {
-  color: #9a1acd;
+  color: #0A674A;
   text-decoration: none;
   font-weight: bold;
 }
