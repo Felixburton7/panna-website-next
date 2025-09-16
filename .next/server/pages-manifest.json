@@ -1,1 +1,18 @@
-{}
+{
+  "/_error": "pages/_error.js",
+  "/About": "pages/About.js",
+  "/_app": "pages/_app.js",
+  "/Careers": "pages/Careers.js",
+  "/ComplaintsDisputes": "pages/ComplaintsDisputes.js",
+  "/GameRules": "pages/GameRules.js",
+  "/Games": "pages/Games.js",
+  "/Home": "pages/Home.js",
+  "/ContactUs": "pages/ContactUs.js",
+  "/PrivacyPolicy": "pages/PrivacyPolicy.js",
+  "/SaferGambling": "pages/SaferGambling.js",
+  "/Shop": "pages/Shop.js",
+  "/TermsConditions": "pages/TermsConditions.js",
+  "/Partners": "pages/Partners.js",
+  "/Responsibility": "pages/Responsibility.js",
+  "/_document": "pages/_document.js"
+}
