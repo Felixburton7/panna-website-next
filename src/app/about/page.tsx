@@ -97,11 +97,6 @@ const About: React.FC = () => {
           <h1 className={styles["about-header-title"]}>
             <span className={styles["neon-blue"]}>Panna</span> challenges traditional gambling, creating a new platform that’s social, transparent, and fair.
           </h1>
-          <div className={styles["play-now-container"]}>
-            <Link href="/responsibility">
-              <button className={styles["learn-more-button"]}>Learn more</button>
-            </Link>
-          </div>
         </div>
   {/* Divider */}
   <div className={styles["about-divider"]}></div>
@@ -112,26 +107,6 @@ const About: React.FC = () => {
             Changing the gambling industry for the better. We believe in creating a more engaging, fair, and social experience for everyone.
           </p>
 
-          <h2 className={`${styles["about-top-why"]} ${styles["white-text"]}`}>Why Social Gambling?</h2>
-          <div className={styles["about-stats"]}>
-            {statsData.map((stat, idx) => (
-              <React.Fragment key={idx}>
-                <div className={styles.stat}>
-                  {/* FlickerStat displays the flickering number */}
-                  <FlickerStat
-                    finalValue={stat.finalValue}
-                    minValue={stat.minValue}
-                    maxValue={stat.maxValue}
-                    prefix={stat.prefix}
-                    suffix={stat.suffix}
-                    flickerDuration={1500} /* 1.5s flicker total */
-                  />
-                  <p className={styles["stat-label"]}>{stat.label}</p>
-                </div>
-                {idx < statsData.length - 1 && <div className={styles.divider}></div>}
-              </React.Fragment>
-            ))}
-          </div>
 
           <h2 className={styles["about-top-stand-for"]}>What We Stand For</h2>
           <p className={styles["about-top-text"]}>
@@ -191,75 +166,6 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* EXECUTIVE SECTION */}
-      <section className={styles["executive-section"]}>
-        <div className={styles.container}>
-          <h2 className={styles["exec-heading"]}>Founders &amp; Executive Team</h2>
-          <ul className={styles["exec-list"]}>
-            <li>
-              Felix Burton -{" "}
-              <a
-                href="https://www.linkedin.com/in/felix-burton-353a7016b/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              Will Jones —{" "}
-              <a
-                href="https://www.linkedin.com/in/will-jones-743967160/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              Caspar Raworth —{" "}
-              <a
-                href="https://www.linkedin.com/search/results/all/?keywords=caspar%20raworth"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      
-
-      {/* JOEY LEVY QUOTE */}
-      <section className={styles["joey-levy-section"]}>
-        <div className={`${styles.container} ${styles["joey-levy-container"]}`}>
-          <blockquote className={styles["joey-levy-quote"]}>
-            
-            <p>
-              “If we believe that social-betting will be the predominant way
-              people bet on sports in the UK, then someone should launch
-              the world’s first social-betting-focused app. This is why we are
-              starting Panna.”
-            </p>
-            <cite>Caspar Raworth, Founder &amp; Director</cite>
-          </blockquote>
-        </div>
-      </section>
-
-      {/* JOIN TEAM SECTION */}
-      <section className={styles["join-team-section"]}>
-        <div className={styles.container}>
-          <h2 className={styles["join-team-heading"]}>Join the team</h2>
-          <p className={styles["join-team-desc"]}>
-            Come build with us in Oxford, UK, as we make sports &amp; betting
-            better.
-          </p>
-          <a href="#job-openings" className={styles["job-openings-link"]}>
-            See job openings
-          </a>
-        </div>
-      </section>
     </div>
   );
 };

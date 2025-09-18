@@ -98,7 +98,7 @@
 }
 
 .heroButton {
-  background: #FDFF4E; /* Yellow accent color */
+  background: var(--panna-gold); /* Brand gold */
   color: #000;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -111,7 +111,7 @@
 }
 
 .heroButton:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .heroImages {
@@ -129,27 +129,12 @@
   transition: all 0.8s ease;
 }
 
-.phoneContainer {
+.heroPhone {
   position: absolute;
+  top: 0;
+  left: 45px;
   width: 260px;
   height: 500px;
-  opacity: 1;
-  transform: translateX(40px) rotate(2deg);
-  transition: transform 0.8s ease, opacity 0.8s ease;
-}
-
-.phoneContainer1 {
-  top: 0;
-  left: 0;
-  transform: translateX(-40px) rotate(-2deg);
-  z-index: 2;
-}
-
-.phoneContainer2 {
-  top: 80px;
-  left: 50px;
-  transform: translateX(40px) rotate(2deg);
-  z-index: 1;
 }
 
 .phoneOutline {
@@ -158,23 +143,34 @@
   display: block;
 }
 
-.appScreenshot {
+.heroSlides {
   position: absolute;
-  top: 4.5%;
-  left: 9%;
-  width: 82.5%;
-  height: 91%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 30px;
+  overflow: hidden;
 }
 
-.appear .phoneContainer1 {
-  opacity: 1;
-  transform: translateX(0) rotate(-10deg);
+.heroSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+  opacity: 0;
+  transition: opacity 600ms ease;
 }
 
-.appear .phoneContainer2 {
+.heroSlide.active {
   opacity: 1;
-  transform: translateX(0) rotate(10deg);
+}
+
+.appear .heroPhone {
+  opacity: 1;
 }
 
 /* ------------------------------------------------------------- */
@@ -249,6 +245,149 @@
   100% {
     transform: translateX(-100%);
   }
+}
+
+/* ------------------------------------------------------------- */
+/* GAMES SECTION (Tabs + Layered Images) */
+.gamesSection {
+  padding: 6rem 0;
+  background: #0b0f19; /* dark container like Splash */
+  position: relative;
+  overflow: hidden; /* contain layered images */
+}
+
+.gamesContainer {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Eyebrow + Heading */
+.gamesEyebrow {
+  color: rgba(255,255,255,0.6);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.gamesHeading {
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+/* Tabs as prominent navigation */
+.gamesTabs {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  margin-bottom: 2rem;
+}
+
+.gamesTab {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: none;
+  padding: 0.75rem 0;
+  font-weight: 900;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border-bottom: 4px solid transparent;
+}
+
+/* Active tab variants */
+.activeLmsTab {
+  color: #fff;
+  border-bottom-color: var(--panna-lms-green);
+}
+
+.activeScorerTab {
+  color: #fff;
+  border-bottom-color: var(--panna-scorer-blue);
+}
+
+.gamesContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.gamesText {}
+
+/* Title color varies by game */
+.gamesTitle {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
+.titleLms { color: var(--panna-lms-green); }
+.titleScorer { color: var(--panna-scorer-blue); }
+
+.gamesDescription {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.gamesCta {
+  background: var(--panna-gold);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.gamesImages {
+  display: flex;
+  justify-content: center;
+}
+
+.imageStack {
+  position: relative;
+  width: 560px; /* wider to show more */
+  height: 480px; /* taller to reveal more of the screens */
+}
+
+/* Fine-tune per game to equalize perceived heights */
+.stackScorer .imageFront {
+  transform: translate(98px, 58px) rotate(4.5deg);
+}
+
+.stackScorer .imageBack {
+  transform: translate(-20px, 20px) rotate(-4deg);
+}
+
+.imageBack {
+  position: absolute;
+  top: -6px; /* slight lift to keep the notch visible */
+  left: 0;
+  width: 460px;
+  height: auto;
+  transform: translate(-20px, 18px) rotate(-4deg); /* move down a touch */
+  opacity: 0.95;
+  filter: drop-shadow(0 12px 36px rgba(0,0,0,0.35));
+}
+
+.imageFront {
+  position: absolute;
+  top: -30px; /* lower than before so more bottom shows */
+  left: 0;
+  width: 460px;
+  height: auto;
+  transform: translate(98px, 50px) rotate(4.5deg); /* shift slightly down */
+  filter: drop-shadow(0 18px 52px rgba(0,0,0,0.5));
 }
 
 /* ------------------------------------------------------------- */
@@ -434,6 +573,127 @@
   box-shadow: 0 6px 20px rgba(10, 103, 74, 0.4);
 }
 
+/* Sticky Scroll How To Play */
+.howToSticky {
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) 1fr;
+  gap: 3rem;
+  align-items: start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stickyMediaCol {
+  position: sticky;
+  top: 120px; /* give more breathing space under navbar */
+  height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.mediaFrame {
+  width: 100%;
+  max-width: 420px; /* visible and balanced next to steps */
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: none; /* remove white card shadow */
+  background: transparent; /* remove white card background */
+  padding: 0; /* remove card padding */
+}
+
+.stickyImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  box-shadow: 0 14px 44px rgba(0,0,0,0.15); /* subtle shadow on the image only */
+}
+
+.stickyImageStack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 18; /* stable box for phone */
+  min-height: 540px; /* ensure visible height on desktop */
+}
+
+.stackedImage {
+  position: absolute !important;
+  inset: 0;
+  transition: opacity 200ms ease;
+  border-radius: 22px;
+}
+
+.fadeIn { 
+  animation: pannaFade 280ms ease; 
+}
+
+@keyframes pannaFade {
+  from { opacity: 0.001; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stepsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stepBlock {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 1.1rem 1.25rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.stepBlock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+}
+
+.activeStep {
+  border-color: #0A674A;
+  box-shadow: 0 12px 36px rgba(10,103,74,0.15);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.stepNumber {
+  font-weight: 800;
+  color: #0A674A;
+  letter-spacing: 1px;
+}
+
+.stepTitle2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.stepBody {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.inlineImageWrapper {
+  display: none; /* visible on mobile */
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 /* ------------------------------------------------------------- */
 /* GREY DIVIDER */
 .greyDivider {
@@ -592,32 +852,14 @@
   }
   
   /* HOW TO PLAY RESPONSIVE */
-  .howToPlayHeading {
-    font-size: 2.8rem;
-    font-weight: 800;
+  .howToSticky {
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    gap: 2.5rem;
   }
-  .carouselContainer {
-    padding: 1.5rem;
-  }
-  .phoneScreenshot {
-    width: 120px;
-    height: auto;
-  }
-  .overlaidScreenshots {
-    width: 150px;
-    height: 270px;
-  }
-  .stepTitle {
-    font-size: 1.3rem;
-  }
-  .stepDescription {
-    font-size: 0.95rem;
-    max-width: 550px;
-  }
-  .downloadButton {
-    font-size: 1rem;
-    padding: 0.9rem 2rem;
-  }
+  .stickyMediaCol { top: 110px; }
+  .mediaFrame { max-width: 360px; }
+  .howToPlayHeading { font-size: 2.8rem; font-weight: 800; }
+  .downloadButton { font-size: 1rem; padding: 0.9rem 2rem; }
 }
 
 @media (max-width: 900px) {
@@ -645,36 +887,22 @@
     height: 90%;
   }
   
+  /* GAMES SECTION */
+  .gamesContent {
+    grid-template-columns: 1fr;
+  }
+  .imageStack { width: 440px; height: 400px; }
+  .imageBack { width: 380px; top: -4px; transform: translate(-12px, 16px) rotate(-3deg); }
+  .imageFront { width: 380px; top: -10px; transform: translate(64px, 46px) rotate(4deg); }
+  .stackScorer .imageFront { transform: translate(64px, 54px) rotate(4deg); }
+  .stackScorer .imageBack { transform: translate(-12px, 18px) rotate(-3deg); }
+  
   /* HOW TO PLAY RESPONSIVE */
-  .howToPlayHeading {
-    font-size: 2.5rem;
-    font-weight: 800;
-  }
-  .carouselArrowLeft {
-    left: -20px;
-  }
-  .carouselArrowRight {
-    right: -20px;
-  }
-  .phoneScreenshot {
-    width: 100px;
-    height: auto;
-  }
-  .overlaidScreenshots {
-    width: 130px;
-    height: 230px;
-  }
-  .stepTitle {
-    font-size: 1.2rem;
-  }
-  .stepDescription {
-    font-size: 0.95rem;
-    max-width: 500px;
-  }
-  .downloadButton {
-    font-size: 0.95rem;
-    padding: 0.8rem 1.8rem;
-  }
+  .howToSticky { grid-template-columns: 1fr; gap: 1.5rem; }
+  .stickyMediaCol { position: static; height: auto; top: auto; }
+  .mediaFrame { max-width: 420px; margin: 0 auto; }
+  .howToPlayHeading { font-size: 2.5rem; font-weight: 800; }
+  .downloadButton { font-size: 0.95rem; padding: 0.8rem 1.8rem; }
 }
 
 @media (max-width: 700px) {
@@ -815,61 +1043,12 @@
     font-size: 1rem;
     padding: 0 1rem;
   }
-  .carouselContainer {
-    width: 95%;
-    padding: 1.5rem 1rem;
-  }
-  .carouselContent {
-    min-height: 350px;
-  }
-  .carouselArrow {
-    width: 35px;
-    height: 35px;
-  }
-  .carouselArrowLeft {
-    left: -15px;
-  }
-  .carouselArrowRight {
-    right: -15px;
-  }
-  .phoneScreenshot {
-    width: 90px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  .overlaidScreenshots {
-    width: 110px;
-    height: 200px;
-  }
-  .overlaidScreenshot1 {
-    transform: rotate(-6deg) translateX(-10px);
-  }
-  .overlaidScreenshot2 {
-    transform: rotate(10deg) translateX(10px);
-  }
-  .stepTitle {
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 1rem 0 0.5rem 0;
-  }
-  .stepDescription {
-    font-size: 0.9rem;
-    margin: 0 auto 1rem auto;
-    padding: 0 0.5rem;
-    max-width: 100%;
-  }
-  .progressIndicators {
-    gap: 0.4rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .progressDot {
-    width: 10px;
-    height: 10px;
-  }
-  .downloadButton {
-    font-size: 0.9rem;
-    padding: 0.7rem 1.5rem;
-    margin-top: 1.5rem;
-  }
+  .howToSticky { display: block; }
+  .stickyMediaCol { position: static; height: auto; top: auto; margin-bottom: 1rem; }
+  .mediaFrame { max-width: 100%; padding: 8px; }
+  .stepsCol { gap: 1rem; }
+  .inlineImageWrapper { display: block; margin: 0.5rem 0; }
+  .inlineImage { width: 100%; height: auto; border-radius: 12px; }
+  .stepHeader { align-items: center; }
+  .stepTitle2 { font-size: 1.05rem; }
 }

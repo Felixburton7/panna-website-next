@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
             About
           </Link>
           <Link
-            href="/games"
+            href="/#games"
             className={`${styles["games-link"]} ${
               isActive("/games") ? styles["active-link"] : ""
             }`}
@@ -89,17 +89,11 @@ const Navbar: React.FC = () => {
           >
             Responsibility
           </Link>
-          <Link
-            href="/careers"
-            className={isActive("/careers") ? styles["active-link"] : ""}
-          >
-            Careers
-          </Link>
         </div>
 
         {/* Play Now Link */}
         <div className={styles["navbar-play-wrapper"]}>
-          <Link href="https://panna-app.uk" className={styles["navbar-play-link"]}>
+          <Link href="/download" className={styles["navbar-play-link"]}>
             Play now
           </Link>
         </div>
@@ -160,7 +154,7 @@ const Navbar: React.FC = () => {
               About
             </Link>
             <Link
-              href="/games"
+              href="/#games"
               onClick={closeMobileMenu}
               className={styles["mobile-link"]}
             >
@@ -172,13 +166,6 @@ const Navbar: React.FC = () => {
               className={styles["mobile-link"]}
             >
               Responsibility
-            </Link>
-            <Link
-              href="/careers"
-              onClick={closeMobileMenu}
-              className={styles["mobile-link"]}
-            >
-              Careers
             </Link>
 
             {/* Social Icons Row */}
@@ -212,15 +199,9 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* "Play Now" Button */}
-            <button
-              className={styles["play-now-button"]}
-              onClick={() => {
-                closeMobileMenu();
-                window.location.href = "https://panna-app.uk";
-              }}
-            >
+            <Link href="/download" className={styles["play-now-button"]} onClick={closeMobileMenu}>
               Play Now
-            </button>
+            </Link>
           </div>
         )}
       </div>
