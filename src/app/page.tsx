@@ -1,29 +1,34 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
-import { Typewriter } from "react-simple-typewriter";
 import {
-  FaRocket,
-  FaBolt,
-  FaList,
-  FaUsers,
-  FaHeart,
-  FaHandshake,
-  FaTiktok,
   FaInstagram,
   FaTwitter,
-  FaYoutube,
-  FaDiscord,
-  FaChevronLeft,
-  FaChevronRight,
-  FaUserPlus,
-  FaGamepad,
-  FaFootballBall,
-  FaTrophy,
-  FaMoneyBillWave,
 } from "react-icons/fa";
+
+// Hero story screens (single phone mockup carousel)
+import screen11 from "../assets/11.png";
+import screen12 from "../assets/12.png";
+import screen7 from "../assets/7.png";
+import screen4 from "../assets/4.png";
+import screen8 from "../assets/8.png";
+
+// How to play assets (straight-on, high-res)
+import signupSvg from "../assets/signup.svg";
+import depositSvg from "../assets/deposit.svg";
+import discoverSvg from "../assets/discoverpage.svg";
+import createGamePng from "../assets/11.png";
+import scorerPicksSvg from "../assets/scorerpicks.svg";
+import lmsPicksSvg from "../assets/lmspicks1.svg";
+import gameHomeSvg from "../assets/gamehome.svg";
+import lmsTablePng from "../assets/4.png";
+
+// Games section layered images
+import lmsTableSvg from "../assets/lmstable.svg";
+import scorerTableSvg from "../assets/scorertable.svg";
 
 interface FAQItem {
   question: string;
@@ -61,203 +66,156 @@ const faqItems: FAQItem[] = [
     answer:
       "Yes! You can create private pots to play against your friends. Customise the game mode, stake, and payout structure, then share the invite link or code.",
   },
-  {
-    question: "Does Panna have a referral scheme?",
-    answer:
-      "Yes, Panna offers a referral program. Refer friends and earn free bets when they sign up, deposit, and play a game.",
-  },
-  {
-    question: "Can I get free bets on Panna?",
-    answer:
-      "Yes, free bets are available through promotions, sign-up bonuses, and free pots. Check your app for eligible free bets before joining a pot.",
-  },
+
 ];
 
-interface HowToPlayStep {
-  id: number;
+interface HowToStickyStep {
   title: string;
   description: string;
-  icon: React.ReactNode;
-  emoji: string;
-  details: string;
-  phoneImage?: string;
-  phoneImages?: string[];
+  image: StaticImageData;
 }
 
-const howToPlaySteps: HowToPlayStep[] = [
+const howToStickySteps: HowToStickyStep[] = [
   {
-    id: 1,
-    title: "STEP 1: REGISTER ACCOUNT",
-    description: "We legally need to verify your identity before you can play our games. We will need some personal details, including your age. This is to ensure the safety of you and every other user on the Panna app.",
-    icon: <FaUserPlus size={24} />,
-    emoji: "📱",
-    details: "Quick phone verification and account setup in under 30 seconds.",
-    phoneImage: "/assets/create_account.png"
+    title: "Register Account",
+    description: "Create your account and verify your identity — quick and secure.",
+    image: signupSvg
   },
   {
-    id: 2,
-    title: "STEP 2: JOIN OR CREATE A GAME",
-    description: "Choose between our two exciting game modes: Last Man Standing where you pick teams that must win (get eliminated if they don't), or Scorer Selector where you pick 3 players and earn points based on their performance with position multipliers.",
-    icon: <FaGamepad size={24} />,
-    emoji: "🎮",
-    details: "Private games with friends or join public competitions. Set your own stakes and rules.",
-    phoneImages: ["/assets/create_game.png", "/assets/join_game.png"]
+    title: "Deposit Funds",
+    description: "Top up your wallet to join games and start playing.",
+    image: depositSvg
   },
   {
-    id: 3,
-    title: "STEP 3: CHOOSE A TEAM OR MAKE A PLAYER PICK",
-    description: "For Last Man Standing, select a team you think will win. For Scorer Selector, choose 3 players from the available fixtures. Defenders earn 8 points per goal, midfielders get 5, and forwards get 4. Make your picks before the deadline!",
-    icon: <FaFootballBall size={24} />,
-    emoji: "⚽",
-    details: "Strategic decisions based on form, fixtures, and your football knowledge.",
-    phoneImage: "/assets/phone_mockup_3.png"
+    title: "Discover games",
+    description: "Browse live and upcoming public games.",
+    image: discoverSvg
   },
   {
-    id: 4,
-    title: "STEP 4: SEE THE RESULTS",
-    description: "Watch the action unfold in real-time! Our system processes every goal, card, and match event as it happens. Track your picks live and see how you're performing against other players on the leaderboard.",
-    icon: <FaTrophy size={24} />,
-    emoji: "📊",
-    details: "Live scoring updates and instant leaderboard rankings throughout the gameweek.",
-    phoneImages: ["/assets/see_the_results.png", "/assets/see_the_results_scorer.png"]
+    title: "Or create a game",
+    description: "Start a private pot for friends or set up a public game.",
+    image: createGamePng
   },
   {
-    id: 5,
-    title: "STEP 5: WIN MONEY AND BRAGGING RIGHTS!",
-    description: "Successful players earn real money payouts and the ultimate prize - bragging rights over their friends! Scorer Selector pays out 60/30/10 to top finishers, while Last Man Standing winners take the entire pot after our small admin fee.",
-    icon: <FaMoneyBillWave size={24} />,
-    emoji: "💰",
-    details: "Instant payouts to your wallet plus leaderboard glory and social recognition.",
-    phoneImage: "/assets/win_money.png"
+    title: "Submit Scorer Picks",
+    description: "Pick your scorers and lock in your selections.",
+    image: scorerPicksSvg
+  },
+  {
+    title: "Submit LMS picks",
+    description: "Choose your team — survive each round to stay in.",
+    image: lmsPicksSvg
+  },
+  {
+    title: "Game Lobby",
+    description: "Track entries, deadlines, and your active games.",
+    image: gameHomeSvg
+  },
+  {
+    title: "Check the LMS table",
+    description: "See who’s still in and watch the leaderboard evolve.",
+    image: lmsTablePng
   }
 ];
 
-// Component to display phone screenshots (single or overlaid)
-interface PhoneScreenshotDisplayProps {
-  phoneImage?: string;
-  phoneImages?: string[];
-  title: string;
-}
+const HowToPlaySticky: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const stepRefs = React.useRef<(HTMLElement | null)[]>([]);
 
-const PhoneScreenshotDisplay: React.FC<PhoneScreenshotDisplayProps> = ({ phoneImage, phoneImages, title }) => {
-  if (phoneImages && phoneImages.length > 1) {
-    // Overlaid images
-    return (
-      <div className={styles.phoneDisplayContainer}>
-        <div className={styles.overlaidScreenshots}>
-          <Image
-            src={phoneImages[0]}
-            alt={`${title} Screenshot 1`}
-            width={140}
-            height={280}
-            className={`${styles.phoneScreenshot} ${styles.overlaidScreenshot1}`}
-          />
-          <Image
-            src={phoneImages[1]}
-            alt={`${title} Screenshot 2`}
-            width={140}
-            height={280}
-            className={`${styles.phoneScreenshot} ${styles.overlaidScreenshot2}`}
-          />
-        </div>
-      </div>
-    );
-  } else {
-    // Single image
-    const imageSrc = phoneImage || (phoneImages && phoneImages[0]);
-    if (!imageSrc) return null;
-    
-    return (
-      <div className={styles.phoneDisplayContainer}>
-        <Image
-          src={imageSrc}
-          alt={`${title} Screenshot`}
-          width={140}
-          height={280}
-          className={styles.phoneScreenshot}
-        />
-      </div>
-    );
-  }
-};
-
-const HowToPlayCarousel: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  // Auto-advance slides
+  // Viewport-center based detection for the active step (more stable on desktop)
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const viewportCenter = window.innerHeight / 2;
+        let closestIndex = 0;
+        let closestDistance = Number.POSITIVE_INFINITY;
+        stepRefs.current.forEach((el, idx) => {
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          const elCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(elCenter - viewportCenter);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = idx;
+          }
+        });
+        setActiveIndex((prev) => (prev !== closestIndex ? closestIndex : prev));
+        ticking = false;
+      });
+    };
 
-    const interval = setInterval(() => {
-      setCurrentStep((prev) => (prev + 1) % howToPlaySteps.length);
-    }, 5000); // 5 seconds per slide
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
-
-  const goToStep = (stepIndex: number) => {
-    setCurrentStep(stepIndex);
-    setIsAutoPlaying(false);
-    // Resume auto-play after 10 seconds
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
-
-  const goToPrevious = () => {
-    setCurrentStep((prev) => (prev - 1 + howToPlaySteps.length) % howToPlaySteps.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
-
-  const goToNext = () => {
-    setCurrentStep((prev) => (prev + 1) % howToPlaySteps.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
-
-  const currentStepData = howToPlaySteps[currentStep];
-
-  return (
-    <div className={styles.carouselContainer}>
-      {/* Navigation Arrows */}
-      <button className={`${styles.carouselArrow} ${styles.carouselArrowLeft}`} onClick={goToPrevious}>
-        <FaChevronLeft size={20} />
-      </button>
-      <button className={`${styles.carouselArrow} ${styles.carouselArrowRight}`} onClick={goToNext}>
-        <FaChevronRight size={20} />
-      </button>
-
-      {/* Main Content Area */}
-      <div className={styles.carouselContent}>
-        {/* Phone Screenshot Display */}
-        <PhoneScreenshotDisplay
-          phoneImage={currentStepData.phoneImage}
-          phoneImages={currentStepData.phoneImages}
-          title={currentStepData.title}
-        />
-
-        <h3 className={styles.stepTitle}>{currentStepData.title}</h3>
-        
-        {/* Step Description */}
-        <p className={styles.stepDescription}>{currentStepData.description}</p>
-
-        {/* Progress Indicators */}
-        <div className={styles.progressIndicators}>
-          {howToPlaySteps.map((_, index) => (
-            <button
-              key={index}
-              className={`${styles.progressDot} ${index === currentStep ? styles.active : ""}`}
-              onClick={() => goToStep(index)}
-            />
-          ))}
+    return (
+    <div className={styles.howToSticky}>
+      <div className={styles.stickyMediaCol}>
+        <div className={styles.mediaFrame}>
+          <div className={styles.stickyImageStack} aria-live="polite">
+            {howToStickySteps.map((item, i) => (
+              <Image
+                key={i}
+                src={item.image}
+                alt={item.title}
+                fill
+                className={styles.stackedImage}
+                priority={i < 2}
+                loading="eager"
+                sizes="(max-width: 900px) 100vw, 420px"
+                style={{ objectFit: "contain", opacity: i === activeIndex ? 1 : 0 }}
+              />
+            ))}
+          </div>
         </div>
-
-        {/* Download Button */}
-        <a href="https://panna-app.uk" target="_blank" rel="noopener noreferrer">
-          <button className={styles.downloadButton}>
-            DOWNLOAD NOW
-          </button>
-        </a>
+      </div>
+      <div className={styles.stepsCol}>
+        {howToStickySteps.map((step, idx) => (
+          <article
+            key={idx}
+            ref={(el) => { stepRefs.current[idx] = el; }}
+            data-index={idx}
+            className={`${styles.stepBlock} ${activeIndex === idx ? styles.activeStep : ""}`}
+            onMouseEnter={() => setActiveIndex(idx)}
+            onFocus={() => setActiveIndex(idx)}
+            onClick={() => {
+              setActiveIndex(idx);
+              const node = stepRefs.current[idx];
+              if (node) {
+                node.scrollIntoView({ behavior: "smooth", block: "center" });
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                const node = stepRefs.current[idx];
+                if (node) {
+                  node.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+                setActiveIndex(idx);
+              }
+            }}
+            role="button"
+            tabIndex={0}
+          >
+            <div className={styles.stepHeader}>
+              <div className={styles.stepNumber}>{String(idx + 1).padStart(2, "0")}</div>
+              <h3 className={styles.stepTitle2}>{step.title}</h3>
+            </div>
+            <div className={styles.inlineImageWrapper}>
+              <Image src={step.image} alt={step.title} className={styles.inlineImage} />
+      </div>
+            <p className={styles.stepBody}>{step.description}</p>
+          </article>
+        ))}
       </div>
     </div>
   );
@@ -266,10 +224,34 @@ const HowToPlayCarousel: React.FC = () => {
 const Home: React.FC = () => {
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
   const [phonesVisible, setPhonesVisible] = useState<boolean>(false);
+  const [currentHeroScreen, setCurrentHeroScreen] = useState<number>(0);
+  const heroWords = ["Live", "Low stakes", "Your way", "Done better", "More social"];
+  const [heroWordIndex, setHeroWordIndex] = useState<number>(0);
+
+  const heroScreens = [screen11, screen12, screen7, screen4, screen8];
+
+  // Games section toggle
+  const [activeGame, setActiveGame] = useState<"lms" | "scorer">("lms");
 
   useEffect(() => {
     // Trigger phone "appear" animation on mount
     setPhonesVisible(true);
+  }, []);
+
+  // Auto-play hero story carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroScreen((prev) => (prev + 1) % heroScreens.length);
+    }, 2000); // ~10s total loop for 5 screens
+    return () => clearInterval(interval);
+  }, []);
+
+  // Rotate hero type text (replace Typewriter to avoid DOM removeChild errors)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroWordIndex((prev) => (prev + 1) % heroWords.length);
+    }, 1200);
+    return () => clearInterval(interval);
   }, []);
 
   const toggleFAQ = (index: number) => {
@@ -283,68 +265,33 @@ const Home: React.FC = () => {
         <div className={`${styles.container} ${styles.heroInner}`}>
           <div className={styles.heroText}>
             <h1 className={styles.heroTitle}>Social Betting</h1>
-            <h2 className={styles.heroSubtitle}>
-              <Typewriter
-                words={[
-                  "Live",
-                  "Low stakes",
-                  "Your way",
-                  "Done better",
-                  "More social",
-                ]}
-                loop={0} // Infinite
-                cursor
-                cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </h2>
+            <h2 className={styles.heroSubtitle}>{heroWords[heroWordIndex]}</h2>
             <p className={styles.heroDescription}>
               Your go-to platform for social betting with friends or competing globally.
               Explore innovative social gambling features, including group pools, leaderboards,
               and community challenges.
             </p>
-            <a href="https://panna-app.uk" target="_blank" rel="noopener noreferrer">
+            <Link href="/download">
               <button className={styles.heroButton}>Play Now</button>
-            </a>
+            </Link>
           </div>
 
           <div className={styles.heroImages}>
             <div className={`${styles.phonesWrapper} ${phonesVisible ? styles.appear : ""}`}>
-              {/* Phone #1 */}
-              <div className={`${styles.phoneContainer} ${styles.phoneContainer1}`}>
-                <Image
-                  src="/assets/app_screenshot_outline.png"
-                  alt="Phone Outline 1"
-                  className={styles.phoneOutline}
-                  width={200}
-                  height={400}
-                />
-                <Image
-                  src="/assets/app_screenshot_2.png"
-                  alt="App Screenshot 1"
-                  className={styles.appScreenshot}
-                  width={200}
-                  height={400}
-                />
-              </div>
-              {/* Phone #2 */}
-              <div className={`${styles.phoneContainer} ${styles.phoneContainer2}`}>
-                <Image
-                  src="/assets/app_screenshot_outline.png"
-                  alt="Phone Outline 2"
-                  className={styles.phoneOutline}
-                  width={200}
-                  height={400}
-                />
-                <Image
-                  src="/assets/app_screenshot.png"
-                  alt="App Screenshot 2"
-                  className={styles.appScreenshot}
-                  width={200}
-                  height={400}
-                />
+              <div className={styles.heroPhone}>
+                <div className={styles.heroSlides}>
+                  {heroScreens.map((img, index) => (
+                    <Image
+                      key={index}
+                      src={img}
+                      alt={`Hero screen ${index + 1}`}
+                      className={`${styles.heroSlide} ${index === currentHeroScreen ? styles.active : ""}`}
+                      width={200}
+                      height={400}
+                      priority
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -420,16 +367,89 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* HOW TO PLAY SECTION */}
+      
+
+      {/* HOW TO PLAY SECTION (Sticky Scroll) */}
       <section className={styles.howToPlaySection}>
         <div className={styles.container}>
           <h2 className={styles.howToPlayHeading}>HOW TO PLAY</h2>
           <p className={styles.howToPlaySubheading}>
-            Panna's Daily Fantasy Sports app is lightning fast and easy to use. You can create an account, add funds, and
-            start playing in less than 1 minute. Here's how:
+            Create an account, add funds, and start playing in under a minute.
           </p>
-          
-          <HowToPlayCarousel />
+          <HowToPlaySticky />
+          <div className={styles.ctaRow}>
+            <Link href="/download">
+              <button className={styles.downloadButton}>DOWNLOAD NOW</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* GAMES SECTION (Tabs + Layered Images) */}
+      <section id="games" className={styles.gamesSection}>
+        <div className={styles.gamesContainer}>
+          <div>
+            <div className={styles.gamesEyebrow}>Introducing</div>
+            <h2 className={styles.gamesHeading}>Our Games</h2>
+          </div>
+          <div className={styles.gamesTabs}>
+            <button
+              className={`${styles.gamesTab} ${activeGame === "lms" ? styles.activeLmsTab : ""}`}
+              onClick={() => setActiveGame("lms")}
+              aria-pressed={activeGame === "lms"}
+            >
+              Last Man Standing
+            </button>
+            <button
+              className={`${styles.gamesTab} ${activeGame === "scorer" ? styles.activeScorerTab : ""}`}
+              onClick={() => setActiveGame("scorer")}
+              aria-pressed={activeGame === "scorer"}
+            >
+              Scorer Selector
+            </button>
+          </div>
+
+          <div className={styles.gamesContent}>
+            <div className={styles.gamesText}>
+              {activeGame === "lms" ? (
+                <>
+                  <h3 className={`${styles.gamesTitle} ${styles.titleLms}`}>LAST MAN STANDING</h3>
+                  <p className={styles.gamesDescription}>
+                    Test your nerve. Pick one team to win each gameweek. If they win, you're through. A draw or loss, and you're out. The catch? You can only pick each team once. Outlast the competition to be the last one standing.
+                  </p>
+                  <Link href="/download">
+                    <button className={styles.gamesCta}>Go to Last Man Standing</button>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <h3 className={`${styles.gamesTitle} ${styles.titleScorer}`}>SCORER SELECTOR</h3>
+                  <p className={styles.gamesDescription}>
+                    Think you know who's hitting the back of the net? Choose three players each gameweek. You'll rack up points for every goal they score—8 for defenders, 5 for midfielders, and 3 for forwards. Finish high on the leaderboard to win from the pot.
+                  </p>
+                  <Link href="/download">
+                    <button className={styles.gamesCta}>Go to Scorer Selector</button>
+                  </Link>
+                </>
+              )}
+            </div>
+
+            <div className={styles.gamesImages}>
+              <div className={`${styles.imageStack} ${activeGame === "scorer" ? styles.stackScorer : ""}`}>
+                {activeGame === "lms" ? (
+                  <>
+                    <Image src={lmsTableSvg} alt="LMS Table" className={styles.imageBack} />
+                    <Image src={lmsPicksSvg} alt="LMS Picks" className={styles.imageFront} />
+                  </>
+                ) : (
+                  <>
+                    <Image src={scorerTableSvg} alt="Scorer Table" className={styles.imageBack} />
+                    <Image src={scorerPicksSvg} alt="Scorer Picks" className={styles.imageFront} />
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -438,11 +458,6 @@ const Home: React.FC = () => {
         <hr className={styles.greyDivider} />
         <div className={styles.followUsContainer}>
           <h2 className={styles.followUsHeading}>Follow us</h2>
-          <p className={styles.followUsDescription}>
-            Play-by-play. Moment-by-moment. Come join the family as we turn the 
-            world into our betting and fantasy playground. The future of sports, 
-            fantasy, and betting just got better.
-          </p>
           <div className={styles.socialIcons}>
             <a href="https://www.instagram.com/panna.app/" target="_blank" rel="noopener noreferrer">
               <div className={styles.iconCircle}>

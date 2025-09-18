@@ -56,13 +56,13 @@ function Footer() {
 
           {/* Gambling Commission Logo */}
           <a
-            href="https://www.gamblingcommission.gov.uk/public-register/business/detail/13375"
+            href="https://www.gamblingcommission.gov.uk/public-register/business/detail/64928"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Gambling Commission Website"
           >
             <Image
-              src="/assets/gambling_comission_logo.png"
+              src="/assets/ukgc.webp"
               alt="Gambling Commission"
               className={styles.footerLogo}
               width={100}

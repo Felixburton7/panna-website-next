@@ -12,13 +12,76 @@
 /* Apply Poppins Font Using CSS Variable */
 :root {
   --font-poppins: 'Poppins', sans-serif;
+
+  /* Primary Colors */
+  --panna-lms-green: #0A674A;
+  --panna-scorer-blue: #015396;
+  --panna-gold: #FFB800;
+
+  /* Extended Palettes */
+  --panna-lms-secondary: #127656;
+  --panna-lms-bright: #1D9272;
+  --panna-scorer-secondary: #0369A1;
+  --panna-scorer-bright: #0EA5E9;
+
+  /* System Colors */
+  --panna-error: #FF3B30;
+  --panna-success: #34C759;
+  --panna-warning: #FF9500;
+  --panna-background: #F7F7F7;
+  --panna-surface: #FFFFFF;
+  --panna-text: rgba(0, 0, 0, 0.87);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-round: 999px;
+
+  /* Font Families */
+  --font-primary: 'Uber Move', var(--font-poppins), sans-serif;
+  --font-secondary: 'Avega', serif;
+}
+
+/* Brand fonts (optional; files should be placed in /public/fonts) */
+@font-face {
+  font-family: 'Uber Move';
+  src: url('/fonts/UberMoveMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uber Move';
+  src: url('/fonts/UberMoveBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avega';
+  src: url('/fonts/avega-italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* ------------------------------------------------------------- */
 /* GLOBAL STYLES */
 html,
 body {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-primary);
   background: #010101; /* Black background */
   color: #fff;      /* White text */
   scroll-behavior: smooth; /* Smooth scrolling between anchors/sections */
@@ -29,17 +92,17 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-primary);
   font-weight: 650;
 }
 
 p {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
 }
 
 button {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-primary);
   font-weight: 800;
 }
 
@@ -286,142 +349,4 @@ a {
   text-align: center;
 }
 
-/* Careers Page Styles */
-.careers-page {
-  padding: 2rem;
-  background-color: #000;
-  color: #fff;
-}
 
-.careers-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.careers-description {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: #aaa;
-}
-
-/* Filters Section */
-.filters-section {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.filter-dropdown label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  color: #9b59b6;
-}
-
-.filter-dropdown select {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #444;
-  background-color: #111;
-  color: #fff;
-  border-radius: 4px;
-}
-
-/* Job Listings */
-.job-listings {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.job-card {
-  background-color: #111;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #444;
-}
-
-.job-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.job-description {
-  font-size: 1rem;
-  color: #aaa;
-  margin-bottom: 0.5rem;
-}
-
-.job-details {
-  font-size: 0.9rem;
-  color: #888;
-}
-
-.no-jobs {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #aaa;
-}
-
-/* ------------------------------------------------------------- */
-/* Careers responsiveness */
-/* ------------------------------------------------------------- */
-/* Responsive Styles for Screens Smaller Than 700px */
-@media screen and (max-width: 700px) {
-  .careers-page {
-    padding: 1rem;
-  }
-
-  .careers-title {
-    font-size: 1.8rem; /* Smaller font size for the title */
-    margin-bottom: 0.5rem;
-  }
-
-  .careers-description {
-    font-size: 0.9rem; /* Smaller font size for description */
-    margin-bottom: 1.5rem;
-  }
-
-  .filters-section {
-    flex-direction: column; /* Stack filters vertically */
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .filter-dropdown label {
-    font-size: 0.8rem; /* Adjust label font size */
-  }
-
-  .filter-dropdown select {
-    padding: 0.4rem;
-    font-size: 0.9rem; /* Smaller dropdown font size */
-  }
-
-  .job-listings {
-    gap: 1rem; /* Reduce spacing between job cards */
-  }
-
-  .job-card {
-    padding: 1rem; /* Reduce padding in job cards */
-  }
-
-  .job-title {
-    font-size: 1.2rem; /* Smaller job title font size */
-  }
-
-  .job-description {
-    font-size: 0.9rem; /* Smaller job description font size */
-  }
-
-  .job-details {
-    font-size: 0.8rem; /* Smaller job details font size */
-  }
-
-  .no-jobs {
-    font-size: 1rem; /* Adjust no-jobs message font size */
-  }
-}
