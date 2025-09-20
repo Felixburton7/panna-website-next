@@ -1,0 +1,89 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/download/page.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.page_page__Y4HLO {
+  background-color: var(--panna-background);
+  color: #111;
+  min-height: 60vh;
+  padding: 4rem 1rem;
+}
+
+.page_container__4HVIl {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page_grid__5FAay {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-gap: 2rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+.page_left__2y9r6 h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.page_left__2y9r6 p {
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.page_badges__n5ZEe {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page_badgeImg__j1mL1 {
+  height: 56px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.page_qrCard__b35_E {
+  background-color: var(--panna-surface);
+  color: var(--panna-text);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.page_qrImageWrapper__WLhVR {
+  background: linear-gradient(135deg, var(--panna-lms-bright), var(--panna-lms-secondary));
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.page_qrLabel__vjD7E {
+  margin-top: 0.75rem;
+  font-weight: 700;
+  color: var(--panna-lms-green);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page_corner__6vDWi {
+  color: var(--panna-lms-green);
+  font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .page_grid__5FAay {
+    grid-template-columns: 1fr;
+  }
+  .page_badgeImg__j1mL1 {
+    height: 48px;
+  }
+}
+
+
+

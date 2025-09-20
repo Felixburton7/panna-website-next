@@ -1,7 +1,25 @@
 /* ------------------------------------------------------------- */
+/* FONT DEFINITIONS */
+@font-face {
+  font-family: 'UberMove';
+  src: url('/fonts/UberMoveMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; /* Prevents FOUT */
+}
+
+@font-face {
+  font-family: 'UberMove';
+  src: url('/fonts/UberMoveBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; /* Prevents FOUT */
+}
+
+/* ------------------------------------------------------------- */
 /* BASE STYLES FOR HOME PAGE */
 .homePage {
-  font-family: Arial, sans-serif;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   background: #FAFAFA; /* Light gray background */
   color: #1a1a1a;
   box-sizing: border-box;
@@ -46,9 +64,9 @@
   background: linear-gradient(
     180deg,
     rgba(0, 64, 45, 1) 0%,
-    rgba(0, 64, 45, 0.8) 20%,
+    rgba(0, 64, 45, 0.75) 20%,
     rgba(10, 103, 74, 0.7) 70%,
-    rgba(10, 103, 74, 1) 100%
+    rgba(10, 103, 74, 0.9) 100%
   );
   z-index: 2;
 }
@@ -77,17 +95,32 @@
 }
 
 .heroTitle {
-  font-size: 4.7rem;
+  font-size: 5.2rem;
   font-weight: 700;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   color: #fff;
+  line-height: 1.1;
 }
 
 .heroSubtitle {
   margin-top: -1rem;
-  font-size: 4.7rem;
+  font-size: 5.2rem;
   margin-bottom: 2rem;
   font-weight: 700;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   color: #fff;
+  line-height: 1.1;
+}
+
+.cursor {
+  opacity: 1;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .heroDescription {
@@ -111,6 +144,25 @@
 }
 
 .heroButton:hover {
+  opacity: 0.9;
+}
+
+.downloadButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.downloadBadge {
+  height: 56px;
+  width: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.downloadBadge:hover {
+  transform: scale(1.05);
   opacity: 0.9;
 }
 
@@ -320,7 +372,6 @@
   align-items: center;
 }
 
-.gamesText {}
 
 /* Title color varies by game */
 .gamesTitle {
@@ -398,8 +449,9 @@
 }
 
 .howToPlayHeading {
-  font-size: 3.5rem;
-  font-weight: 900;
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   text-align: center;
   margin-bottom: 0.5rem;
   color: #0A674A;
@@ -571,6 +623,24 @@
   background: linear-gradient(135deg, #127656, #0A674A);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(10, 103, 74, 0.4);
+}
+
+/* Download Buttons Container */
+.downloadButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.downloadBadge {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.downloadBadge:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /* Sticky Scroll How To Play */
@@ -834,10 +904,10 @@
 /* RESPONSIVE DESIGN */
 @media (max-width: 1000px) {
   .heroTitle {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   .heroSubtitle {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   .heroImages {
     margin-right: 2rem;
@@ -867,10 +937,10 @@
     max-width: 100%;
   }
   .heroTitle {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
   }
   .heroSubtitle {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
   }
   .phonesWrapper {
     width: 250px;
@@ -917,11 +987,11 @@
     text-align: center;
   }
   .heroTitle {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     margin-bottom: 0.5rem;
   }
   .heroSubtitle {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     margin-bottom: 1.5rem;
   }
   .heroDescription {
@@ -1030,13 +1100,23 @@
     font-size: 1.8rem;
   }
   
+  .downloadButtons {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .downloadBadge {
+    height: 48px;
+  }
+
   /* HOW TO PLAY MOBILE */
   .howToPlaySection {
     padding: 3rem 1rem;
   }
   .howToPlayHeading {
-    font-size: 2.2rem;
-    font-weight: 800;
+    font-size: 2.5rem;
+    font-weight: 700;
     letter-spacing: 1px;
   }
   .howToPlaySubheading {

@@ -113,7 +113,7 @@ const howToStickySteps: HowToStickyStep[] = [
   },
   {
     title: "Check the LMS table",
-    description: "See who’s still in and watch the leaderboard evolve.",
+    description: "See who's still in and watch the leaderboard evolve.",
     image: lmsTablePng
   }
 ];
@@ -221,12 +221,58 @@ const HowToPlaySticky: React.FC = () => {
   );
 };
 
+// Typing Effect Component
+const heroWords = ["Live", "Low stakes", "Your way", "Done better", "More social"];
+
+const TypingEffect: React.FC = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = heroWords[currentWordIndex];
+    
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Typing forward
+        if (currentText.length < currentWord.length) {
+          setCurrentText(currentWord.substring(0, currentText.length + 1));
+        } else {
+          // Word complete, pause then start deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+          return;
+        }
+      } else {
+        // Deleting
+        if (currentText.length > 0) {
+          setCurrentText(currentWord.substring(0, currentText.length - 1));
+        } else {
+          // Finished deleting, move to next word
+          setIsDeleting(false);
+          setCurrentWordIndex((prev) => (prev + 1) % heroWords.length);
+          return;
+        }
+      }
+    };
+
+    const typingSpeed = isDeleting ? 75 : 150;
+    const timer = setTimeout(handleTyping, typingSpeed);
+    
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentWordIndex]);
+
+  return (
+    <h2 className={styles.heroSubtitle}>
+      {currentText}
+      <span className={styles.cursor}>|</span>
+    </h2>
+  );
+};
+
 const Home: React.FC = () => {
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
   const [phonesVisible, setPhonesVisible] = useState<boolean>(false);
   const [currentHeroScreen, setCurrentHeroScreen] = useState<number>(0);
-  const heroWords = ["Live", "Low stakes", "Your way", "Done better", "More social"];
-  const [heroWordIndex, setHeroWordIndex] = useState<number>(0);
 
   const heroScreens = [screen11, screen12, screen7, screen4, screen8];
 
@@ -246,14 +292,6 @@ const Home: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Rotate hero type text (replace Typewriter to avoid DOM removeChild errors)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHeroWordIndex((prev) => (prev + 1) % heroWords.length);
-    }, 1200);
-    return () => clearInterval(interval);
-  }, []);
-
   const toggleFAQ = (index: number) => {
     setActiveFAQ(activeFAQ === index ? null : index);
   };
@@ -265,15 +303,20 @@ const Home: React.FC = () => {
         <div className={`${styles.container} ${styles.heroInner}`}>
           <div className={styles.heroText}>
             <h1 className={styles.heroTitle}>Social Betting</h1>
-            <h2 className={styles.heroSubtitle}>{heroWords[heroWordIndex]}</h2>
+            <TypingEffect />
             <p className={styles.heroDescription}>
               Your go-to platform for social betting with friends or competing globally.
               Explore innovative social gambling features, including group pools, leaderboards,
               and community challenges.
             </p>
-            <Link href="/download">
-              <button className={styles.heroButton}>Play Now</button>
-            </Link>
+            <div className={styles.downloadButtons}>
+              <Link href="https://apps.apple.com/gb/app/panna/id6749247478" target="_blank" rel="noopener noreferrer">
+                <Image src="/assets/appstore.png" width={180} height={56} alt="Download on the App Store" className={styles.downloadBadge} />
+              </Link>
+              <Link href="https://play.google.com/store/apps/details?id=com.panna.app" target="_blank" rel="noopener noreferrer">
+                <Image src="/assets/googleplay.png" width={200} height={56} alt="Get it on Google Play" className={styles.downloadBadge} />
+              </Link>
+            </div>
           </div>
 
           <div className={styles.heroImages}>
