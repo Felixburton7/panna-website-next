@@ -88,23 +88,23 @@ const howToStickySteps: HowToStickyStep[] = [
   },
   {
     title: "Discover games",
-    description: "Browse live and upcoming public games.",
+    description: "Browse live and upcoming public games. Or get an add code from a mate!",
     image: discoverSvg
   },
   {
     title: "Or create a game",
-    description: "Start a private pot for friends or set up a public game.",
+    description: "Create a private pot for friends. Completely free, we take no fees!",
     image: createGamePng
   },
   {
-    title: "Submit Scorer Picks",
-    description: "Pick your scorers and lock in your selections.",
-    image: scorerPicksSvg
-  },
-  {
-    title: "Submit LMS picks",
+    title: "Submit Last Man Standing picks",
     description: "Choose your team — survive each round to stay in.",
     image: lmsPicksSvg
+  },
+  {
+    title: "Submit Scorer Picks",
+    description: "For Scorer Game Mode. Pick your scorers and lock in your selections.",
+    image: scorerPicksSvg
   },
   {
     title: "Game Lobby",
@@ -112,9 +112,14 @@ const howToStickySteps: HowToStickyStep[] = [
     image: gameHomeSvg
   },
   {
-    title: "Check the LMS table",
+    title: "Check the Last Man Standing or Scorer table",
     description: "See who's still in and watch the leaderboard evolve.",
     image: lmsTablePng
+  },
+  {
+    title: "Win big when the round completes 🎉",
+    description: "Celebrate your victory when the round finishes!",
+    image: gameHomeSvg
   }
 ];
 
