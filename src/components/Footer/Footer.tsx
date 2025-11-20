@@ -21,7 +21,7 @@ function Footer() {
             Prosper Sports Limited is a company registered in England and Wales
             (Company Number '15742284'). Prosper Sports Limited is licensed and
             regulated in Great Britain by the Gambling Commission under account
-            number '13375'.
+            number '64928'.
           </p>
         </div>
 

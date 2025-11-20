@@ -23,12 +23,15 @@ import discoverSvg from "../assets/discoverpage.svg";
 import createGamePng from "../assets/11.png";
 import scorerPicksSvg from "../assets/scorerpicks.svg";
 import lmsPicksSvg from "../assets/lmspicks1.svg";
+import grassrootsSelectionsSvg from "../assets/Grassroots Selections.svg";
 import gameHomeSvg from "../assets/gamehome.svg";
 import lmsTablePng from "../assets/4.png";
 
 // Games section layered images
 import lmsTableSvg from "../assets/lmstable.svg";
 import scorerTableSvg from "../assets/scorertable.svg";
+import grassroots1Svg from "../assets/Grassroots 1.svg";
+import grassroots2Svg from "../assets/Grassroots 2.svg";
 
 interface FAQItem {
   question: string;
@@ -102,6 +105,11 @@ const howToStickySteps: HowToStickyStep[] = [
     image: lmsPicksSvg
   },
   {
+    title: "Build Your Grassroots Team",
+    description: "For Grassroots Fantasy. Select your squad and customise your lineup.",
+    image: grassrootsSelectionsSvg
+  },
+  {
     title: "Submit Scorer Picks",
     description: "For Scorer Game Mode. Pick your scorers and lock in your selections.",
     image: scorerPicksSvg
@@ -161,7 +169,7 @@ const HowToPlaySticky: React.FC = () => {
     };
   }, []);
 
-    return (
+  return (
     <div className={styles.howToSticky}>
       <div className={styles.stickyMediaCol}>
         <div className={styles.mediaFrame}>
@@ -217,7 +225,7 @@ const HowToPlaySticky: React.FC = () => {
             </div>
             <div className={styles.inlineImageWrapper}>
               <Image src={step.image} alt={step.title} className={styles.inlineImage} />
-      </div>
+            </div>
             <p className={styles.stepBody}>{step.description}</p>
           </article>
         ))}
@@ -236,7 +244,7 @@ const TypingEffect: React.FC = () => {
 
   useEffect(() => {
     const currentWord = heroWords[currentWordIndex];
-    
+
     const handleTyping = () => {
       if (!isDeleting) {
         // Typing forward
@@ -262,7 +270,7 @@ const TypingEffect: React.FC = () => {
 
     const typingSpeed = isDeleting ? 75 : 150;
     const timer = setTimeout(handleTyping, typingSpeed);
-    
+
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentWordIndex]);
 
@@ -282,7 +290,7 @@ const Home: React.FC = () => {
   const heroScreens = [screen11, screen12, screen7, screen4, screen8];
 
   // Games section toggle
-  const [activeGame, setActiveGame] = useState<"lms" | "scorer">("lms");
+  const [activeGame, setActiveGame] = useState<"lms" | "scorer" | "grassroots">("lms");
 
   useEffect(() => {
     // Trigger phone "appear" animation on mount
@@ -318,7 +326,7 @@ const Home: React.FC = () => {
               <Link href="https://apps.apple.com/gb/app/panna/id6749247478" target="_blank" rel="noopener noreferrer">
                 <Image src="/assets/appstore.png" width={180} height={56} alt="Download on the App Store" className={styles.downloadBadge} />
               </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.panna.app" target="_blank" rel="noopener noreferrer">
+              <Link href="https://play.google.com/store/apps/details?id=com.pannasports.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
                 <Image src="/assets/googleplay.png" width={200} height={56} alt="Get it on Google Play" className={styles.downloadBadge} />
               </Link>
             </div>
@@ -415,23 +423,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      
 
-      {/* HOW TO PLAY SECTION (Sticky Scroll) */}
-      <section className={styles.howToPlaySection}>
-        <div className={styles.container}>
-          <h2 className={styles.howToPlayHeading}>HOW TO PLAY</h2>
-          <p className={styles.howToPlaySubheading}>
-            Create an account, add funds, and start playing in under a minute.
-          </p>
-          <HowToPlaySticky />
-          <div className={styles.ctaRow}>
-            <Link href="/download">
-              <button className={styles.downloadButton}>DOWNLOAD NOW</button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* GAMES SECTION (Tabs + Layered Images) */}
       <section id="games" className={styles.gamesSection}>
@@ -447,6 +439,13 @@ const Home: React.FC = () => {
               aria-pressed={activeGame === "lms"}
             >
               Last Man Standing
+            </button>
+            <button
+              className={`${styles.gamesTab} ${activeGame === "grassroots" ? styles.activeGrassrootsTab : ""}`}
+              onClick={() => setActiveGame("grassroots")}
+              aria-pressed={activeGame === "grassroots"}
+            >
+              Grassroots Fantasy
             </button>
             <button
               className={`${styles.gamesTab} ${activeGame === "scorer" ? styles.activeScorerTab : ""}`}
@@ -465,8 +464,18 @@ const Home: React.FC = () => {
                   <p className={styles.gamesDescription}>
                     Test your nerve. Pick one team to win each gameweek. If they win, you're through. A draw or loss, and you're out. The catch? You can only pick each team once. Outlast the competition to be the last one standing.
                   </p>
-                  <Link href="/download">
+                  <Link href="/games?tab=lms">
                     <button className={styles.gamesCta}>Go to Last Man Standing</button>
+                  </Link>
+                </>
+              ) : activeGame === "grassroots" ? (
+                <>
+                  <h3 className={`${styles.gamesTitle} ${styles.titleGrassroots}`}>GRASSROOTS FANTASY</h3>
+                  <p className={styles.gamesDescription}>
+                    FPL, but for your own squad! Add your players/fixtures, pick your team and watch the points roll in. Make use of the fundraising tool to raise some cash for facilities, kits and more!
+                  </p>
+                  <Link href="/games?tab=grassroots">
+                    <button className={styles.gamesCta}>Go to Grassroots Fantasy</button>
                   </Link>
                 </>
               ) : (
@@ -475,7 +484,7 @@ const Home: React.FC = () => {
                   <p className={styles.gamesDescription}>
                     Think you know who's hitting the back of the net? Choose three players each gameweek. You'll rack up points for every goal they score—8 for defenders, 5 for midfielders, and 3 for forwards. Finish high on the leaderboard to win from the pot.
                   </p>
-                  <Link href="/download">
+                  <Link href="/games?tab=scorer">
                     <button className={styles.gamesCta}>Go to Scorer Selector</button>
                   </Link>
                 </>
@@ -483,21 +492,67 @@ const Home: React.FC = () => {
             </div>
 
             <div className={styles.gamesImages}>
-              <div className={`${styles.imageStack} ${activeGame === "scorer" ? styles.stackScorer : ""}`}>
+              <div className={`${styles.imageStack} ${activeGame === "scorer" ? styles.stackScorer : activeGame === "grassroots" ? styles.stackGrassroots : ""}`}>
                 {activeGame === "lms" ? (
                   <>
                     <Image src={lmsTableSvg} alt="LMS Table" className={styles.imageBack} />
                     <Image src={lmsPicksSvg} alt="LMS Picks" className={styles.imageFront} />
                   </>
-                ) : (
+                ) : activeGame === "scorer" ? (
                   <>
                     <Image src={scorerTableSvg} alt="Scorer Table" className={styles.imageBack} />
                     <Image src={scorerPicksSvg} alt="Scorer Picks" className={styles.imageFront} />
+                  </>
+                ) : (
+                  <>
+                    <Image src={grassroots1Svg} alt="Grassroots 1" className={styles.imageBack} />
+                    <Image src={grassroots2Svg} alt="Grassroots 2" className={styles.imageFront} />
                   </>
                 )}
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* HOW TO PLAY SECTION (Sticky Scroll) */}
+      <section className={styles.howToPlaySection}>
+        <div className={styles.container}>
+          <h2 className={styles.howToPlayHeading}>HOW TO PLAY</h2>
+          <p className={styles.howToPlaySubheading}>
+            Create an account, add funds, and start playing in under a minute.
+          </p>
+          <HowToPlaySticky />
+          <div className={styles.ctaRow}>
+            <Link href="/download">
+              <button className={styles.downloadButton}>DOWNLOAD NOW</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+      {/* FAQ SECTION */}
+      <section className={styles.faqSection}>
+        <div className={`${styles.container} ${styles.faqContainer}`}>
+          <h2 className={styles.faqHeading}>Frequently Asked Questions</h2>
+          {faqItems.map((item, index) => (
+            <div className={styles.faq} key={index}>
+              <button
+                className={`${styles.faqQuestion} ${activeFAQ === index ? styles.open : ""
+                  }`}
+                onClick={() => toggleFAQ(index)}
+              >
+                {item.question}
+              </button>
+              <div
+                className={`${styles.faqAnswer} ${activeFAQ === index ? styles.visible : ""
+                  }`}
+              >
+                {item.answer}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -515,7 +570,7 @@ const Home: React.FC = () => {
             <a href="https://whatsapp.com/channel/0029VbAudnREQIatLdBnFf0O" target="_blank" rel="noopener noreferrer">
               <div className={styles.iconCircle}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.109"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.109" />
                 </svg>
               </div>
             </a>
@@ -527,32 +582,6 @@ const Home: React.FC = () => {
           </div>
         </div>
         <hr className={styles.greyDivider} />
-      </section>
-
-      {/* FAQ SECTION */}
-      <section className={styles.faqSection}>
-        <div className={`${styles.container} ${styles.faqContainer}`}>
-          <h2 className={styles.faqHeading}>Frequently Asked Questions</h2>
-          {faqItems.map((item, index) => (
-            <div className={styles.faq} key={index}>
-              <button
-                className={`${styles.faqQuestion} ${
-                  activeFAQ === index ? styles.open : ""
-                }`}
-                onClick={() => toggleFAQ(index)}
-              >
-                {item.question}
-              </button>
-              <div
-                className={`${styles.faqAnswer} ${
-                  activeFAQ === index ? styles.visible : ""
-                }`}
-              >
-                {item.answer}
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
     </div>
   );

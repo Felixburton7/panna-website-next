@@ -17,7 +17,9 @@ export default function DownloadPage() {
               <Link href="https://apps.apple.com/gb/app/panna/id6749247478" target="_blank" rel="noopener noreferrer">
                 <Image src="/assets/appstore.png" width={180} height={56} alt="Download on the App Store" className={styles.badgeImg} />
               </Link>
-              <Image src="/assets/googleplay.png" width={200} height={56} alt="Get it on Google Play" className={styles.badgeImg} />
+              <Link href="https://play.google.com/store/apps/details?id=com.pannasports.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                <Image src="/assets/googleplay.png" width={200} height={56} alt="Get it on Google Play" className={styles.badgeImg} />
+              </Link>
             </div>
           </div>
           <div className={styles.right}>

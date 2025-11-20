@@ -1,6 +1,7 @@
 {
   "/page": "app/page.js",
+  "/games/page": "app/games/page.js",
+  "/responsibility/page": "app/responsibility/page.js",
   "/download/page": "app/download/page.js",
-  "/about/page": "app/about/page.js",
-  "/responsibility/page": "app/responsibility/page.js"
+  "/about/page": "app/about/page.js"
 }

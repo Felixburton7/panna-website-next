@@ -1,534 +1,202 @@
-/* src/app/about/games/page.module.css */
+/* Games Page Styles */
 
-/* ------------------------------------------------------------- */
-/* GAMES PAGE BASE STYLES */
-.games-page {
-  background: #FAFAFA; /* Light gray background to match home page */
-  color: #1a1a1a;
-  font-family: sans-serif;
-  overflow-x: hidden;
+.gamesPage {
+  min-height: 100vh;
+  background: #FAFAFA;
+  padding: 2rem 0 4rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #0A674A;
+  margin-bottom: 0.5rem;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Game Tabs */
+.gameTabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.gameTab {
+  background: #fff;
+  border: 2px solid #ddd;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.gameTab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.activeTabLms {
+  background: #0A674A;
+  color: #fff;
+  border-color: #0A674A;
+}
+
+.activeTabGrassroots {
+  background: #16A34A;
+  color: #fff;
+  border-color: #16A34A;
+}
+
+.activeTabScorer {
+  background: #015396;
+  color: #fff;
+  border-color: #015396;
+}
+
+/* Game Content */
+.gameContent {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gameHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.gameIcon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.gameTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0A674A;
+  margin-bottom: 0.5rem;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+.gameDescription {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Sections */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.section {
+  border-left: 4px solid #0A674A;
+  padding-left: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0A674A;
+  margin-bottom: 1rem;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+.rulesList {
+  list-style: none;
   padding: 0;
   margin: 0;
-  position: relative; /* Allows overlapping elements */
-}
-
-/* Utility: For centering and layout */
-.games-section {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 0;
-}
-.games-section-title {
-  text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  color: #0A674A;
-}
-
-/* ------------------------------------------------------------- */
-/* 1. HERO SECTION (Header) */
-.games-hero-section {
-  padding: 5rem 0 2rem 0; /* Reduced bottom padding */
-  background: #0A674A; /* Green background to match home page theme */
-  position: relative;
-  overflow: visible; /* Allow images to hang off */
-  z-index: 2;
-}
-.games-hero-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.games-hero-title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  color: #fff;
-}
-.games-hero-subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
-  margin: 0 auto 2.5rem auto;
-  line-height: 1.6;
-}
-
-/* Spacer to add more space between subtitle and screenshots */
-.subtitle-spacing {
-  height: 2rem; /* Adjusted spacing */
-}
-
-/* 
-   Phones with minimal angles & transitions arranged in a fan-like formation
-*/
-.hero-phone-images {
-  position: relative;
-  width: 600px; /* Increased width to accommodate three images */
-  height: 350px;
-  margin: auto auto 3rem auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.phone-image {
+.ruleItem {
+  padding-left: 1.5rem;
+  position: relative;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.ruleItem::before {
+  content: "✓";
   position: absolute;
-  top: 0;
-  opacity: 0;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-.phone-image-1 {
-  left: 25%;
-  z-index: 3; /* Frontmost */
-  transform: rotate(0deg) translateX(0);
-}
-
-.phone-image-2 {
-  left: 50%;
-  z-index: 2;
-  transform: rotate(0deg) translateX(-50%);
-}
-
-.phone-image-3 {
-  left: 75%;
-  z-index: 1; /* Backmost */
-  transform: rotate(0deg) translateX(-100%) translateY(20px); /* Lowered position */
-}
-
-/* On .animate-phones, arrange them in a fan-like formation */
-.animate-phones .phone-image-1 {
-  opacity: 1;
-  transform: rotate(-10deg) translateX(-20%);
-}
-
-.animate-phones .phone-image-2 {
-  opacity: 1;
-  transform: rotate(0deg) translateX(-50%);
-}
-
-.animate-phones .phone-image-3 {
-  opacity: 1;
-  transform: rotate(10deg) translateX(-80%) translateY(30px); /* Lowered position during animation */
-}
-
-/* The phone images themselves */
-.games-phone-mockup {
-  width: 220px;
-  height: inherit;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(10, 103, 74, 0.4);
-}
-
-/* CTA button styling */
-.games-cta-button {
-  background-color: transparent;
-  border: 2px solid #0A674A;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-.games-cta-button:hover {
-  color: #fff;
-  background-color: #0A674A;
-  box-shadow: 0 0 10px rgba(10, 103, 74, 0.5);
-}
-
-/* ------------------------------------------------------------- */
-/* 2. LAST MAN STANDING INTRO */
-.last-man-standing-intro {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  margin: 5rem auto 1rem; /* Reduced top margin */
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-  background-color: transparent; /* Ensured transparent background */
-  position: relative;
-  z-index: 1;
-}
-.last-man-standing-intro.fade-in-up {
-  opacity: 1;
-  transform: translateY(0);
-}
-.lms-title {
-  font-size: 2.5rem;
-  margin-top: 3rem; /* Reduced margin-top */
-  margin-bottom: 1rem;
+  left: 0;
   color: #0A674A;
-}
-.lms-subtitle {
-  font-size: 1.1rem;
-  color: #8f8f8f;
-  line-height: 1.6;
-}
-
-/* ------------------------------------------------------------- */
-/* 3. LAST MAN STANDING BENEFITS */
-.lms-benefits-section .benefits-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: nowrap;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.lms-benefits-section.fade-in-up .benefits-row {
-  opacity: 1;
-  transform: translateY(0);
-}
-.benefits-left {
-  flex: 1;
-  min-width: 300px;
-}
-.benefits-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 300px;
-}
-.games-section-heading {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #0A674A;
-}
-.games-phone-shadow {
-  width: 250px;
-  height: inherit;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(10, 103, 74, 0.4);
-}
-
-/* Each bullet point has a gradient circle with a number */
-.lms-benefit-point {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.lms-number {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0A674A, #127656);
-  color: #fff;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 1rem;
-}
-.lms-benefit-point h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
-  color: #1a1a1a;
-}
-.lms-benefit-point p {
-  color: #8f8f8f;
-  line-height: 1.4;
 }
 
-/* ------------------------------------------------------------- */
-/* 4. HOW IT WORKS SECTION */
-.how-it-works {
-  text-align: center;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.how-it-works.fade-in-up {
-  opacity: 1;
-  transform: translateY(0);
-}
-.games-how-steps {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-.games-step {
-  flex: 1 1 250px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(10, 103, 74, 0.1);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin: 0 0.5rem;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(10, 103, 74, 0.1);
-}
-.games-step:hover {
-  transform: translateY(-5px);
-}
-.games-step-icon {
-  color: #0A674A;
-  margin-bottom: 0.5rem;
-}
-.games-step-title {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #1a1a1a;
-}
-
-/* ------------------------------------------------------------- */
-/* 5. FAQ SECTION */
-.games-faq {
-  padding: 2rem 0;
-}
-.games-faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-.games-faq-item {
-  margin-bottom: 1.5rem;
-}
-.games-faq-question {
-  background: none;
-  color: #1a1a1a;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: left;
-  width: 100%;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease;
-}
-.games-faq-question:hover {
-  color: #0A674A;
-}
-.games-faq-answer {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.5s ease;
-}
-.games-faq-answer.visible {
-  max-height: 300px;
-  opacity: 1;
-  padding: 0.5rem 0;
-  color: #8f8f8f;
-}
-
-/* ------------------------------------------------------------- */
-/* 6. FOOTER CTA */
-.games-footer-cta {
-  text-align: center;
-  padding-bottom: 6rem;
-}
-.games-section-subtitle {
-  font-size: 1rem;
-  color: #8f8f8f;
-  margin-bottom: 2rem;
-}
-/* ------------------------------------------------------------- */
-/* RESPONSIVE ADJUSTMENTS */
-@media (max-width: 900px) {
-  .lms-benefits-section .benefits-row {
-    flex-wrap: wrap;
-  }
-  .benefits-left,
-  .benefits-right {
-    width: 100%;
-    margin-bottom: 2rem;
-    justify-content: center;
-  }
-  .games-phone-shadow {
-    margin: 0 auto;
-  }
-
-  /* Adjust hero-phone-images for smaller screens */
-  .hero-phone-images {
-    width: 500px;
-    height: 300px;
-  }
-
-  /* Adjust phone-image-3 position */
-  .phone-image-3 {
-    transform: rotate(5deg) translateX(-70%) translateY(15px); /* Lowered position */
-  }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .games-hero-title {
-    font-size: 2.4rem;
-  }
-  .games-hero-subtitle {
-    font-size: 1rem;
-  }
-  .subtitle-spacing {
-    height: 1.5rem; /* Reduced spacing */
-  }
-  .hero-phone-images {
-    width: 200px; /* Reduced width by 50% */
-    height: 220px; /* Reduced height by 50% */
-    flex-direction: row; /* Align horizontally */
-    justify-content: center;
-    align-items: center;
-  }
-  .phone-image {
-    position: relative;
-    transform: none;
-    opacity: 1;
-    margin-right: -60px; /* Overlapping effect reduced to match smaller size */
-  }
-  .phone-image:last-child {
-    margin-right: 0;
+  .pageTitle {
+    font-size: 2.5rem;
   }
 
-  /* Adjust phone-image-3 further for better alignment */
-  .phone-image-3 {
-    transform: rotate(0deg) translateX(-50%) translateY(-15px); /* Increased translateY to lower the image */
-    margin-top: 20px; /* Increased margin-top to create a noticeable lower position */
+  .gameContent {
+    padding: 1.5rem;
   }
 
-  /* Shrink phone mockups by 50% */
-  .games-phone-mockup {
-    width: 110px; /* Reduced from 220px to 110px */
-  }
-
-  /* Adjust benefits section */
-  .lms-benefits-section .benefits-row {
+  .gameHeader {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .benefits-left,
-  .benefits-right {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  /* Adjust steps in How It Works */
-  .games-how-steps {
-    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
   }
 
-  .games-step {
-    margin: 0;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .games-hero-title {
-    font-size: 2.4rem;
-  }
-  .games-hero-subtitle {
-    font-size: 1rem;
-  }
-  .subtitle-spacing {
-    height: 1.5rem; /* Reduced spacing */
-  }
-  .hero-phone-images {
-    width: 200px; /* Reduced width by 50% */
-    height: 220px; /* Reduced height by 50% */
-    flex-direction: row; /* Align horizontally */
-    justify-content: center;
-    align-items: center;
-  }
-  .phone-image {
-    position: relative;
-    transform: none;
-    opacity: 1;
-    margin-right: -60px; /* Overlapping effect reduced to match smaller size */
-  }
-  .phone-image:last-child {
-    margin-right: 0;
+  .gameIcon {
+    font-size: 3rem;
   }
 
-  /* Adjust phone-image-3 further for better alignment */
-  .phone-image-3 {
-    transform: rotate(0deg) translateX(-60%) translateY(-10); /* Adjusted for better alignment */
-    margin-top: 10px; /* Reduced margin-top to better align with smaller images */
+  .gameTitle {
+    font-size: 2rem;
   }
 
-  /* Shrink phone mockups by 50% */
-  .games-phone-mockup {
-    width: 110px; /* Reduced from 220px to 110px */
-  }
-
-  /* Adjust benefits section */
-  .lms-benefits-section .benefits-row {
+  .gameTabs {
     flex-direction: column;
-    align-items: center;
   }
 
-  .benefits-left,
-  .benefits-right {
+  .gameTab {
     width: 100%;
-    margin-bottom: 2rem;
+    text-align: center;
   }
 
-  /* Adjust steps in How It Works */
-  .games-how-steps {
-    flex-direction: column;
-    gap: 1rem;
+  .section {
+    padding-left: 1rem;
   }
 
-  .games-step {
-    margin: 0;
+  .sectionTitle {
+    font-size: 1.25rem;
   }
-}
-
-/* Footer Section */
-.games-footer {
-  background-color: #FAFAFA;
-  color: #8f8f8f;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-
-.terms-link {
-  color: #0A674A;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.terms-link:hover {
-  text-decoration: underline;
-}
-
-/* ------------------------------------------------------------- */
-/* Fade-In Up Animation */
-.fade-in-up {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Optional: Adding transition for smoother appearance */
-.last-man-standing-intro,
-.lms-benefits-section .benefits-row,
-.how-it-works {
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-/* ------------------------------------------------------------- */
-/* Additional Adjustments for Overlapping Screenshots */
-
-/* Ensure that the hero section is positioned above the next section */
-.games-hero-section {
-  z-index: 2;
-}
-
-/* Next section has a higher z-index to allow hero screenshots to overlap */
-.last-man-standing-intro {
-  background-color: transparent; /* Changed to transparent */
-  padding-top: 5rem; /* Reduced padding to decrease spacing */
-  position: relative;
-  z-index: 1;
 }

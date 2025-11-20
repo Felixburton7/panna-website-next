@@ -8,7 +8,8 @@
   src: url('/fonts/UberMoveMedium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
-  font-display: swap; /* Prevents FOUT */
+  font-display: swap;
+  /* Prevents FOUT */
 }
 
 @font-face {
@@ -16,14 +17,16 @@
   src: url('/fonts/UberMoveBold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
-  font-display: swap; /* Prevents FOUT */
+  font-display: swap;
+  /* Prevents FOUT */
 }
 
 /* ------------------------------------------------------------- */
 /* BASE STYLES FOR HOME PAGE */
 .page_homePage__gmrHv {
   font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  background: #FAFAFA; /* Light gray background */
+  background: #FAFAFA;
+  /* Light gray background */
   color: #1a1a1a;
   box-sizing: border-box;
   margin: 0;
@@ -34,10 +37,12 @@
 /* HERO SECTION */
 .page_heroSection___mcj9 {
   padding: 5rem 0 0rem 3.5rem;
-  background: #0A674A; /* Solid green background */
+  background: #0A674A;
+  /* Solid green background */
   position: relative;
   overflow: hidden;
-  margin-bottom: 5rem; /* Extra bottom margin */
+  margin-bottom: 5rem;
+  /* Extra bottom margin */
 }
 
 /* Background image overlay for hero */
@@ -52,7 +57,8 @@
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.1; /* Much more faded image */
+  opacity: 0.1;
+  /* Much more faded image */
   z-index: 1;
 }
 
@@ -64,13 +70,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 64, 45, 1) 0%,
-    rgba(0, 64, 45, 0.7) 20%,
-    rgba(10, 103, 74, 0.65) 70%,
-    rgba(10, 103, 74, 0.9) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 64, 45, 1) 0%,
+      rgba(0, 64, 45, 0.7) 20%,
+      rgba(10, 103, 74, 0.65) 70%,
+      rgba(10, 103, 74, 0.9) 100%);
   z-index: 2;
 }
 
@@ -89,7 +93,8 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 3; /* Above the overlay */
+  z-index: 3;
+  /* Above the overlay */
 }
 
 .page_heroText__g5S3T {
@@ -122,8 +127,16 @@
 }
 
 @keyframes page_blink__A5Bbl {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .page_heroDescription__E0XDR {
@@ -134,7 +147,8 @@
 }
 
 .page_heroButton__cVwBD {
-  background: var(--panna-gold); /* Brand gold */
+  background: var(--panna-gold);
+  /* Brand gold */
   color: #000;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -233,8 +247,10 @@
 .page_snippetsSection__EavtI {
   padding: 2rem 0;
   overflow: hidden;
-  background: #FAFAFA; /* Light gray background */
-  margin-top: -5rem; /* Extra bottom margin for spacing */
+  background: #FAFAFA;
+  /* Light gray background */
+  margin-top: -5rem;
+  /* Extra bottom margin for spacing */
 }
 
 .page_snippetsWrapper__hHOyo {
@@ -265,8 +281,10 @@
 .page_snippet__7OR_F {
   display: inline-block;
   padding: 0.5rem 1rem;
-  color: rgba(70, 70, 70, 0.9); /* More opaque and faded text */
-  border: 1px solid rgba(70, 70, 70, 0.9); /* Matching faded border */
+  color: rgba(70, 70, 70, 0.9);
+  /* More opaque and faded text */
+  border: 1px solid rgba(70, 70, 70, 0.9);
+  /* Matching faded border */
   border-radius: 30px;
   background: transparent;
   font-size: 1rem;
@@ -279,6 +297,7 @@
   0% {
     transform: translateX(-20%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -288,6 +307,7 @@
   0% {
     transform: translateX(-20%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -297,6 +317,7 @@
   0% {
     transform: translateX(-20%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -306,9 +327,11 @@
 /* GAMES SECTION (Tabs + Layered Images) */
 .page_gamesSection__HA9n2 {
   padding: 6rem 0;
-  background: #0b0f19; /* dark container like Splash */
+  background: #0b0f19;
+  /* dark container like Splash */
   position: relative;
-  overflow: hidden; /* contain layered images */
+  overflow: hidden;
+  /* contain layered images */
 }
 
 .page_gamesContainer__vcBBT {
@@ -319,7 +342,7 @@
 
 /* Eyebrow + Heading */
 .page_gamesEyebrow__B5pBd {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -340,13 +363,13 @@
 .page_gamesTabs__fbg_5 {
   display: flex;
   gap: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   margin-bottom: 2rem;
 }
 
 .page_gamesTab__WELi_ {
   background: transparent;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   border: none;
   padding: 0.75rem 0;
   font-weight: 900;
@@ -368,6 +391,11 @@
   border-bottom-color: var(--panna-scorer-blue);
 }
 
+.page_activeGrassrootsTab__EIDNs {
+  color: #fff;
+  border-bottom-color: var(--panna-grassroots-green);
+}
+
 .page_gamesContent__QS5Sy {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -385,11 +413,20 @@
   margin-bottom: 0.75rem;
 }
 
-.page_titleLms__lcDHP { color: var(--panna-lms-green); }
-.page_titleScorer__8uac1 { color: var(--panna-scorer-blue); }
+.page_titleLms__lcDHP {
+  color: var(--panna-lms-green);
+}
+
+.page_titleScorer__8uac1 {
+  color: var(--panna-scorer-blue);
+}
+
+.page_titleGrassroots__tXcOY {
+  color: var(--panna-grassroots-green);
+}
 
 .page_gamesDescription__pnqbT {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
   margin-bottom: 1.25rem;
 }
@@ -411,8 +448,10 @@
 
 .page_imageStack__0P2Kr {
   position: relative;
-  width: 560px; /* wider to show more */
-  height: 480px; /* taller to reveal more of the screens */
+  width: 560px;
+  /* wider to show more */
+  height: 480px;
+  /* taller to reveal more of the screens */
 }
 
 /* Fine-tune per game to equalize perceived heights */
@@ -426,23 +465,27 @@
 
 .page_imageBack__AjD7s {
   position: absolute;
-  top: -6px; /* slight lift to keep the notch visible */
+  top: -6px;
+  /* slight lift to keep the notch visible */
   left: 0;
   width: 460px;
   height: auto;
-  transform: translate(-20px, 18px) rotate(-4deg); /* move down a touch */
+  transform: translate(-20px, 18px) rotate(-4deg);
+  /* move down a touch */
   opacity: 0.95;
-  filter: drop-shadow(0 12px 36px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 12px 36px rgba(0, 0, 0, 0.35));
 }
 
 .page_imageFront__Lscn_ {
   position: absolute;
-  top: -30px; /* lower than before so more bottom shows */
+  top: -30px;
+  /* lower than before so more bottom shows */
   left: 0;
   width: 460px;
   height: auto;
-  transform: translate(98px, 50px) rotate(4.5deg); /* shift slightly down */
-  filter: drop-shadow(0 18px 52px rgba(0,0,0,0.5));
+  transform: translate(98px, 50px) rotate(4.5deg);
+  /* shift slightly down */
+  filter: drop-shadow(0 18px 52px rgba(0, 0, 0, 0.5));
 }
 
 /* ------------------------------------------------------------- */
@@ -662,7 +705,8 @@
 .page_stickyMediaCol__QbEQX {
   position: -webkit-sticky;
   position: sticky;
-  top: 120px; /* give more breathing space under navbar */
+  top: 120px;
+  /* give more breathing space under navbar */
   height: calc(100vh - 140px);
   display: flex;
   align-items: center;
@@ -672,12 +716,16 @@
 
 .page_mediaFrame___AYtP {
   width: 100%;
-  max-width: 420px; /* visible and balanced next to steps */
+  max-width: 420px;
+  /* visible and balanced next to steps */
   border-radius: 28px;
   overflow: hidden;
-  box-shadow: none; /* remove white card shadow */
-  background: transparent; /* remove white card background */
-  padding: 0; /* remove card padding */
+  box-shadow: none;
+  /* remove white card shadow */
+  background: transparent;
+  /* remove white card background */
+  padding: 0;
+  /* remove card padding */
 }
 
 .page_stickyImage__0m4Xa {
@@ -685,14 +733,17 @@
   height: auto;
   display: block;
   border-radius: 22px;
-  box-shadow: 0 14px 44px rgba(0,0,0,0.15); /* subtle shadow on the image only */
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.15);
+  /* subtle shadow on the image only */
 }
 
 .page_stickyImageStack__Ca9mW {
   position: relative;
   width: 100%;
-  aspect-ratio: 9 / 18; /* stable box for phone */
-  min-height: 540px; /* ensure visible height on desktop */
+  aspect-ratio: 9 / 18;
+  /* stable box for phone */
+  min-height: 540px;
+  /* ensure visible height on desktop */
 }
 
 .page_stackedImage__qny2P {
@@ -702,13 +753,20 @@
   border-radius: 22px;
 }
 
-.page_fadeIn__wvzG6 { 
-  animation: page_pannaFade__YR4i_ 280ms ease; 
+.page_fadeIn__wvzG6 {
+  animation: page_pannaFade__YR4i_ 280ms ease;
 }
 
 @keyframes page_pannaFade__YR4i_ {
-  from { opacity: 0.001; transform: translateY(2px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0.001;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .page_stepsCol__341vP {
@@ -720,19 +778,19 @@
 .page_stepBlock__5uHBs {
   background: #fff;
   border-radius: 16px;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 1.1rem 1.25rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .page_stepBlock__5uHBs:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08);
 }
 
 .page_activeStep__RsZM7 {
   border-color: #0A674A;
-  box-shadow: 0 12px 36px rgba(10,103,74,0.15);
+  box-shadow: 0 12px 36px rgba(10, 103, 74, 0.15);
 }
 
 .page_stepHeader__OR2KQ {
@@ -761,7 +819,8 @@
 }
 
 .page_inlineImageWrapper__iSJV0 {
-  display: none; /* visible on mobile */
+  display: none;
+  /* visible on mobile */
 }
 
 .page_ctaRow__yWcJm {
@@ -775,9 +834,11 @@
 .page_greyDivider__aP2W0 {
   border: none;
   height: 1px;
-  background-color: rgba(90, 90, 90, 0.8); /* More opaque and faded */
+  background-color: rgba(90, 90, 90, 0.8);
+  /* More opaque and faded */
   width: 80%;
-  margin: 3rem auto; /* Consistent top and bottom margin */
+  margin: 3rem auto;
+  /* Consistent top and bottom margin */
 }
 
 
@@ -785,8 +846,9 @@
 /* ------------------------------------------------------------- */
 /* FOLLOW US SECTION */
 .page_followUsSection__JqmAO {
-  padding: 3rem 0;
-  margin-bottom: 5rem; /* Extra space below to avoid overlap */
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+  /* Reduced spacing for more compact layout */
 }
 
 .page_followUsContainer__LW_PC {
@@ -821,7 +883,8 @@
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background-color: rgba(34, 34, 34, 0.9); /* More opaque and faded */
+  background-color: rgba(34, 34, 34, 0.9);
+  /* More opaque and faded */
   color: #fff;
   display: flex;
   align-items: center;
@@ -831,14 +894,18 @@
 }
 
 .page_iconCircle__fyWXm:hover {
-  background-color: rgba(68, 68, 68, 0.9); /* More opaque and faded on hover */
+  background-color: rgba(68, 68, 68, 0.9);
+  /* More opaque and faded on hover */
 }
 
 /* ------------------------------------------------------------- */
 /* FAQ SECTION */
 .page_faqSection__NArq_ {
   padding: 4rem 0;
-  margin-bottom: 5rem; /* Extra space below to avoid overlap */
+  margin-bottom: 5rem;
+  background: #0A674A;
+  /* Same green as hero section */
+  /* Extra space below to avoid overlap */
 }
 
 .page_faqContainer__AQ1nw {
@@ -851,16 +918,18 @@
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #1a1a1a;
+  color: #fff;
+  /* White text on green background */
 }
 
 .page_faq__hmOuC {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .page_faqQuestion__21phv {
   background: none;
-  color: #1a1a1a;
+  color: #fff;
+  /* White text on green background */
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
@@ -872,7 +941,8 @@
 }
 
 .page_faqQuestion__21phv:hover {
-  color: #0A674A;
+  color: #f5d20b;
+  /* Gold color on hover */
 }
 
 .page_faqAnswer__TQMcb {
@@ -880,7 +950,8 @@
   opacity: 0;
   overflow: hidden;
   transition: all 0.5s ease;
-  color: #333;
+  color: rgba(255, 255, 255, 0.9);
+  /* Light white for readability */
 }
 
 .page_visible__NlJV_ {
@@ -912,94 +983,163 @@
   .page_heroTitle__Gfler {
     font-size: 4rem;
   }
+
   .page_heroSubtitle__RTAw0 {
     font-size: 4rem;
   }
+
   .page_heroImages__ujYYR {
     margin-right: 2rem;
   }
+
   .page_phonesWrapper__XbN8S {
     width: 300px;
     height: 500px;
   }
+
   .page_phoneContainer__bW9jl {
     width: 220px;
     height: 440px;
   }
-  
+
   /* HOW TO PLAY RESPONSIVE */
   .page_howToSticky__471aS {
     grid-template-columns: minmax(260px, 360px) 1fr;
     gap: 2.5rem;
   }
-  .page_stickyMediaCol__QbEQX { top: 110px; }
-  .page_mediaFrame___AYtP { max-width: 360px; }
-  .page_howToPlayHeading__aRVs6 { font-size: 2.8rem; font-weight: 800; }
-  .page_downloadButton__A6C4Z { font-size: 1rem; padding: 0.9rem 2rem; }
+
+  .page_stickyMediaCol__QbEQX {
+    top: 110px;
+  }
+
+  .page_mediaFrame___AYtP {
+    max-width: 360px;
+  }
+
+  .page_howToPlayHeading__aRVs6 {
+    font-size: 2.8rem;
+    font-weight: 800;
+  }
+
+  .page_downloadButton__A6C4Z {
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+  }
 }
 
 @media (max-width: 900px) {
   .page_heroText__g5S3T {
     max-width: 100%;
   }
+
   .page_heroTitle__Gfler {
     font-size: 3.2rem;
   }
+
   .page_heroSubtitle__RTAw0 {
     font-size: 3.2rem;
   }
+
   .page_phonesWrapper__XbN8S {
     width: 250px;
     height: 450px;
   }
+
   .page_phoneContainer__bW9jl {
     width: 180px;
     height: 360px;
   }
+
   .page_appScreenshot__ogQkE {
     top: 5%;
     left: 9%;
     width: 82%;
     height: 90%;
   }
-  
+
   /* GAMES SECTION */
   .page_gamesContent__QS5Sy {
     grid-template-columns: 1fr;
   }
-  .page_imageStack__0P2Kr { width: 440px; height: 400px; }
-  .page_imageBack__AjD7s { width: 380px; top: -4px; transform: translate(-12px, 16px) rotate(-3deg); }
-  .page_imageFront__Lscn_ { width: 380px; top: -10px; transform: translate(64px, 46px) rotate(4deg); }
-  .page_stackScorer__jX1cS .page_imageFront__Lscn_ { transform: translate(64px, 54px) rotate(4deg); }
-  .page_stackScorer__jX1cS .page_imageBack__AjD7s { transform: translate(-12px, 18px) rotate(-3deg); }
-  
+
+  .page_imageStack__0P2Kr {
+    width: 440px;
+    height: 400px;
+  }
+
+  .page_imageBack__AjD7s {
+    width: 380px;
+    top: -4px;
+    transform: translate(-12px, 16px) rotate(-3deg);
+  }
+
+  .page_imageFront__Lscn_ {
+    width: 380px;
+    top: -10px;
+    transform: translate(64px, 46px) rotate(4deg);
+  }
+
+  .page_stackScorer__jX1cS .page_imageFront__Lscn_ {
+    transform: translate(64px, 54px) rotate(4deg);
+  }
+
+  .page_stackScorer__jX1cS .page_imageBack__AjD7s {
+    transform: translate(-12px, 18px) rotate(-3deg);
+  }
+
   /* HOW TO PLAY RESPONSIVE */
-  .page_howToSticky__471aS { grid-template-columns: 1fr; gap: 1.5rem; }
-  .page_stickyMediaCol__QbEQX { position: static; height: auto; top: auto; }
-  .page_mediaFrame___AYtP { max-width: 420px; margin: 0 auto; }
-  .page_howToPlayHeading__aRVs6 { font-size: 2.5rem; font-weight: 800; }
-  .page_downloadButton__A6C4Z { font-size: 0.95rem; padding: 0.8rem 1.8rem; }
+  .page_howToSticky__471aS {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .page_stickyMediaCol__QbEQX {
+    position: static;
+    height: auto;
+    top: auto;
+  }
+
+  .page_mediaFrame___AYtP {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .page_howToPlayHeading__aRVs6 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+  .page_downloadButton__A6C4Z {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.8rem;
+  }
 }
 
 @media (max-width: 700px) {
+
   /* HERO */
   .page_heroSection___mcj9 {
     padding: 4rem 1rem;
-    margin-bottom: 4rem; /* Reduced bottom margin for better spacing */
+    margin-bottom: 4rem;
+    /* Reduced bottom margin for better spacing */
   }
+
   .page_heroInner__FQkwa {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+
   .page_heroTitle__Gfler {
     font-size: 2.6rem;
     margin-bottom: 0.5rem;
   }
+
   .page_heroSubtitle__RTAw0 {
     font-size: 2.6rem;
     margin-bottom: 1.5rem;
   }
+
   .page_heroDescription__E0XDR {
     font-size: 1rem;
     color: #aaa;
@@ -1007,19 +1147,23 @@
     margin: 0 auto 2rem auto;
     text-align: center;
   }
+
   .page_heroButton__cVwBD {
     margin: 0 auto 2rem auto;
     display: block;
   }
+
   .page_heroImages__ujYYR {
     margin-top: 2rem;
     margin-right: 0;
     justify-content: center;
   }
+
   .page_phonesWrapper__XbN8S {
     width: 200px;
     height: 360px;
   }
+
   .page_phoneContainer__bW9jl {
     width: 160px;
     height: 320px;
@@ -1030,9 +1174,11 @@
     padding: 2rem 1rem;
     margin-bottom: 4rem;
   }
+
   .page_snippetsWrapper__hHOyo {
     width: 100%;
   }
+
   .page_snippetsRow__nieVe {
     gap: 0.5rem;
   }
@@ -1045,8 +1191,10 @@
   /* WHY CHOOSE PANNA SECTION */
   .page_whyChoosePannaSection__9jMyN {
     padding: 1rem 1rem;
-    margin-bottom: 1rem; /* Slightly smaller */
+    margin-bottom: 1rem;
+    /* Slightly smaller */
   }
+
   .page_whyChooseInner__vr_jS {
     flex-direction: column;
     align-items: flex-start;
@@ -1056,20 +1204,23 @@
   .page_whyChooseInner__vr_jS .page_textColumn__2Hcnn,
   .page_whyChooseInner__vr_jS .page_featureCardsColumn__7DQ5a {
     max-width: 100%;
-    width: 100%; /* Ensure full width */
+    width: 100%;
+    /* Ensure full width */
   }
+
   .page_whyChooseInner__vr_jS .page_sectionHeading__K6Wm4 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
 
-/* ------------------------------------------------------------- */
+  /* ------------------------------------------------------------- */
 
   /* FOLLOW US SECTION */
   .page_followUsSection__JqmAO {
     padding: 1rem 1rem;
     margin-bottom: 0.5rem;
   }
+
   .page_socialIcons__tlwCp {
     display: flex;
     gap: 1rem;
@@ -1077,12 +1228,13 @@
     align-items: center;
     margin-top: 1rem;
   }
-  
+
   .page_iconCircle__fyWXm {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: rgba(34, 34, 34, 0.9); /* More opaque and faded */
+    background-color: rgba(34, 34, 34, 0.9);
+    /* More opaque and faded */
     color: #fff;
     display: flex;
     align-items: center;
@@ -1090,29 +1242,33 @@
     font-size: 1.3rem;
     transition: background-color 0.3s ease;
   }
-  
+
   .page_iconCircle__fyWXm:hover {
-    background-color: rgba(68, 68, 68, 0.9); /* More opaque and faded on hover */
+    background-color: rgba(68, 68, 68, 0.9);
+    /* More opaque and faded on hover */
   }
-.page_greyDivider__aP2W0 {
-  margin-bottom: 5rem;
-  margin-top: 10rem;
-}
+
+  .page_greyDivider__aP2W0 {
+    margin-bottom: 5rem;
+    margin-top: 10rem;
+  }
+
   /* FAQ SECTION */
   .page_faqSection__NArq_ {
     padding: 3rem 1rem;
     margin-bottom: 4rem;
   }
+
   .page_faqHeading__kLJzn {
     font-size: 1.8rem;
   }
-  
+
   .page_downloadButtons__yw6bF {
     flex-direction: column;
     gap: 0.75rem;
     align-items: center;
   }
-  
+
   .page_downloadBadge__ucdHP {
     height: 48px;
   }
@@ -1121,22 +1277,54 @@
   .page_howToPlaySection__0_DbT {
     padding: 3rem 1rem;
   }
+
   .page_howToPlayHeading__aRVs6 {
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1px;
   }
+
   .page_howToPlaySubheading__TeaYM {
     font-size: 1rem;
     padding: 0 1rem;
   }
-  .page_howToSticky__471aS { display: block; }
-  .page_stickyMediaCol__QbEQX { position: static; height: auto; top: auto; margin-bottom: 1rem; }
-  .page_mediaFrame___AYtP { max-width: 100%; padding: 8px; }
-  .page_stepsCol__341vP { gap: 1rem; }
-  .page_inlineImageWrapper__iSJV0 { display: block; margin: 0.5rem 0; }
-  .page_inlineImage__DmezX { width: 100%; height: auto; border-radius: 12px; }
-  .page_stepHeader__OR2KQ { align-items: center; }
-  .page_stepTitle2__VRAtC { font-size: 1.05rem; }
-}
 
+  .page_howToSticky__471aS {
+    display: block;
+  }
+
+  .page_stickyMediaCol__QbEQX {
+    position: static;
+    height: auto;
+    top: auto;
+    margin-bottom: 1rem;
+  }
+
+  .page_mediaFrame___AYtP {
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .page_stepsCol__341vP {
+    gap: 1rem;
+  }
+
+  .page_inlineImageWrapper__iSJV0 {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .page_inlineImage__DmezX {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .page_stepHeader__OR2KQ {
+    align-items: center;
+  }
+
+  .page_stepTitle2__VRAtC {
+    font-size: 1.05rem;
+  }
+}

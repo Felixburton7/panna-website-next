@@ -27,9 +27,11 @@
   flex: 2;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
+  /* Increased from 1.5rem */
   align-items: center;
-  font-weight: 550;
+  font-weight: 700;
+  /* Increased from 550 */
 }
 
 .navbar-right {
@@ -44,7 +46,8 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  height: 60px; /* Increased height to give more room */
+  height: 60px;
+  /* Increased height to give more room */
 }
 
 /* Link underlines for active nav items */
@@ -53,6 +56,17 @@
   padding-bottom: 4px;
   color: #fff;
   text-decoration: none;
+  font-size: 1.1rem;
+  /* Added larger font size */
+  transition: all 0.2s ease;
+  /* Added smooth transition */
+}
+
+.navbar-center a:hover {
+  color: #f5d20b;
+  /* Gold color on hover */
+  transform: translateY(-1px);
+  /* Subtle lift effect */
 }
 
 .active-link::after {
@@ -96,6 +110,7 @@
 
 /* Hide center/right nav on narrower screens by default. */
 @media (max-width: 900px) {
+
   .navbar-center,
   .navbar-right {
     display: none;
@@ -202,6 +217,7 @@
 
 /* Hide center/right nav on narrower screens by default. */
 @media (max-width: 700px) {
+
   .navbar-center,
   .navbar-right {
     display: none;
@@ -228,6 +244,7 @@
 
   /* Adjust logo size for mobile */
   .navbar-logo {
-    height: 50px; /* Slightly smaller on mobile */
+    height: 50px;
+    /* Slightly smaller on mobile */
   }
 }
