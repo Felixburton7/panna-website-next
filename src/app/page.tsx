@@ -386,7 +386,7 @@ const Home: React.FC = () => {
       <section className={styles.heroSection}>
         <div className={`${styles.container} ${styles.heroInner}`}>
           <div className={styles.heroText}>
-            <h1 className={styles.heroTitle}>The Home of Social Sports</h1>
+            <h1 className={styles.heroTitle}>Play, Bet, Connect</h1>
             <RotatingText />
             <div className={styles.downloadButtons}>
               <Link href="https://apps.apple.com/gb/app/panna/id6749247478" target="_blank" rel="noopener noreferrer">
