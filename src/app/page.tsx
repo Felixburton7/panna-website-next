@@ -7,6 +7,7 @@ import styles from "./page.module.css";
 import {
   FaInstagram,
   FaTwitter,
+  FaArrowRight,
 } from "react-icons/fa";
 
 // Hero story screens (single phone mockup carousel)
@@ -76,57 +77,42 @@ interface HowToStickyStep {
   title: string;
   description: string;
   image: StaticImageData;
+  subItems?: { label: string; detail: string }[];
 }
 
 const howToStickySteps: HowToStickyStep[] = [
   {
     title: "Register Account",
-    description: "Create your account and verify your identity — quick and secure.",
+    description: "Sign up, verify your ID, and top up your wallet securely in seconds.",
     image: signupSvg
   },
   {
-    title: "Deposit Funds",
-    description: "Top up your wallet to join games and start playing.",
-    image: depositSvg
+    title: "Find or Create a Game",
+    description: "Browse the public lobby for big pools, or create a private pot for you and your mates.",
+    image: createGamePng,
+    subItems: [
+      { label: "Public Lobby", detail: "Join existing big-money pools" },
+      { label: "Private Pots", detail: "Create free games for friends" }
+    ]
   },
   {
-    title: "Discover games",
-    description: "Browse live and upcoming public games. Or get an add code from a mate!",
-    image: discoverSvg
+    title: "Make Your Picks",
+    description: "Lock in your selections before the deadline.",
+    image: lmsPicksSvg,
+    subItems: [
+      { label: "Last Man Standing", detail: "Pick 1 winner per week. Lose & you're out." },
+      { label: "Scorer Selector", detail: "Pick 3 anytime goalscorers for points." },
+      { label: "Grassroots Fantasy", detail: "Build a squad of your real-life teammates." }
+    ]
   },
   {
-    title: "Or create a game",
-    description: "Create a private pot for friends. Completely free, we take no fees!",
-    image: createGamePng
-  },
-  {
-    title: "Submit Last Man Standing picks",
-    description: "Choose your team — survive each round to stay in.",
-    image: lmsPicksSvg
-  },
-  {
-    title: "Build Your Grassroots Team",
-    description: "For Grassroots Fantasy. Select your squad and customise your lineup.",
-    image: grassrootsSelectionsSvg
-  },
-  {
-    title: "Submit Scorer Picks",
-    description: "For Scorer Game Mode. Pick your scorers and lock in your selections.",
-    image: scorerPicksSvg
-  },
-  {
-    title: "Game Lobby",
-    description: "Track entries, deadlines, and your active games.",
-    image: gameHomeSvg
-  },
-  {
-    title: "Check the Last Man Standing or Scorer table",
-    description: "See who's still in and watch the leaderboard evolve.",
+    title: "Track the Action",
+    description: "Follow the live leaderboards and see where you stand as the matches play out.",
     image: lmsTablePng
   },
   {
-    title: "Win big when the round completes 🎉",
-    description: "Celebrate your victory when the round finishes!",
+    title: "Win & Withdraw",
+    description: "Top the table to win the pot. Winnings are credited instantly for you to withdraw.",
     image: gameHomeSvg
   }
 ];
@@ -135,42 +121,63 @@ const HowToPlaySticky: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const stepRefs = React.useRef<(HTMLElement | null)[]>([]);
 
-  // Viewport-center based detection for the active step (more stable on desktop)
-  useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const viewportCenter = window.innerHeight / 2;
-        let closestIndex = 0;
-        let closestDistance = Number.POSITIVE_INFINITY;
-        stepRefs.current.forEach((el, idx) => {
-          if (!el) return;
-          const rect = el.getBoundingClientRect();
-          const elCenter = rect.top + rect.height / 2;
-          const distance = Math.abs(elCenter - viewportCenter);
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIndex = idx;
-          }
-        });
-        setActiveIndex((prev) => (prev !== closestIndex ? closestIndex : prev));
-        ticking = false;
-      });
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
-
   return (
     <div className={styles.howToSticky}>
+      <div className={styles.stepsColWrapper}>
+        {/* Vertical progress rail with shimmer */}
+        <div className={styles.progressRail}>
+          <div className={styles.progressRailTrack} />
+          <div
+            className={styles.progressRailIndicator}
+            style={{
+              top: `${(activeIndex / (howToStickySteps.length - 1)) * 100}%`,
+            }}
+          />
+
+        </div>
+        <div className={styles.stepsCol}>
+          {howToStickySteps.map((step, idx) => (
+            <article
+              key={idx}
+              ref={(el) => { stepRefs.current[idx] = el; }}
+              data-index={idx}
+              className={`${styles.stepBlock} ${activeIndex === idx ? styles.activeStep : ""}`}
+              onMouseEnter={() => setActiveIndex(idx)}
+              onFocus={() => setActiveIndex(idx)}
+              onClick={() => setActiveIndex(idx)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActiveIndex(idx);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              <div className={styles.stepHeader}>
+                <div className={styles.stepNumber}>{String(idx + 1).padStart(2, "0")}</div>
+                <h3 className={styles.stepTitle2}>{step.title}</h3>
+              </div>
+              <div className={styles.inlineImageWrapper}>
+                <Image src={step.image} alt={step.title} className={styles.inlineImage} />
+              </div>
+              <div className={styles.stepBody}>
+                <p>{step.description}</p>
+                {step.subItems && (
+                  <div className={styles.subItemsGrid}>
+                    {step.subItems.map((sub, sIdx) => (
+                      <div key={sIdx} className={styles.subItem}>
+                        <span className={styles.subItemLabel}>{sub.label}</span>
+                        <span className={styles.subItemDetail}>{sub.detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
       <div className={styles.stickyMediaCol}>
         <div className={styles.mediaFrame}>
           <div className={styles.stickyImageStack} aria-live="polite">
@@ -190,95 +197,77 @@ const HowToPlaySticky: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={styles.stepsCol}>
-        {howToStickySteps.map((step, idx) => (
-          <article
-            key={idx}
-            ref={(el) => { stepRefs.current[idx] = el; }}
-            data-index={idx}
-            className={`${styles.stepBlock} ${activeIndex === idx ? styles.activeStep : ""}`}
-            onMouseEnter={() => setActiveIndex(idx)}
-            onFocus={() => setActiveIndex(idx)}
-            onClick={() => {
-              setActiveIndex(idx);
-              const node = stepRefs.current[idx];
-              if (node) {
-                node.scrollIntoView({ behavior: "smooth", block: "center" });
-              }
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                const node = stepRefs.current[idx];
-                if (node) {
-                  node.scrollIntoView({ behavior: "smooth", block: "center" });
-                }
-                setActiveIndex(idx);
-              }
-            }}
-            role="button"
-            tabIndex={0}
-          >
-            <div className={styles.stepHeader}>
-              <div className={styles.stepNumber}>{String(idx + 1).padStart(2, "0")}</div>
-              <h3 className={styles.stepTitle2}>{step.title}</h3>
-            </div>
-            <div className={styles.inlineImageWrapper}>
-              <Image src={step.image} alt={step.title} className={styles.inlineImage} />
-            </div>
-            <p className={styles.stepBody}>{step.description}</p>
-          </article>
-        ))}
-      </div>
     </div>
   );
 };
 
-// Typing Effect Component
+// Rotating Text Component with Underline Wipe
 const heroWords = ["Live", "Low stakes", "Your way", "Done better", "More social"];
 
-const TypingEffect: React.FC = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState("");
+const RotatingText: React.FC = () => {
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [showUnderline, setShowUnderline] = useState(false);
+
+  // Configuration
+  const typeSpeed = 100;
+  const deleteSpeed = 40;
+  const holdTime = 1500; // Time to wait with full text & underline
+  const underlineDelay = 200; // Short pause after typing before underline wipes in
 
   useEffect(() => {
-    const currentWord = heroWords[currentWordIndex];
+    const currentWord = heroWords[index % heroWords.length];
+    let timer: NodeJS.Timeout;
 
-    const handleTyping = () => {
-      if (!isDeleting) {
-        // Typing forward
-        if (currentText.length < currentWord.length) {
-          setCurrentText(currentWord.substring(0, currentText.length + 1));
-        } else {
-          // Word complete, pause then start deleting
-          setTimeout(() => setIsDeleting(true), 2000);
-          return;
-        }
+    if (isDeleting) {
+      // DELETING PHASE
+      if (subIndex > 0) {
+        timer = setTimeout(() => {
+          setSubIndex((prev) => prev - 1);
+        }, deleteSpeed);
       } else {
-        // Deleting
-        if (currentText.length > 0) {
-          setCurrentText(currentWord.substring(0, currentText.length - 1));
+        // Finished deleting
+        setIsDeleting(false);
+        setShowUnderline(false);
+        setIndex((prev) => prev + 1);
+      }
+    } else {
+      // TYPING PHASE
+      if (subIndex < currentWord.length) {
+        timer = setTimeout(() => {
+          setSubIndex((prev) => prev + 1);
+        }, typeSpeed);
+      } else {
+        // Finished typing
+        if (!showUnderline) {
+          // Trigger underline appearing
+          timer = setTimeout(() => {
+            setShowUnderline(true);
+          }, underlineDelay);
         } else {
-          // Finished deleting, move to next word
-          setIsDeleting(false);
-          setCurrentWordIndex((prev) => (prev + 1) % heroWords.length);
-          return;
+          // Underline is visible, hold then start deleting
+          timer = setTimeout(() => {
+            setIsDeleting(true);
+          }, holdTime);
         }
       }
-    };
-
-    const typingSpeed = isDeleting ? 75 : 150;
-    const timer = setTimeout(handleTyping, typingSpeed);
+    }
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentWordIndex]);
+  }, [subIndex, isDeleting, showUnderline, index]);
 
   return (
-    <h2 className={styles.heroSubtitle}>
-      {currentText}
-      <span className={styles.cursor}>|</span>
-    </h2>
+    <div className={styles.heroSubtitleWrapper}>
+      <span className={styles.prefixText}>Social Betting</span>
+      <div className={styles.rotatingWindow}>
+        <span className={styles.wordWrapper}>
+          {heroWords[index % heroWords.length].substring(0, subIndex)}
+          <span className={styles.cursor}>|</span>
+          <div className={`${styles.underlineBar} ${showUnderline ? styles.underlineVisible : ""}`} />
+        </span>
+      </div>
+    </div>
   );
 };
 
@@ -292,18 +281,100 @@ const Home: React.FC = () => {
   // Games section toggle
   const [activeGame, setActiveGame] = useState<"lms" | "scorer" | "grassroots">("lms");
 
+  // Scroll Animation for Games Section
+  const gamesSectionRef = React.useRef<HTMLElement>(null);
+  const [gamesVisible, setGamesVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setGamesVisible(true);
+          observer.disconnect(); // Animate once
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% visible
+    );
+
+    if (gamesSectionRef.current) {
+      observer.observe(gamesSectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     // Trigger phone "appear" animation on mount
     setPhonesVisible(true);
   }, []);
 
-  // Auto-play hero story carousel
+  // Carousel Logic
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  // Game Content Configuration
+  const gamesConfig = {
+    lms: {
+      title: "LAST MAN STANDING",
+      desc: "The ultimate test of ball knowledge. Pick one winner each week to survive. You can't pick the same team twice. Last one standing takes the pot.",
+      cta: "Start Your League",
+      link: "/#games",
+      titleClass: styles.titleLms,
+    },
+    grassroots: {
+      title: "GRASSROOTS FANTASY",
+      desc: "Fantasy football for your local team. Raise funds, win bragging rights.",
+      cta: "Start Your League",
+      link: "/#games",
+      titleClass: styles.titleGrassroots,
+    },
+    scorer: {
+      title: "SCORER SELECTOR",
+      desc: "Pick 3 scorers each week. Points calculate live. Top the leaderboard.",
+      cta: "Start Your League",
+      link: "/#games",
+      titleClass: styles.titleScorer,
+    },
+  };
+
+  const activeContent = gamesConfig[activeGame];
+
+  // 3 Phones: 0, 1, 2.
+  // We want them to rotate: Center -> Left -> Right -> Center...
+  // Wait: Standard carousel is Right -> Center -> Left -> Right (wrap)
+  // Let's define the positions as [Left, Center, Right]
+  // 0: Center
+  // 1: Right
+  // 2: Left
+  //
+  // Tick 1: 0 Goes Left (2), 1 Goes Center (0), 2 Goes Right (1)
+  // Mapping logic:
+  // We have 3 items. item i at state s.
+  // let pos = (i - s + 3) % 3
+  // 0: Center, 1: Right, 2: Left.
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHeroScreen((prev) => (prev + 1) % heroScreens.length);
-    }, 2000); // ~10s total loop for 5 screens
+      setCarouselIndex((prev) => (prev + 1) % 3);
+    }, 5000); // 5s slow rotation
     return () => clearInterval(interval);
   }, []);
+
+  const getPhoneClass = (index: number, current: number) => {
+    // Calculate "virtual position" in the cycle
+    // We want 3 slots: Center(0), Right(1), Left(2)
+    // If index matches current, it's Center.
+    // If index is (current + 1), it's Right.
+    // If index is (current + 2), it's Left.
+    const pos = (index - current + 3) % 3;
+    if (pos === 0) return styles.posCenter;
+    if (pos === 1) return styles.posRight;
+    return styles.posLeft;
+  };
+
+  // Assign specific images to specific phones so they carry their content
+  // Phone 0: Screens[0] (screen11)
+  // Phone 1: Screens[1] (screen12)
+  // Phone 2: Screens[2] (screen7)
+  const phoneImages = [screen11, screen12, screen7];
 
   const toggleFAQ = (index: number) => {
     setActiveFAQ(activeFAQ === index ? null : index);
@@ -315,13 +386,8 @@ const Home: React.FC = () => {
       <section className={styles.heroSection}>
         <div className={`${styles.container} ${styles.heroInner}`}>
           <div className={styles.heroText}>
-            <h1 className={styles.heroTitle}>Social Betting</h1>
-            <TypingEffect />
-            <p className={styles.heroDescription}>
-              Your go-to platform for social betting with friends or competing globally.
-              Explore innovative social gambling features, including group pools, leaderboards,
-              and community challenges.
-            </p>
+            <h1 className={styles.heroTitle}>The Home of Social Sports</h1>
+            <RotatingText />
             <div className={styles.downloadButtons}>
               <Link href="https://apps.apple.com/gb/app/panna/id6749247478" target="_blank" rel="noopener noreferrer">
                 <Image src="/assets/appstore.png" width={180} height={56} alt="Download on the App Store" className={styles.downloadBadge} />
@@ -333,22 +399,47 @@ const Home: React.FC = () => {
           </div>
 
           <div className={styles.heroImages}>
-            <div className={`${styles.phonesWrapper} ${phonesVisible ? styles.appear : ""}`}>
-              <div className={styles.heroPhone}>
+            <div className={styles.phonesWrapper}>
+
+              {/* Phone 0 */}
+              <div className={`${styles.heroPhoneBase} ${getPhoneClass(0, carouselIndex)}`}>
                 <div className={styles.heroSlides}>
-                  {heroScreens.map((img, index) => (
-                    <Image
-                      key={index}
-                      src={img}
-                      alt={`Hero screen ${index + 1}`}
-                      className={`${styles.heroSlide} ${index === currentHeroScreen ? styles.active : ""}`}
-                      width={200}
-                      height={400}
-                      priority
-                    />
-                  ))}
+                  <Image
+                    src={phoneImages[0]}
+                    alt="Phone Screen 1"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
                 </div>
               </div>
+
+              {/* Phone 1 */}
+              <div className={`${styles.heroPhoneBase} ${getPhoneClass(1, carouselIndex)}`}>
+                <div className={styles.heroSlides}>
+                  <Image
+                    src={phoneImages[1]}
+                    alt="Phone Screen 2"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Phone 2 */}
+              <div className={`${styles.heroPhoneBase} ${getPhoneClass(2, carouselIndex)}`}>
+                <div className={styles.heroSlides}>
+                  <Image
+                    src={phoneImages[2]}
+                    alt="Phone Screen 3"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -426,10 +517,13 @@ const Home: React.FC = () => {
 
 
       {/* GAMES SECTION (Tabs + Layered Images) */}
-      <section id="games" className={styles.gamesSection}>
+      <section
+        id="games"
+        ref={gamesSectionRef}
+        className={`${styles.gamesSection} ${gamesVisible ? styles.gamesSectionVisible : ""}`}
+      >
         <div className={styles.gamesContainer}>
           <div>
-            <div className={styles.gamesEyebrow}>Introducing</div>
             <h2 className={styles.gamesHeading}>Our Games</h2>
           </div>
           <div className={styles.gamesTabs}>
@@ -458,37 +552,15 @@ const Home: React.FC = () => {
 
           <div className={styles.gamesContent}>
             <div className={styles.gamesText}>
-              {activeGame === "lms" ? (
-                <>
-                  <h3 className={`${styles.gamesTitle} ${styles.titleLms}`}>LAST MAN STANDING</h3>
-                  <p className={styles.gamesDescription}>
-                    Test your nerve. Pick one team to win each gameweek. If they win, you're through. A draw or loss, and you're out. The catch? You can only pick each team once. Outlast the competition to be the last one standing.
-                  </p>
-                  <Link href="/games?tab=lms">
-                    <button className={styles.gamesCta}>Go to Last Man Standing</button>
-                  </Link>
-                </>
-              ) : activeGame === "grassroots" ? (
-                <>
-                  <h3 className={`${styles.gamesTitle} ${styles.titleGrassroots}`}>GRASSROOTS FANTASY</h3>
-                  <p className={styles.gamesDescription}>
-                    FPL, but for your own squad! Add your players/fixtures, pick your team and watch the points roll in. Make use of the fundraising tool to raise some cash for facilities, kits and more!
-                  </p>
-                  <Link href="/games?tab=grassroots">
-                    <button className={styles.gamesCta}>Go to Grassroots Fantasy</button>
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <h3 className={`${styles.gamesTitle} ${styles.titleScorer}`}>SCORER SELECTOR</h3>
-                  <p className={styles.gamesDescription}>
-                    Think you know who's hitting the back of the net? Choose three players each gameweek. You'll rack up points for every goal they score—8 for defenders, 5 for midfielders, and 3 for forwards. Finish high on the leaderboard to win from the pot.
-                  </p>
-                  <Link href="/games?tab=scorer">
-                    <button className={styles.gamesCta}>Go to Scorer Selector</button>
-                  </Link>
-                </>
-              )}
+              <h3 className={`${styles.gamesTitle} ${activeContent.titleClass}`}>
+                {activeContent.title}
+              </h3>
+              <p className={styles.gamesDescription}>
+                {activeContent.desc}
+              </p>
+              <Link href={activeContent.link} className={styles.gamesCta}>
+                {activeContent.cta} <FaArrowRight style={{ marginLeft: "8px" }} />
+              </Link>
             </div>
 
             <div className={styles.gamesImages}>
@@ -519,13 +591,12 @@ const Home: React.FC = () => {
       <section className={styles.howToPlaySection}>
         <div className={styles.container}>
           <h2 className={styles.howToPlayHeading}>HOW TO PLAY</h2>
-          <p className={styles.howToPlaySubheading}>
-            Create an account, add funds, and start playing in under a minute.
-          </p>
+          <p className={styles.howToPlaySubtitle}>Sign up and create a game in less than a minute!</p>
+
           <HowToPlaySticky />
           <div className={styles.ctaRow}>
-            <Link href="/download">
-              <button className={styles.downloadButton}>DOWNLOAD NOW</button>
+            <Link href="/download" className={styles.downloadButton}>
+              DOWNLOAD NOW
             </Link>
           </div>
         </div>

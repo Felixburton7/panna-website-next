@@ -12,12 +12,17 @@
 /* Apply Poppins Font Using CSS Variable */
 :root {
   --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
 
   /* Primary Colors */
-  --panna-lms-green: #0A674A;
-  --panna-scorer-blue: #015396;
-  --panna-grassroots-green: #16A34A;
-  --panna-gold: #f5d20b;
+  /* Primary Colors */
+  --panna-lms-green: #00B16A;
+  /* Brighter, more vibrant green */
+  --panna-scorer-blue: #0A74DA;
+  --panna-grassroots-green: #1DB954;
+  --panna-gold: #FFED00;
+  /* Bright, vibrant yellow (less gold) */
 
   /* Extended Palettes */
   --panna-lms-secondary: #127656;

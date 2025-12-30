@@ -1,5 +1,5 @@
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Poppins","arguments":[{"subsets":["latin"],"weight":["400","600","700","800"],"variable":"--font-poppins"}],"variableName":"poppins"} ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Poppins","arguments":[{"subsets":["latin"],"weight":["400","600","700","800"],"variable":"--font-poppins"}],"variableName":"poppins"} ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* devanagari */
 @font-face {
@@ -114,7 +114,7 @@
 }
 
 /*!*****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/app/globals.css ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************/
 /* src/app/globals.css */
 
@@ -130,12 +130,17 @@
 /* Apply Poppins Font Using CSS Variable */
 :root {
   --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
 
   /* Primary Colors */
-  --panna-lms-green: #0A674A;
-  --panna-scorer-blue: #015396;
-  --panna-grassroots-green: #16A34A;
-  --panna-gold: #f5d20b;
+  /* Primary Colors */
+  --panna-lms-green: #00B16A;
+  /* Brighter, more vibrant green */
+  --panna-scorer-blue: #0A74DA;
+  --panna-grassroots-green: #1DB954;
+  --panna-gold: #FFED00;
+  /* Bright, vibrant yellow (less gold) */
 
   /* Extended Palettes */
   --panna-lms-secondary: #127656;
@@ -475,7 +480,7 @@ a {
   text-align: center;
 }
 /*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/Footer/Footer.module.css ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Footer/Footer.module.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************/
 /* src/components/Footer/Footer.module.css */
 
@@ -573,7 +578,7 @@ a {
 }
 
 /*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/Navbar/Navbar.module.css ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Navbar/Navbar.module.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************/
 /* ------------------------------------------------------------- */
 /* BASE NAVBAR STYLES */

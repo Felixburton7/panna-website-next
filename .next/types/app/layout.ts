@@ -1,4 +1,4 @@
-// File: /Users/Caspar/development/PANNA_WEBSITE_REAL/panna-website-next/src/app/layout.tsx
+// File: /Users/felix/PANNA/panna-website-2.0/panna-website-next/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
