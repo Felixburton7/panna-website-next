@@ -43,7 +43,7 @@
   margin-bottom: 1.5rem;
   color: #000000;
   font-family: var(--font-poppins), sans-serif;
-  border-bottom: 2px solid #23AC55;
+  border-bottom: 2px solid #0A674A;
   padding-bottom: 0.5rem;
 }
 
@@ -56,7 +56,7 @@
 
 .contactItem {
   background: white;
-  border: 1px solid rgba(35, 172, 85, 0.2);
+  border: 1px solid rgba(10, 103, 74, 0.2);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: left;
@@ -66,12 +66,12 @@
 
 .contactItem:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(35, 172, 85, 0.15);
-  border-color: #23AC55;
+  box-shadow: 0 10px 25px rgba(10, 103, 74, 0.15);
+  border-color: #0A674A;
 }
 
 .contactItem h3 {
-  color: #23AC55;
+  color: #0A674A;
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -86,20 +86,20 @@
 }
 
 .contactLink {
-  color: #23AC55;
+  color: #0A674A;
   text-decoration: underline;
   transition: color 0.3s ease;
   font-weight: 500;
 }
 
 .contactLink:hover {
-  color: #1e8f47;
+  color: #084d38;
   text-decoration: none;
 }
 
 .responseTime {
-  background: rgba(35, 172, 85, 0.05);
-  border-left: 4px solid #23AC55;
+  background: rgba(10, 103, 74, 0.05);
+  border-left: 4px solid #0A674A;
   padding: 1rem 1.5rem;
   margin: 2rem 0;
   border-radius: 0 8px 8px 0;
@@ -114,7 +114,7 @@
 .closingStatement {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #23AC55;
+  color: #0A674A;
   text-align: center;
   margin-top: 2rem;
   font-style: italic;
