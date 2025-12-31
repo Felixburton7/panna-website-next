@@ -551,8 +551,7 @@ const Home: React.FC = () => {
               <span className={styles.socialTitleLine}>Your Bets.</span>
             </h2>
             <p className={styles.socialDescription}>
-              Share your bets, follow your mates bets, and build bets together in the first group chat made for betting.
-            </p>
+              Play against your mates, not the bookie. Follow friends and compete head-to-head in the social sports gaming app built for you.            </p>
             <Link href="/download" className={styles.socialCta}>
               Play here
             </Link>
