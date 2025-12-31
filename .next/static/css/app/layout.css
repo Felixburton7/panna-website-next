@@ -206,10 +206,10 @@
 html,
 body {
   font-family: var(--font-primary);
-  background: #010101;
-  /* Black background */
-  color: #fff;
-  /* White text */
+  background: #ffffff;
+  /* White background - prevents black gaps between sections */
+  color: #111;
+  /* Dark text for readability */
   scroll-behavior: smooth;
   /* Smooth scrolling between anchors/sections */
   -webkit-font-smoothing: antialiased;
@@ -484,99 +484,227 @@ a {
   \***********************************************************************************************************************************************************************************************************************************************************************************/
 /* src/components/Footer/Footer.module.css */
 
-/* FOOTER */
+/* FOOTER BASE */
 .Footer_footer__4vzqH {
-  background: #010101; /* Solid black background */
-  padding: 2rem 0;
-  margin-top: 2rem;
-  color: hsl(0, 27%, 84%);
+  background: #00402D;
+  padding: 6rem 0 2rem 0;
+  /* More top padding to cover black gap */
+  color: #ffffff;
+  /* White text */
+  margin-top: 0;
+  /* Removed top margin to hide black body background */
+  font-family: var(--font-primary);
 }
 
-.Footer_footerContainer__77_mg { /* Renamed from .container to avoid conflicts */
+.Footer_footerContainer__77_mg {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.Footer_footerContent__33dnM {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  text-align: center;
+  gap: 2rem;
 }
 
-.Footer_footerInfo__LPUj1,
-.Footer_footerCompany__Gz6oq {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Footer Logos */
-.Footer_footerLogos__GLn19 {
+/* TOP ROW: Logo & Compliance */
+.Footer_topRow__tb8kI {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 4rem;
-  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-.Footer_footerLogo__HvedU {
-  width: 7rem; /* Adjust the logo size */
-  height: auto;
+.Footer_logoSection__60cxm {
+  flex: 0 0 auto;
+}
+
+.Footer_pannaLogo__vk0iH {
+  /* Filter to convert logo to White */
+  filter: brightness(0) invert(1);
+}
+
+.Footer_complianceLogos__5H7l0 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.Footer_complianceLink__uUNab {
   display: block;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-.Footer_footerLogo__HvedU:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
+.Footer_complianceLink__uUNab:hover {
+  opacity: 0.7;
 }
 
-.Footer_ageRestrictionLink__VuYMo {
-  text-decoration: none;
+.Footer_complianceLogo__vnYLV {
+  width: auto;
+  height: 30px;
+  /* Consistent height for compliance logos */
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.Footer_gamstopLogo__0SXb5 {
+  /* Fix for Gamstop logo having white background */
+  /* Invert makes bg black, text white. Screen mode makes black bg transparent. */
+  filter: grayscale(1) invert(1) !important;
+  mix-blend-mode: screen;
 }
 
 .Footer_ageRestriction__dVkHe {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  border: 1px solid #ffffff;
+  /* White border */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
-.Footer_ageRestriction__dVkHe:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
+/* DIVIDER */
+.Footer_divider__07lwa {
+  border: 0;
+  border-top: 1px solid #127656;
+  /* Darker green divider */
+  margin: 0;
 }
 
-@media (max-width: 700px) {
-  .Footer_footerLogos__GLn19 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.8rem;
-    margin-top: 1.5rem;
-  }
-
-  .Footer_footerLogo__HvedU {
-    width: 3.5rem; /* Adjust the logo size */
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  .Footer_ageRestriction__dVkHe {
-    width: 60px; /* Adjust size for smaller screens */
-    height: 60px;
-    font-size: 1rem;
-  }
+/* MIDDLE ROW: Social, Links, Payment */
+.Footer_middleRow__GpAjP {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
+.Footer_middleLeft__sd_in {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Social Icons */
+.Footer_socialIcons__7CTKy {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.Footer_socialIcon__Snf9u {
+  color: #00402D;
+  font-size: 1.2rem;
+  background: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.Footer_socialIcon__Snf9u:hover {
+  background: #00B16A;
+  color: #fff;
+}
+
+/* Nav Links */
+.Footer_navLinks__ovLNx {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.Footer_navLink__6CzNs {
+  color: #ffffff;
+  /* White links */
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.Footer_navLink__6CzNs:hover {
+  color: #00B16A;
+}
+
+/* Payment Logo */
+.Footer_middleRight__qTBsS {
+  flex: 0 0 auto;
+}
+
+.Footer_paymentLogo__Bb1Bx {
+  width: auto;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* BOTTOM ROW: Company Info */
+.Footer_bottomRow__7kjqF {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.Footer_companyText__NTlpV {
+  margin-bottom: 1.5rem;
+}
+
+.Footer_companyText__NTlpV a {
+  color: #ffffff;
+}
+
+.Footer_copyright__1v3uR {
+  margin-top: 1rem;
+}
+
+
+/* GC Logo Row */
+.Footer_gcLogoRow__W2otK {
+  margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+  .Footer_topRow__tb8kI,
+  .Footer_middleRow__GpAjP,
+  .Footer_middleLeft__sd_in {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .Footer_middleRow__GpAjP {
+    align-items: flex-start;
+  }
+
+  .Footer_navLinks__ovLNx {
+    flex-direction: column;
+    /* Stack links on mobile if space is tight, or keep row */
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .Footer_socialIcons__7CTKy {
+    margin-bottom: 0.5rem;
+  }
+
+  /* On mobile maybe hide right aligned things or stack them */
+  .Footer_complianceLogos__5H7l0 {
+    flex-wrap: wrap;
+  }
+}
 /*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/components/Navbar/Navbar.module.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************/

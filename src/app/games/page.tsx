@@ -239,6 +239,8 @@ const gameRulesData: Record<GameType, GameRules> = {
     },
 };
 
+import FadeInUp from "../../components/FadeInUp";
+
 function GamesContent() {
     const searchParams = useSearchParams();
     const tabParam = searchParams.get("tab");
@@ -257,54 +259,64 @@ function GamesContent() {
         <div className={styles.gamesPage}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <h1 className={styles.pageTitle}>Game Rules</h1>
-                    <p className={styles.pageSubtitle}>
-                        Learn how to play our different game modes and understand the rules
-                    </p>
+                    <FadeInUp>
+                        <h1 className={styles.pageTitle}>Game Rules</h1>
+                    </FadeInUp>
+                    <FadeInUp delay={0.1}>
+                        <p className={styles.pageSubtitle}>
+                            Learn how to play our different game modes and understand the rules
+                        </p>
+                    </FadeInUp>
                 </div>
 
-                <div className={styles.gameTabs}>
-                    <button
-                        className={`${styles.gameTab} ${activeGame === "lms" ? styles.activeTabLms : ""}`}
-                        onClick={() => setActiveGame("lms")}
-                    >
-                        🏆 Last Man Standing
-                    </button>
-                    <button
-                        className={`${styles.gameTab} ${activeGame === "grassroots" ? styles.activeTabGrassroots : ""}`}
-                        onClick={() => setActiveGame("grassroots")}
-                    >
-                        🌱 Grassroots Fantasy
-                    </button>
-                    <button
-                        className={`${styles.gameTab} ${activeGame === "scorer" ? styles.activeTabScorer : ""}`}
-                        onClick={() => setActiveGame("scorer")}
-                    >
-                        ⚽ Scorer Selector
-                    </button>
-                </div>
+                <FadeInUp delay={0.2}>
+                    <div className={styles.gameTabs}>
+                        <button
+                            className={`${styles.gameTab} ${activeGame === "lms" ? styles.activeTabLms : ""}`}
+                            onClick={() => setActiveGame("lms")}
+                        >
+                            🏆 Last Man Standing
+                        </button>
+                        <button
+                            className={`${styles.gameTab} ${activeGame === "grassroots" ? styles.activeTabGrassroots : ""}`}
+                            onClick={() => setActiveGame("grassroots")}
+                        >
+                            🌱 Grassroots Fantasy
+                        </button>
+                        <button
+                            className={`${styles.gameTab} ${activeGame === "scorer" ? styles.activeTabScorer : ""}`}
+                            onClick={() => setActiveGame("scorer")}
+                        >
+                            ⚽ Scorer Selector
+                        </button>
+                    </div>
+                </FadeInUp>
 
                 <div className={styles.gameContent}>
-                    <div className={styles.gameHeader}>
-                        <span className={styles.gameIcon}>{currentGame.icon}</span>
-                        <div>
-                            <h2 className={styles.gameTitle}>{currentGame.displayName}</h2>
-                            <p className={styles.gameDescription}>{currentGame.description}</p>
+                    <FadeInUp>
+                        <div className={styles.gameHeader}>
+                            <span className={styles.gameIcon}>{currentGame.icon}</span>
+                            <div>
+                                <h2 className={styles.gameTitle}>{currentGame.displayName}</h2>
+                                <p className={styles.gameDescription}>{currentGame.description}</p>
+                            </div>
                         </div>
-                    </div>
+                    </FadeInUp>
 
                     <div className={styles.sections}>
                         {currentGame.sections.map((section, idx) => (
-                            <div key={idx} className={styles.section}>
-                                <h3 className={styles.sectionTitle}>{section.title}</h3>
-                                <ul className={styles.rulesList}>
-                                    {section.rules.map((rule, rIdx) => (
-                                        <li key={rIdx} className={styles.ruleItem}>
-                                            {rule}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <FadeInUp key={idx} delay={idx * 0.1}>
+                                <div className={styles.section}>
+                                    <h3 className={styles.sectionTitle}>{section.title}</h3>
+                                    <ul className={styles.rulesList}>
+                                        {section.rules.map((rule, rIdx) => (
+                                            <li key={rIdx} className={styles.ruleItem}>
+                                                {rule}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </FadeInUp>
                         ))}
                     </div>
                 </div>

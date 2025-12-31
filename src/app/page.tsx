@@ -8,6 +8,7 @@ import {
   FaInstagram,
   FaTwitter,
   FaArrowRight,
+  FaPlus,
 } from "react-icons/fa";
 
 // Hero story screens (single phone mockup carousel)
@@ -16,6 +17,7 @@ import screen12 from "../assets/12.png";
 import screen7 from "../assets/7.png";
 import screen4 from "../assets/4.png";
 import screen8 from "../assets/8.png";
+import pannaAppScreen from "../assets/handimage.png";
 
 // How to play assets (straight-on, high-res)
 import signupSvg from "../assets/signup.svg";
@@ -33,6 +35,8 @@ import lmsTableSvg from "../assets/lmstable.svg";
 import scorerTableSvg from "../assets/scorertable.svg";
 import grassroots1Svg from "../assets/Grassroots 1.svg";
 import grassroots2Svg from "../assets/Grassroots 2.svg";
+
+
 
 interface FAQItem {
   question: string;
@@ -70,7 +74,6 @@ const faqItems: FAQItem[] = [
     answer:
       "Yes! You can create private pots to play against your friends. Customise the game mode, stake, and payout structure, then share the invite link or code.",
   },
-
 ];
 
 interface HowToStickyStep {
@@ -285,21 +288,41 @@ const Home: React.FC = () => {
   const gamesSectionRef = React.useRef<HTMLElement>(null);
   const [gamesVisible, setGamesVisible] = useState(false);
 
+  // Scroll Animation for Social Section
+  const socialSectionRef = React.useRef<HTMLElement>(null);
+  const [socialVisible, setSocialVisible] = useState(false);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const gamesObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setGamesVisible(true);
-          observer.disconnect(); // Animate once
+          gamesObserver.disconnect(); // Animate once
         }
       },
       { threshold: 0.3 } // Trigger when 30% visible
     );
 
+    const socialObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setSocialVisible(true);
+          socialObserver.disconnect(); // Animate once
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% visible
+    );
+
     if (gamesSectionRef.current) {
-      observer.observe(gamesSectionRef.current);
+      gamesObserver.observe(gamesSectionRef.current);
     }
-    return () => observer.disconnect();
+    if (socialSectionRef.current) {
+      socialObserver.observe(socialSectionRef.current);
+    }
+    return () => {
+      gamesObserver.disconnect();
+      socialObserver.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -516,12 +539,56 @@ const Home: React.FC = () => {
 
 
 
+      {/* SOCIAL FEATURE SECTION */}
+      <section
+        ref={socialSectionRef}
+        className={`${styles.socialSection} ${socialVisible ? styles.socialSectionVisible : ""}`}
+      >
+        <div className={styles.socialContainer}>
+          <div className={styles.socialContent}>
+            <h2 className={styles.socialTitle}>
+              <span className={styles.socialTitleLine}>Your Mates.</span>
+              <span className={styles.socialTitleLine}>Your Bets.</span>
+            </h2>
+            <p className={styles.socialDescription}>
+              Share your bets, follow your mates bets, and build bets together in the first group chat made for betting.
+            </p>
+            <Link href="/download" className={styles.socialCta}>
+              Play here
+            </Link>
+          </div>
+          <div className={styles.socialImageWrapper}>
+            {/* Background Decorations - Swapped positions */}
+            <div className={styles.socialBackdrop} />
+            <div className={styles.socialCircle1} />
+            <div className={styles.socialCircle2} />
+
+            {/* Phone Image */}
+            <div className={styles.socialPhoneImage}>
+              <Image
+                src={pannaAppScreen}
+                alt="Panna App Screen"
+                width={340}
+                height={680}
+                style={{ height: "auto" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* GAMES SECTION (Tabs + Layered Images) */}
       <section
         id="games"
         ref={gamesSectionRef}
         className={`${styles.gamesSection} ${gamesVisible ? styles.gamesSectionVisible : ""}`}
       >
+        {/* Background Shapes */}
+        <div className={`${styles.backgroundCircle} ${styles.circle1}`} />
+        <div className={`${styles.backgroundCircle} ${styles.circle2}`} />
+
         <div className={styles.gamesContainer}>
           <div>
             <h2 className={styles.gamesHeading}>Our Games</h2>
@@ -564,7 +631,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className={styles.gamesImages}>
-              <div className={`${styles.imageStack} ${activeGame === "scorer" ? styles.stackScorer : activeGame === "grassroots" ? styles.stackGrassroots : ""}`}>
+              <div key={activeGame} className={`${styles.imageStack} ${activeGame === "scorer" ? styles.stackScorer : activeGame === "grassroots" ? styles.stackGrassroots : ""}`}>
                 {activeGame === "lms" ? (
                   <>
                     <Image src={lmsTableSvg} alt="LMS Table" className={styles.imageBack} />
@@ -605,25 +672,44 @@ const Home: React.FC = () => {
 
       {/* FAQ SECTION */}
       <section className={styles.faqSection}>
-        <div className={`${styles.container} ${styles.faqContainer}`}>
-          <h2 className={styles.faqHeading}>Frequently Asked Questions</h2>
-          {faqItems.map((item, index) => (
-            <div className={styles.faq} key={index}>
-              <button
-                className={`${styles.faqQuestion} ${activeFAQ === index ? styles.open : ""
-                  }`}
-                onClick={() => toggleFAQ(index)}
-              >
-                {item.question}
-              </button>
-              <div
-                className={`${styles.faqAnswer} ${activeFAQ === index ? styles.visible : ""
-                  }`}
-              >
-                {item.answer}
+        <div className={styles.faqContainer}>
+
+          {/* Left Col: Heading & Contact */}
+          <div className={styles.faqLeftCol}>
+            <h2 className={styles.faqHeading}>FAQS</h2>
+            <p className={styles.faqDescription}>
+              If you can't find what you're looking for, get in touch and we'll be happy to help.
+            </p>
+            <Link href="mailto:support@panna.app" className={styles.contactButton}>
+              Get in touch
+            </Link>
+          </div>
+
+          {/* Right Col: Accordion */}
+          <div className={styles.faqList}>
+            {faqItems.map((item, index) => (
+              <div className={styles.faqItem} key={index}>
+                <button
+                  className={styles.faqQuestionButton}
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={activeFAQ === index}
+                >
+                  <span className={styles.questionText}>{item.question}</span>
+                  <span className={`${styles.iconPlus} ${activeFAQ === index ? styles.iconPlusOpen : ""}`}>
+                    <FaPlus />
+                  </span>
+                </button>
+                <div
+                  className={`${styles.faqAnswerWrapper} ${activeFAQ === index ? styles.faqAnswerVisible : ""}`}
+                >
+                  <div className={styles.faqAnswerContent}>
+                    {item.answer}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
         </div>
       </section>
 
@@ -654,7 +740,11 @@ const Home: React.FC = () => {
         </div>
         <hr className={styles.greyDivider} />
       </section>
-    </div>
+
+      {/* FOOTER LOGOS */}
+
+
+    </div >
   );
 };
 

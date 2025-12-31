@@ -88,10 +88,10 @@
 html,
 body {
   font-family: var(--font-primary);
-  background: #010101;
-  /* Black background */
-  color: #fff;
-  /* White text */
+  background: #ffffff;
+  /* White background - prevents black gaps between sections */
+  color: #111;
+  /* Dark text for readability */
   scroll-behavior: smooth;
   /* Smooth scrolling between anchors/sections */
   -webkit-font-smoothing: antialiased;

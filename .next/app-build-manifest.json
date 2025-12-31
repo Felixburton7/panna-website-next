@@ -18,17 +18,23 @@
       "static/css/app/about/page.css",
       "static/chunks/app/about/page.js"
     ],
+    "/games/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/games/page.css",
+      "static/chunks/app/games/page.js"
+    ],
     "/responsibility/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/responsibility/page.css",
       "static/chunks/app/responsibility/page.js"
     ],
-    "/games/page": [
+    "/contact-us/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/games/page.css",
-      "static/chunks/app/games/page.js"
+      "static/css/app/contact-us/page.css",
+      "static/chunks/app/contact-us/page.js"
     ]
   }
 }

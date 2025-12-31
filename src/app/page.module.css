@@ -108,6 +108,8 @@
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
   max-width: 800px;
+  -webkit-text-stroke: 1px #fff;
+  paint-order: stroke fill;
 }
 
 .heroSubtitleWrapper {
@@ -388,24 +390,37 @@
 .gamesSection {
   padding: 3rem 0;
   /* Compact vertical spacing */
-  background: #0d1016;
-  /* Clean dark background, less intense gradient */
+  background: #FAFAFA;
+  /* Light background */
   position: relative;
   overflow: hidden;
 }
 
 /* Subtler glow */
-.gamesSection::before {
-  content: "";
+/* Background Shapes */
+.backgroundCircle {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(20, 100, 70, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
   z-index: 0;
   pointer-events: none;
+}
+
+.circle1 {
+  width: 600px;
+  height: 600px;
+  background: rgba(10, 103, 74, 0.15);
+  /* Darker opacity/tone */
+  top: -100px;
+  right: -100px;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(10, 103, 74, 0.2);
+  /* Darker opacity/tone */
+  bottom: -150px;
+  left: -150px;
 }
 
 .gamesContainer {
@@ -419,12 +434,14 @@
 .gamesHeading {
   display: block;
   text-align: left;
-  color: #fff;
-  font-size: 3rem;
+  color: #0A674A;
+  font-size: 4.5rem;
   line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-weight: 900;
+  letter-spacing: -0.02em;
   margin-bottom: 2rem;
+  -webkit-text-stroke: 1px #0A674A;
+  /* Thicker appearance */
 }
 
 /* Tabs: Classic Text Style */
@@ -440,13 +457,16 @@
 
 .gamesTab {
   background: transparent;
-  color: rgba(255, 255, 255, 0.6);
+  color: #4a5568;
+  /* Darker than #666 */
   border: none;
   border-bottom: 3px solid transparent;
   padding: 0 0 1rem 0;
   border-radius: 0;
-  font-weight: 700;
-  font-size: 0.85rem;
+  font-weight: 900;
+  /* Thicker */
+  font-size: 0.9rem;
+  /* Slightly larger */
   letter-spacing: 0.05em;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -454,23 +474,25 @@
 }
 
 .gamesTab:hover {
-  color: #fff;
+  color: #000;
 }
 
 /* Active tab variants - Underline */
 .activeLmsTab {
-  color: #fff;
-  border-bottom-color: #0aff78;
+  color: #05422C;
+  border-bottom-color: #05422C;
+  /* Dark green matching title */
 }
 
 .activeScorerTab {
-  color: #fff;
-  border-bottom-color: #3ca0ff;
+  color: #0077E6;
+  border-bottom-color: #0077E6;
 }
 
 .activeGrassrootsTab {
-  color: #fff;
-  border-bottom-color: var(--panna-gold);
+  color: #57F287;
+  border-bottom-color: #57F287;
+  /* Light green matching title */
 }
 
 /* Active tab variants */
@@ -505,31 +527,36 @@
 /* Title color varies by game */
 /* Title color varies by game */
 .gamesTitle {
-  font-size: 2.8rem;
+  font-size: 3rem;
   /* Larger */
   font-weight: 900;
-  /* Thicker */
-  /* "Slightly at an angle" - sporty look */
-  /* More aggressive angle */
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
   text-transform: uppercase;
+  -webkit-text-stroke: 1px currentColor;
+  /* Thicker */
 }
 
 .titleLms {
-  color: #0aff78;
+  color: #05422C;
+  /* Much darker green */
+  -webkit-text-stroke: 1px currentColor;
 }
 
 .titleScorer {
-  color: #3ca0ff;
+  color: #0077E6;
+  /* Keep scorer blue or darken if needed, user didn't specify Scorer */
 }
 
 .titleGrassroots {
-  color: var(--panna-gold);
+  color: #57F287;
+  /* Light vibrant green */
+  -webkit-text-stroke: 1px #44c26b;
+  /* Slight outline to define readability on light bg if needed, or matched stroke */
 }
 
 .gamesDescription {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -538,8 +565,8 @@
 
 .gamesCta {
   background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #0A674A;
+  border: 2px solid #0A674A;
   border-radius: 8px;
   padding: 14px 28px;
   font-size: 1rem;
@@ -555,11 +582,11 @@
 }
 
 .gamesCta:hover {
-  background: #fff;
-  color: #000;
+  background: #0A674A;
+  color: #fff;
   transform: translateY(-2px);
   /* Removed skew */
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 20px rgba(10, 103, 74, 0.2);
 }
 
 .gamesImages {
@@ -569,10 +596,12 @@
 
 .imageStack {
   position: relative;
-  width: 420px;
-  /* wider to show more */
-  height: 360px;
-  /* taller to reveal more of the screens */
+  width: 480px;
+  /* Wider */
+  height: 400px;
+  /* Taller */
+  transform: scale(1.05);
+  /* Slightly bigger overall */
 }
 
 /* Fine-tune per game to equalize perceived heights */
@@ -584,17 +613,34 @@
   transform: translate(-15px, 15px) rotate(-4deg);
 }
 
+/* Animations for stack images coming together */
+@keyframes slideInBack {
+  0% {
+    opacity: 0;
+    transform: translate(-80px, 20px) rotate(-12deg);
+  }
+}
+
+@keyframes slideInFront {
+  0% {
+    opacity: 0;
+    transform: translate(140px, 50px) rotate(12deg);
+  }
+}
+
 .imageBack {
   position: absolute;
   top: -6px;
   /* slight lift to keep the notch visible */
   left: 0;
-  width: 320px;
+  width: 360px;
+  /* Wider */
   height: auto;
   transform: translate(-15px, 12px) rotate(-4deg);
   /* move down a touch */
   opacity: 0.95;
   filter: drop-shadow(0 12px 36px rgba(0, 0, 0, 0.35));
+  animation: slideInBack 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
 }
 
 .imageFront {
@@ -602,11 +648,13 @@
   top: -30px;
   /* lower than before so more bottom shows */
   left: 0;
-  width: 320px;
+  width: 360px;
+  /* Wider */
   height: auto;
   transform: translate(70px, 35px) rotate(4.5deg);
   /* shift slightly down */
   filter: drop-shadow(0 18px 52px rgba(0, 0, 0, 0.5));
+  animation: slideInFront 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
 }
 
 /* ------------------------------------------------------------- */
@@ -624,6 +672,8 @@
   margin-bottom: 1rem;
   color: #0A674A;
   letter-spacing: 2px;
+  -webkit-text-stroke: 2px #0A674A;
+  paint-order: stroke fill;
 }
 
 .howToPlaySubtitle {
@@ -1145,63 +1195,190 @@
 /* ------------------------------------------------------------- */
 /* FAQ SECTION */
 .faqSection {
-  padding: 4rem 0;
+  padding: 6rem 0;
   margin-bottom: 5rem;
-  background: #0A674A;
-  /* Same green as hero section */
-  /* Extra space below to avoid overlap */
+  background: #eaf6f1;
+  /* Darker green tint */
 }
 
 .faqContainer {
   width: 90%;
-  max-width: 800px;
+  max-width: 1000px;
+  /* Narrower overall width */
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  /* Slightly narrower left col */
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* Left Column */
+.faqLeftCol {
+  position: sticky;
+  top: 100px;
 }
 
 .faqHeading {
-  font-size: 2rem;
+  font-family: 'UberMove', sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 900;
+  color: #0A674A;
+  /* Panna Green */
   margin-bottom: 2rem;
-  text-align: center;
-  color: #fff;
-  /* White text on green background */
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  -webkit-text-stroke: 2px #0A674A;
+  /* Thicker writing */
+  paint-order: stroke fill;
 }
 
-.faq {
-  margin-bottom: 3rem;
+.faqDescription {
+  color: #4a5568;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 260px;
 }
 
-.faqQuestion {
-  background: none;
+.contactButton {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid #0A674A;
+  /* Panna Green */
+  border-radius: 30px;
+  color: #0A674A;
+  /* Panna Green */
+  font-weight: 700;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.contactButton:hover {
+  background: #0A674A;
   color: #fff;
-  /* White text on green background */
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: left;
+}
+
+/* Right Column (FAQ List) */
+.faqList {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqItem {
+  border-bottom: 1px solid rgba(10, 103, 74, 0.15);
+  /* Greenish border */
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestionButton {
   width: 100%;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 2.2rem 0;
+  /* More breathing room */
+  text-align: left;
+  cursor: pointer;
 }
 
-.faqQuestion:hover {
-  color: #f5d20b;
-  /* Gold color on hover */
+.questionText {
+  font-size: 1.8rem;
+  /* Even Bigger as requested */
+  font-weight: 900;
+  /* Thicker */
+  color: #1a202c;
+  transition: color 0.2s ease;
+  padding-right: 2rem;
+  letter-spacing: -0.02em;
 }
 
-.faqAnswer {
-  max-height: 0;
-  opacity: 0;
+.faqQuestionButton:hover .questionText {
+  color: #0A674A;
+}
+
+.iconPlus {
+  font-size: 1.5rem;
+  color: #1a202c;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconPlusOpen {
+  transform: rotate(45deg);
+}
+
+.faqAnswerWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  transition: all 0.5s ease;
-  color: rgba(255, 255, 255, 0.9);
-  /* Light white for readability */
 }
 
-.visible {
-  max-height: 500px;
+.faqAnswerVisible {
+  grid-template-rows: 1fr;
+}
+
+.faqAnswerContent {
+  overflow: hidden;
+  min-height: 0;
+  color: #4a5568;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  padding-bottom: 2rem;
+}
+
+/* Response for Mobile */
+@media (max-width: 900px) {
+  .faqContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .faqLeftCol {
+    position: static;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* FOOTER SECTION */
+.footerSection {
+  padding: 3rem 0 5rem 0;
+  background: #f7fdfa;
+  /* Match the FAQ tint or white? Let's keep it clean/similar */
+}
+
+.footerLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footerLogoItem {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  filter: grayscale(100%);
+  /* Make them look like compliance logos */
+}
+
+.footerLogoItem:hover {
   opacity: 1;
-  padding: 0.5rem 0;
+  filter: grayscale(0%);
 }
 
 /* ------------------------------------------------------------- */
@@ -1435,8 +1612,27 @@
   }
 
   .phonesWrapper {
-    width: 200px;
-    height: 360px;
+    width: 220px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .heroPhoneBase {
+    width: 140px;
+    height: 280px;
+  }
+
+  /* Override positions for mobile */
+  .posCenter {
+    transform: translateX(40px) scale(1) rotate(0deg);
+  }
+
+  .posRight {
+    transform: translateX(110px) scale(0.85) rotate(10deg);
+  }
+
+  .posLeft {
+    transform: translateX(-30px) scale(0.85) rotate(-10deg);
   }
 
   .phoneContainer {
@@ -1671,5 +1867,202 @@
 
   .stepTitle2 {
     font-size: 1.05rem;
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* SOCIAL FEATURE SECTION */
+.socialSection {
+  padding: 8rem 0;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scroll animation - content starts hidden and rises up */
+.socialSection .socialContent {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.socialSection .socialDescription {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out 0.15s, transform 0.8s ease-out 0.15s;
+}
+
+.socialSection .socialCta {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s, background 0.3s ease, color 0.3s ease;
+}
+
+/* When section becomes visible */
+.socialSectionVisible .socialContent,
+.socialSectionVisible .socialDescription,
+.socialSectionVisible .socialCta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.socialContent {
+  flex: 1;
+  max-width: 500px;
+}
+
+.socialTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  /* Slightly more line height for spacing */
+  letter-spacing: -0.03em;
+  color: #0A674A;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-family: 'UberMove', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  -webkit-text-stroke: 3px #0A674A;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  /* Adds space between title lines */
+}
+
+.socialTitleLine {
+  display: block;
+}
+
+.socialDescription {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+}
+
+.socialCta {
+  display: inline-block;
+  padding: 12px 32px;
+  background: transparent;
+  color: #0A674A;
+  border: 2px solid #0A674A;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.socialCta:hover {
+  background: rgba(10, 103, 74, 0.08);
+  transform: translateY(-2px);
+}
+
+.socialImageWrapper {
+  flex: 1;
+  position: relative;
+  height: 700px;
+  /* Taller to accommodate bigger image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SWAPPED: Left Semi-circle - straight right edge, curved left edge */
+.socialBackdrop {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  background-color: #0A674A;
+  border-radius: 500px 0 0 500px;
+  left: 0px;
+  bottom: 5%;
+  /* Moved to bottom */
+  top: auto;
+  transform: rotate(-8deg);
+  /* Removed translateY */
+  z-index: 0;
+}
+
+/* Right Semi-circle - straight left edge, curved right edge */
+/* Right Semi-circle - straight left edge, curved right edge */
+/* Right Semi-circle - straight left edge, curved right edge */
+.socialCircle1 {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  background-color: #0A674A;
+  border-radius: 0 500px 500px 0;
+  right: 0px;
+  top: 44%;
+  /* Moved down slightly more again */
+  bottom: auto;
+  transform: translateY(-50%) rotate(8deg);
+  z-index: 0;
+}
+
+/* Hide unused circle */
+.socialCircle2 {
+  display: none;
+}
+
+.socialPhoneImage {
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25));
+  transform: scale(1.2);
+  /* Slightly bigger */
+  transform-origin: center center;
+}
+
+@media (max-width: 900px) {
+  .socialContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .socialContent {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .socialTitle {
+    align-items: center;
+  }
+
+  .socialDescription {
+    margin: 0 auto 2rem auto;
+  }
+
+  .socialImageWrapper {
+    height: 500px;
+    width: 100%;
+  }
+
+  .socialBackdrop {
+    width: 400px;
+    height: 400px;
+    right: 50%;
+    transform: translate(50%, 0);
+    bottom: 10%;
+    left: auto;
+  }
+
+  .socialCircle1 {
+    width: 400px;
+    height: 400px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 10%;
+    right: auto;
   }
 }
