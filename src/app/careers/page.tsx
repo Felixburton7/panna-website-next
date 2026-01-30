@@ -21,42 +21,49 @@ export default function Careers() {
             {/* Content Section */}
             <div className={styles.container}>
                 <div className={styles["job-card"]}>
-                    <div className={styles["job-header"]}>
-                        <h2 className={styles["job-title"]}>Sales Internship</h2>
-                        <div className={styles["job-meta"]}>
-                            <span>Part-time</span>
-                            <span>1-3 Months (ASAP)</span>
-                            <span>Flexible</span>
+
+                    <div className={styles.jobHeader}>
+                        <h2 className={styles.jobTitle}>Sales Internship</h2>
+                        <div className={styles.jobHighlights}>
+                            <div className={styles.highlightItem}>
+                                <FaClock className={styles.highlightIcon} />
+                                <span>Part-time</span>
+                            </div>
+                            <div className={styles.highlightItem}>
+                                <FaCalendar className={styles.highlightIcon} />
+                                <span>1-3 Months (ASAP)</span>
+                            </div>
+                            <div className={styles.highlightItem}>
+                                <FaMapMarkerAlt className={styles.highlightIcon} />
+                                <span>Flexible</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div className={styles["job-section"]}>
-                        <p>
-                            Looking for a motivated student or early-career candidate to support outbound sales for a <span style={{ fontWeight: 'bold', color: '#0A674A' }}>Panna</span>, a new sports betting app.
+                    <div className={styles.jobSection}>
+                        <p className={styles.introText}>
+                            Looking for a motivated student or early-career candidate to support outbound sales for <span className={styles.brandName}>Panna</span>, a new sports betting app.
                         </p>
 
-                        <ul className={styles["job-list"]}>
+                        <ul className={styles.jobList}>
                             <li>Strong commission upside</li>
                             <li>Hands-on sales experience (great for CV)</li>
                             <li>Interest in football/sport is a bonus</li>
                             <li>Experience with GTM tools (e.g. Clay.com) helpful but not required - willingness to learn is key</li>
                         </ul>
 
-                        <p>
+                        <p className={styles.idealFor}>
                             <strong>Ideal for:</strong> students, recent grads, or job-seekers looking to break into sales.
                         </p>
                     </div>
 
-                    <div className={styles["apply-section"]}>
+                    <div className={styles.applySection}>
                         <a
                             href="mailto:info@panna-app.uk?subject=Sales Internship Application"
-                            className={styles["apply-button"]}
+                            className={styles.applyButton}
                         >
-                            Apply via Email <FaArrowRight style={{ marginLeft: '0.5rem', verticalAlign: 'middle' }} />
+                            Apply via Email <FaArrowRight style={{ marginLeft: '0.5rem' }} />
                         </a>
-                        <p style={{ marginTop: '1rem', color: '#666', fontSize: '0.9rem' }}>
-                            Or send your CV to <strong style={{ color: '#333' }}>info@panna-app.uk</strong>
-                        </p>
                     </div>
                 </div>
             </div>
