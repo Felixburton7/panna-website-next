@@ -39,62 +39,85 @@
     margin-top: -3rem;
 }
 
+
 .filterSection {
-    background: #fff;
+    background: #0A674A;
+    /* Brand green */
     border-radius: 12px;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
     position: relative;
     z-index: 10;
-    max-width: 900px;
+    max-width: 950px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .filterGroup {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    min-width: 150px;
+    min-width: 180px;
+    flex: 1;
 }
 
 .filterGroup label {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
+    /* Lighter text for dark background */
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .filterSelect {
-    padding: 0.75rem 1rem;
-    border: 1px solid #ddd;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     font-size: 1rem;
-    color: #333;
-    background: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    /* Glassy look */
     cursor: pointer;
     transition: all 0.2s;
     outline: none;
+    appearance: none;
+    /* Remove default arrow to style commonly if needed, but keeping simple for now */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.65em auto;
+}
+
+.filterSelect:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .filterSelect:focus {
-    border-color: #0A674A;
-    box-shadow: 0 0 0 3px rgba(10, 103, 74, 0.1);
+    border-color: #FDFF4E;
+    /* Yellow accent */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filterSelect option {
+    background-color: #0A674A;
+    color: #fff;
 }
 
 .job-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 2.5rem;
+    background: #E8F0EB;
+    /* Light green/grey tint */
+    border-radius: 16px;
+    padding: 3rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(10, 103, 74, 0.1);
 }
 
 
@@ -124,14 +147,14 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: #f4fdf9;
-    /* Subtle green tint */
+    background: rgba(255, 255, 255, 0.6);
+    /* Semi-transparent white to contrast with the new card bg */
     padding: 0.6rem 1.2rem;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 600;
     color: #0A674A;
-    border: 1px solid #e0ece7;
+    border: 1px solid rgba(255, 255, 255, 0.8);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
