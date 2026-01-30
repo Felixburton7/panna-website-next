@@ -88,6 +88,12 @@ const Navbar: React.FC = () => {
           >
             Responsibility
           </Link>
+          <Link
+            href="/careers"
+            className={isActive("/careers") ? styles["active-link"] : ""}
+          >
+            Careers
+          </Link>
         </div>
 
         {/* Play Now Link */}
@@ -165,6 +171,13 @@ const Navbar: React.FC = () => {
               className={styles["mobile-link"]}
             >
               Responsibility
+            </Link>
+            <Link
+              href="/careers"
+              onClick={closeMobileMenu}
+              className={styles["mobile-link"]}
+            >
+              Careers
             </Link>
 
             {/* Social Icons Row */}
