@@ -16,6 +16,34 @@ export default function Careers() {
                         We're looking for passionate individuals to help us redefine the sports betting experience.
                     </p>
                 </div>
+                <div className={styles.filterSection}>
+                    <div className={styles.filterGroup}>
+                        <label>Location</label>
+                        <select className={styles.filterSelect}>
+                            <option>All Locations</option>
+                            <option>Remote</option>
+                            <option>London, UK</option>
+                        </select>
+                    </div>
+                    <div className={styles.filterGroup}>
+                        <label>Department</label>
+                        <select className={styles.filterSelect}>
+                            <option>All Departments</option>
+                            <option>Sales</option>
+                            <option>Engineering</option>
+                            <option>Marketing</option>
+                        </select>
+                    </div>
+                    <div className={styles.filterGroup}>
+                        <label>Work Type</label>
+                        <select className={styles.filterSelect}>
+                            <option>All Work Types</option>
+                            <option>Full-time</option>
+                            <option>Part-time</option>
+                            <option>Contract</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
             {/* Content Section */}
@@ -42,18 +70,18 @@ export default function Careers() {
 
                     <div className={styles.jobSection}>
                         <p className={styles.introText}>
-                            Looking for a motivated student or early-career candidate to support outbound sales for <span className={styles.brandName}>Panna</span>, a new sports betting app.
+                            We're looking for a motivated student or early-career candidate to help drive outbound sales for <span className={styles.brandName}>Panna</span>.
                         </p>
 
                         <ul className={styles.jobList}>
-                            <li>Strong commission upside</li>
-                            <li>Hands-on sales experience (great for CV)</li>
-                            <li>Interest in football/sport is a bonus</li>
-                            <li>Experience with GTM tools (e.g. Clay.com) helpful but not required - willingness to learn is key</li>
+                            <li>Earn commission on every deal</li>
+                            <li>Get real-world sales experience (perfect for your CV)</li>
+                            <li>Love football/sports? You'll fit right in</li>
+                            <li>Experience with GTM tools (like Clay.com) is a plus, but we're happy to teach you if you're ready to learn</li>
                         </ul>
 
                         <p className={styles.idealFor}>
-                            <strong>Ideal for:</strong> students, recent grads, or job-seekers looking to break into sales.
+                            <strong>Who we need:</strong> Students, grads, or anyone hungry to break into sales.
                         </p>
                     </div>
 
@@ -64,6 +92,9 @@ export default function Careers() {
                         >
                             Apply via Email <FaArrowRight style={{ marginLeft: '0.5rem' }} />
                         </a>
+                        <p className={styles.emailNote}>
+                            Or email us directly at <a href="mailto:info@panna-app.uk">info@panna-app.uk</a>
+                        </p>
                     </div>
                 </div>
             </div>

@@ -35,7 +35,57 @@
     max-width: 1000px;
     margin: -2rem auto 0;
     /* Overlap header slightly or just regular margin */
-    margin-top: 3rem;
+    /* Overlap header slightly or just regular margin */
+    margin-top: -3rem;
+}
+
+.filterSection {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 150px;
+}
+
+.filterGroup label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.filterSelect {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.filterSelect:focus {
+    border-color: #0A674A;
+    box-shadow: 0 0 0 3px rgba(10, 103, 74, 0.1);
 }
 
 .job-card {
@@ -184,6 +234,24 @@
     padding: 4rem 0;
     color: #666;
     font-size: 1.2rem;
+}
+
+.emailNote {
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.emailNote a {
+    color: #333;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.emailNote a:hover {
+    color: #0A674A;
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
