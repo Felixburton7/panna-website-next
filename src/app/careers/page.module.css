@@ -40,16 +40,20 @@
 }
 
 
+
 .filterSection {
     background: #0A674A;
     /* Brand green */
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1.5rem;
+    /* Reduced padding */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    /* Reduced margin */
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    /* Reduced gap */
     flex-wrap: wrap;
     position: relative;
     z-index: 10;
@@ -62,13 +66,16 @@
 .filterGroup {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    min-width: 180px;
+    gap: 0.35rem;
+    /* Tighter gap */
+    min-width: 160px;
+    /* Slightly smaller width */
     flex: 1;
 }
 
 .filterGroup label {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    /* Smaller label */
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9);
     /* Lighter text for dark background */
@@ -77,10 +84,12 @@
 }
 
 .filterSelect {
-    padding: 0.85rem 1rem;
+    padding: 0.6rem 0.8rem;
+    /* Smaller padding */
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    /* Smaller font */
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
     /* Glassy look */
@@ -91,8 +100,8 @@
     /* Remove default arrow to style commonly if needed, but keeping simple for now */
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 0.65em auto;
+    background-position: right 0.8rem center;
+    background-size: 0.6em auto;
 }
 
 .filterSelect:hover {
@@ -113,8 +122,9 @@
 .job-card {
     background: #E8F0EB;
     /* Light green/grey tint */
-    border-radius: 16px;
-    padding: 3rem;
+    border-radius: 12px;
+    padding: 2rem;
+    /* Reduced padding from 3rem */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
     border: 1px solid rgba(10, 103, 74, 0.1);
@@ -122,36 +132,43 @@
 
 
 
+
 .jobHeader {
-    margin-bottom: 2.5rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
+    border-bottom: 1px solid #dae6e0;
+    padding-bottom: 1.5rem;
+    /* Reduced padding */
 }
 
 .jobTitle {
-    font-size: 2.5rem;
-    /* Larger, clearer title */
+    font-size: 2rem;
+    /* Reduced font size */
     color: #0A674A;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    /* Reduced margin */
     font-weight: 800;
     letter-spacing: -0.02em;
 }
 
 .jobHighlights {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    /* Reduced gap */
     flex-wrap: wrap;
 }
 
 .highlightItem {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     background: rgba(255, 255, 255, 0.6);
     /* Semi-transparent white to contrast with the new card bg */
-    padding: 0.6rem 1.2rem;
+    padding: 0.4rem 1rem;
+    /* Reduced padding */
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    /* Reduced font size */
     font-weight: 600;
     color: #0A674A;
     border: 1px solid rgba(255, 255, 255, 0.8);
@@ -164,18 +181,21 @@
 }
 
 .highlightIcon {
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .jobSection {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
 }
 
 .introText {
-    font-size: 1.25rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    /* Reduced font size */
+    line-height: 1.5;
     color: #444;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
     max-width: 800px;
 }
 
@@ -187,16 +207,20 @@
 .jobList {
     list-style: none;
     padding: 0;
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 2rem 0;
+    /* Reduced margin */
     display: grid;
-    gap: 1rem;
+    gap: 0.75rem;
+    /* Reduced gap */
 }
 
 .jobList li {
     position: relative;
-    padding-left: 2rem;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    padding-left: 1.5rem;
+    /* Reduced padding */
+    line-height: 1.5;
+    font-size: 1rem;
+    /* Reduced font size */
     color: #333;
 }
 
@@ -207,27 +231,33 @@
     font-weight: 900;
     position: absolute;
     left: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     top: 0;
 }
 
 .idealFor {
-    font-size: 1.1rem;
-    background: #fafafa;
-    padding: 1.5rem;
-    border-radius: 12px;
-    border-left: 4px solid #0A674A;
+    font-size: 1rem;
+    /* Reduced font size */
+    background: rgba(255, 255, 255, 0.5);
+    /* More subtle background */
+    padding: 1rem;
+    /* Reduced padding */
+    border-radius: 8px;
+    border-left: 3px solid #0A674A;
     color: #555;
+    line-height: 1.5;
 }
 
 .applySection {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid #eee;
+    margin-top: 2rem;
+    /* Reduced margin */
+    padding-top: 1.5rem;
+    /* Reduced padding */
+    border-top: 1px solid #dae6e0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .applyButton {
@@ -236,19 +266,21 @@
     gap: 0.75rem;
     background: #0A674A;
     color: #fff;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2rem;
+    /* Reduced padding */
     border-radius: 50px;
     /* Pill shape */
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    /* Reduced font size */
     font-weight: 700;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     box-shadow: 0 4px 15px rgba(10, 103, 74, 0.3);
 }
 
 .applyButton:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(10, 103, 74, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10, 103, 74, 0.3);
     background: #0D7E5A;
 }
 
