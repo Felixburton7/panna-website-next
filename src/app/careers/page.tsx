@@ -16,34 +16,7 @@ export default function Careers() {
                         We're looking for passionate individuals to help us redefine the sports betting experience.
                     </p>
                 </div>
-                <div className={styles.filterSection}>
-                    <div className={styles.filterGroup}>
-                        <label>Location</label>
-                        <select className={styles.filterSelect}>
-                            <option>All Locations</option>
-                            <option>Remote</option>
-                            <option>London, UK</option>
-                        </select>
-                    </div>
-                    <div className={styles.filterGroup}>
-                        <label>Department</label>
-                        <select className={styles.filterSelect}>
-                            <option>All Departments</option>
-                            <option>Sales</option>
-                            <option>Engineering</option>
-                            <option>Marketing</option>
-                        </select>
-                    </div>
-                    <div className={styles.filterGroup}>
-                        <label>Work Type</label>
-                        <select className={styles.filterSelect}>
-                            <option>All Work Types</option>
-                            <option>Full-time</option>
-                            <option>Part-time</option>
-                            <option>Contract</option>
-                        </select>
-                    </div>
-                </div>
+
             </div>
 
             {/* Content Section */}
